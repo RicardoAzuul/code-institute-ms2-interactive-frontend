@@ -1,14 +1,17 @@
-# Roleplay Cafe
+# Puggy Pair Up
 
-This project is for a static website for a non-existing cafe: the Roleplay Cafe.
-The Roleplay Cafe specializes in providing a venue and resources for roleplaying enthousiasts. 
+Puggy Pair Up is a browser game for people who like pugs and memory games.
 
-As such, the site needs to meet the needs of both visitors and owners:
-- new visitors need to be able to quickly learn about the Roleplay Cafe.
-- returning visitors need to quickly find relevant information, for instance about events.
-- the owners want to convert new visitors into recurring visitors and have recurring visitors return to the cafe.
+Players will be be presented with a board of tiles, which they can click on to flip over. When flipped over, the tile reveals a picture of a pug: there are doubles of every picture on the board and it is up to the players to remember where they are and pair them up!
 
-To visit the site, open [https://ricardoazuul.github.io/roleplay-cafe](https://ricardoazuul.github.io/roleplay-cafe)
+Must haves for this project:
+- a clear interface.
+- a functioning game.
+
+Nice to have: 
+- a way to keep track of scores, maybe even a scoreboard.
+
+To visit the site, open [https://ricardoazuul.github.io/puggy-pair-up](https://ricardoazuul.github.io/puggy-pair-up)
 
 ---
 
@@ -38,90 +41,28 @@ To visit the site, open [https://ricardoazuul.github.io/roleplay-cafe](https://r
 ## UI and UX
  
 ### User stories
-- As a potential customer of the cafe, I want to visit the site and quickly determine if the cafe is suitable for me, so I can decide to visit. I will look at location, opening times and the menu. Some photos to give a sense of the ambience would be nice too.
+- As a visitor to the site, I want to be able to play the game. It would be nice if I can keep track of high scores, and even nicer if there is a scoreboard for multiple players. 
+
 
     - Screenshots related to this user story:
 
-        - [Footer screenshot](assets/readme-assets/footer_screenshot.png)
 
-        - [Menu screenshot](assets/readme-assets/menu_screenshot.png)
-
-        - [Ambience ](assets/readme-assets/ambience_screenshot.png)
-
-- As a recurring customer of the cafe, I want to visit the site to see what events are on and when, so I can decide which events to go to. I want to see when these events are planned, if they recur, and a brief description of these events.
-
-    - Screenshots related to this user story:
-
-        - [Next event screenshot](assets/readme-assets/next_event_screenshot.png)
-
-        - [Upcoming events screenshot](assets/readme-assets/upcoming_events_screenshot.png)
-
-- As a potential customer of the cafe who wants to be a game master for a roleplaying game, I want to visit the site to see what resources the cafe provides for hosting my game, so I can decide to host my game at the cafe. I want to have an overview of the resources provided - dice, character sheets, a sound system, perhaps a booth? - any possible costs associated with them and when the resources are available.
-
-    - Screenshots related to this user story:
-
-        - [Resources screenshot](assets/readme-assets/resources_screenshot.png)
-
-        - [GM form screenshot](assets/readme-assets/gm_form_screenshot.png)
-
-- As a potential customer of the cafe who wants to be a player in a roleplaying game, I want to visit the site to see if there are any games for me to join, so I can decide to go to the cafe.
-
-    - Screenshots related to this user story:
-
-        - [Next event screenshot](assets/readme-assets/next_event_screenshot.png)
-
-        - [Upcoming events screenshot](assets/readme-assets/upcoming_events_screenshot.png)
-
-- As a potential customer of the cafe who is new to roleplaying games, I want to visit the site to see what the cafe offers to help me learn about this hobby, so I can decide to go to the cafe.
-
-    - Screenshots related to this user story:
-
-        - [Information for new players screenshot](assets/readme-assets/newbies_screenshot.png)
-
-        - [Encouraging videos screenshot](assets/readme-assets/newbie_videos_screenshot.png)
 
 ---
 
 ### The 5 Planes of Design
 
-I've used Jesse James Garret's 5 planes of UX design to design the site. I started off at the Strategy Plane.
+Jesse James Garret's 5 planes of UX design were used to design the site. We start off at the Strategy Plane:
 
 #### Strategy Plane
 
-For the owners of the Roleplay Cafe, the site needs to achieve the following:
-- inform site visitors what the Roleplay Cafe offers.
-- turn visitors to the site into visitors of the cafe, and ideally recurring visitors too.
+The main goal for visitors to the site is to play a game. This means that upon visiting the page, a game must be ready to be started. For this, we need an active board of tiles. The tiles should consist of pairs of pug pictures, that can be flipped over. Players then remember where particular pug pictures are, and if they find the twin, they try and flip both of them to score. 
 
-The value of the site for the owners: the number of visitors to the Cafe increases, website visitors register their games and more games are being offered by the Cafe, building a tribe of like-minded visitors.
+There are at least two ways of running the game: 
+1. Every game is one big board of tiles, with all possible pairs of pug pictures on the board in a random configuration.
+1. Upon loading the site, a (relatively) easy version of the game is loaded, with a small number of paired pictures. Once a player clears the board, a new board is generated, this time with increased difficulty: meaning more paired pictures.
 
-For the visitors, the site needs to achieve the following:
-- allow them to quickly figure out what the Roleplay Cafe offers.
-- find out about roleplaying games they can join.
-- submit a game they want to run as game master.
-- find out about events.
-
-The value of the site for site visitors: quickly learn about a cool new cafe in town and get to meet people with similar interests.
-
-The owners of the Roleplay Cafe want to have a website designed in order to reach more potential customers and to keep their customers.
-
-The goals of the website are thus:
-- inform potential customers of what the Roleplay Cafe has on offer.
-- inform returning customers of what the Roleplay Cafe has on offer.
-
-The users I am focusing on:
-- players of roleplaying games who are looking for a place to socialize with others like them, try out new roleplaying games, find new groups to play with.
-- gamemasters of roleplaying games, who are looking for a place to host their games and find new players.
-- people who are interested in roleplaying games, but have little to no experience and are looking to learn more.
-
-The tasks that I will help users solve:
-- find the basic details of the Roleplay Cafe: opening times, location, an idea of the menu, social media.
-- find events that are hosted at the Roleplay Cafe.
-- for the gamemasters: submit their game idea, so the Roleplay Cafe can add it to the regular games.
-- for the gamemasters: find out the resources the Roleplay Cafe has on offer, and if necessary reserve them.
-- for people curious about roleplaying games: discover what the Roleplay Cafe and roleplaying is about, using photos of the Roleplay Cafe and perhaps some videos about roleplaying games.
-
-Why will users use this solution:
-- it's the easiest way to find out what the Roleplay Cafe is about and what is on offer. Walking in might be confusing, and you would have to find the Roleplay Cafe first.
+We want players to come back as well. Competition can stimulate players to return. There can be a scoreboard that keeps track of individual scores, but a shared scoreboard for all players can be even more stimulating.
 
 ---
 
