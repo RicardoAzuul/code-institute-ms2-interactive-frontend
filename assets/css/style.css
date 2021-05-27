@@ -1,0 +1,23 @@
+* {
+	margin: 0;
+	border: none;
+	padding: 0;
+}
+
+/* Navbar */
+.navbar {
+  background-color: oldlace;
+}
+/* End of Navbar */
+
+/* Main */
+main {
+  padding-top: 56px;
+}
+/* End of Main */
+
+/* Footer */
+.footer {
+  background-color: lightslategray;
+}
+/* End of Footer */
