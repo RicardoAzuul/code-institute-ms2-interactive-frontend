@@ -45,15 +45,15 @@ To visit the site, open [https://ricardoazuul.github.io/puggy-pair-up](https://r
 - In order to play the game I need to be able to:
     1. See a board of tiles that I can flip.
     2. Be able to flip two tiles to see which picture is behind them.
-    3. If the pictures match, the tiles need to remain flipped.
+    3. If the pictures match, the tiles need to remain flipped, and the score needs to change.
     4. If the pictures don't match, the tiles flip back.
     5. I then need to select two more tiles to flip and find the remaining matching pairs.
     6. Every time the game is run, it needs to have a random layout.
     7. Nice to have: scaling difficulty, by having more or less tiles on the board.
     8. Nice to have: a scoreboard, at least for individual players. An all time highscore board, and a scoreboard for friends might also be nice.
-- To see my own scores, I will click on "My high scores" in the navbar.
-- To see all high scores, I will click on "Alltime high scores" in the navbar.
-- To see the scoreboard for me and my friends, I will click on "High scores with friends."
+- To see my own scores, I will click on "My high scores" in the navbar. This will take me to a page with my highscores.
+- To see all high scores, I will click on "Alltime high scores" in the navbar. This will take me to a page with alltime highscores.
+- To see the scoreboard for me and my friends, I will click on "High scores with friends." This will take me to a page with my friends' and my highscores.
 
 
     - Screenshots related to this user story:
@@ -156,7 +156,7 @@ Fonts are sourced from Google Fonts.
 - [Alltime high scores mobile Version](readme-assets/wireframes/alltime_highscores_mobile_view.png)
 - [Friends' highscores](readme-assets/wireframes/highscores_with_friends.png)
 - [Friends' highscores tablet](readme-assets/wireframes/highscores_with_friends_tablet_view.png)
-- [Friends' highscores mobile Version](readme-assets/wireframes/highscores_with_friends_mobile_view.png))
+- [Friends' highscores mobile Version](readme-assets/wireframes/highscores_with_friends_mobile_view.png)
 
 ---
 
