@@ -85,7 +85,7 @@ It might also be an idea to encourage players to invite their friends to play an
 The functional specifications of the site:
 - A responsive website, mobile first design - with at least the following content:
     - the main section, with the game interface. For this we need:
-      - a collection of pug pictures.
+      - a collection of pug pictures. Potential problem: as the board increases in number of tiles, tile size will decrease and pictures might be become hard to keep apart.
       - code to generate a board of tiles, with the pug pictures on the other side of the tiles in a random configuration.
       - code that allows for flipping of the tiles and revealing the pug picture.
       - code that checks whether the two flipped tiles match or not:
@@ -95,7 +95,7 @@ The functional specifications of the site:
     - a basic footer
 
 Content requirements:
-- Photos pugs.
+- Photos of pugs.
 - Maybe a logo.
 - Some background music, but not a necessity.
 
@@ -120,7 +120,7 @@ All pages should have the same navigation bar and footer:
 - a list of all collective high scores. This list needs to update after games.
 
 <ins>Friends high score board</ins>
-- a list of high scorers from you and your friends, to see how you match up. This list needs to update after games.
+- a list of high scores from you and your friends, to see how you match up. This list needs to update after games.
 
 ---
 
