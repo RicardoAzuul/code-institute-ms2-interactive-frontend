@@ -146,17 +146,17 @@ Fonts are sourced from Google Fonts.
 <ins>Wireframes</ins>
 
 - [Game page](readme-assets/wireframes/game.png)
-- [Game page tablet version]
-- [Game page mobile Version]
-- [Individual high scores]
-- [Individual high scores tablet version]
-- [Individual high scores mobile version]
-- [Alltime high scores]
-- [Alltime high scores tablet version]
-- [Alltime high scores mobile Version]
-- [Friends' highscores]
-- [Friends' highscores tablet]
-- [Friends' highscores mobile Version]
+- [Game page tablet version](readme-assets/wireframes/game_tablet_view.png)
+- [Game page mobile Version](readme-assets/wireframes/game_mobile_view.png)
+- [Individual high scores](readme-assets/wireframes/your_highscores.png)
+- [Individual high scores tablet version](readme-assets/wireframes/your_highscores_tablet_view.png)
+- [Individual high scores mobile version](readme-assets/wireframes/your_highscores_mobile_view.png)
+- [Alltime high scores](readme-assets/wireframes/alltime_highscores.png)
+- [Alltime high scores tablet version](readme-assets/wireframes/alltime_highscores_tablet_view.png)
+- [Alltime high scores mobile Version](readme-assets/wireframes/alltime_highscores_mobile_view.png)
+- [Friends' highscores](readme-assets/wireframes/highscores_with_friends.png)
+- [Friends' highscores tablet](readme-assets/wireframes/highscores_with_friends_tablet_view.png)
+- [Friends' highscores mobile Version](readme-assets/wireframes/highscores_with_friends_mobile_view.png))
 
 ---
 
