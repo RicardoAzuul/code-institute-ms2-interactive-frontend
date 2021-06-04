@@ -42,6 +42,18 @@ To visit the site, open [https://ricardoazuul.github.io/puggy-pair-up](https://r
  
 ### User stories
 - As a visitor to the site, I want to be able to play the game. It would be nice if I can keep track of high scores, and even nicer if there is a scoreboard for multiple players. 
+- In order to play the game I need to be able to:
+    1. See a board of tiles that I can flip.
+    2. Be able to flip two tiles to see which picture is behind them.
+    3. If the pictures match, the tiles need to remain flipped.
+    4. If the pictures don't match, the tiles flip back.
+    5. I then need to select two more tiles to flip and find the remaining matching pairs.
+    6. Every time the game is run, it needs to have a random layout.
+    7. Nice to have: scaling difficulty, by having more or less tiles on the board.
+    8. Nice to have: a scoreboard, at least for individual players. An all time highscore board, and a scoreboard for friends might also be nice.
+- To see my own scores, I will click on "My high scores" in the navbar.
+- To see all high scores, I will click on "Alltime high scores" in the navbar.
+- To see the scoreboard for me and my friends, I will click on "High scores with friends."
 
 
     - Screenshots related to this user story:
@@ -249,7 +261,7 @@ Click [here](https://docs.github.com/en/pages/getting-started-with-github-pages/
 1. If you want to run the project locally, simply clone the repository into the directory of your choice: 
 
 ```
-git clone https://github.com/RicardoAzuul/RicardoAzuul.github.io.git
+git clone 
 ```
 2. Using Visual Studio Code, search for the [Live Server](https://ritwickdey.github.io/vscode-live-server/) extension by Ritwick Dey and install it.
 3. Press F1 in Visual Studio Code and in the search bar that pops up look for Live Server and start it.
