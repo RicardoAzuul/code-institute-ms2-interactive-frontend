@@ -145,7 +145,7 @@ Fonts are sourced from Google Fonts.
 
 <ins>Wireframes</ins>
 
-- [Game page]
+- [Game page](readme-assets/wireframes/game.png)
 - [Game page tablet version]
 - [Game page mobile Version]
 - [Individual high scores]
