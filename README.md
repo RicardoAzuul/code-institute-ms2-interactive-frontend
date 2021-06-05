@@ -278,6 +278,7 @@ git clone
 
 
 ### Media
+Pug stock photos from Pexels.com
 
 ### Acknowledgements
 
