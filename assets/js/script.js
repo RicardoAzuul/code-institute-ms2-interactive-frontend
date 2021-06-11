@@ -9,6 +9,9 @@ if button pressed is easy or hard run those games
 */
 
 document.addEventListener('DOMContentLoaded', function() {
+  $('#current-score').text('0'); // set score to 0 on page load
+  $('#timer').text('0'); // set timer to 0 on page load
+
   createBoard('medium'); // on page load we run the game at medium difficulty by default
 })
 
