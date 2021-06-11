@@ -21,7 +21,7 @@ function createBoard(boardDifficulty) {
     console.log('Running game on medium difficulty...');
     let boardWidth = 3;
     let boardHeight = 4;
-    console.log('Board settings. Width: ' + boardWidth + '. Heigth: ' +boardHeight);
+    console.log('Board settings. Width: ' + boardWidth + '. Heigth: ' + boardHeight);
   }
 
 }
