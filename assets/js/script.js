@@ -24,14 +24,26 @@ function createBoard(boardDifficulty) {
     // as medium is the default right now, we set width and height to 2. Later this will be set to 3 and 4.
     let boardWidth = 2;
     let boardHeight = 2;
-    // each image on a row needs to be col-6
     // we want to get all the div's with class tile-row, and then loop through this equal to boardHeight
     // for each loop we have another loop, of adding image equal to boardWidth
+    // create row and col around the tiles
+    let gameBoardHtml ='';
+    gameBoardHtml =
+      `
+      <div class="row" id="row-around-all-tiles">
+        <div class="col col-md-6 col-lg-4 offset-md-3 offset-lg-4" id="col-around-all-tiles">
+        </div>
+      </div>    
+      `
+    $('#game-board').append(gameBoardHtml);
   }
 
 }
 
 // function to flip two cards
+function flipCard() {
+
+}
 
 // function to check the flipped cards to see if they are the same
 function checkFlippedCards() {

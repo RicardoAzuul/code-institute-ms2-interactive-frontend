@@ -21,3 +21,35 @@ https://getbootstrap.com/docs/4.6/layout/overview/
         `
     }
     $('#game-board').html(html);
+
+
+
+<!-- Full html for creating row and col around tile-rows and tile-cols -->
+          <div class="row" id="row-around-all-tiles">
+      <div class="col col-md-6 col-lg-4 offset-md-3 offset-lg-4" id="col-around-all-tiles">
+        <div class="row tile-row">
+          <div class="col tile-col">
+            <div class="tile">
+              <img src="https://via.placeholder.com/200" class="img-fluid" alt="Pug face looking up">
+            </div>
+          </div>
+          <div class="col tile-col">
+            <div class="tile">
+              <img src="https://via.placeholder.com/200" class="img-fluid" alt="Pug face looking up">
+            </div>
+          </div>
+        </div>
+        <div class="row tile-row">
+          <div class="col tile-col">
+            <div class="tile">
+              <img src="https://via.placeholder.com/200" class="img-fluid" alt="Pug face looking up">
+            </div>
+          </div>
+          <div class="col tile-col">
+            <div class="tile">
+              <img src="https://via.placeholder.com/200" class="img-fluid" alt="Pug face looking up">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
