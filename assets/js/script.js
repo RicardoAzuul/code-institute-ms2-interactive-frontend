@@ -27,13 +27,6 @@ function createBoard(boardDifficulty) {
     // each image on a row needs to be col-6
     // we want to get all the div's with class tile-row, and then loop through this equal to boardHeight
     // for each loop we have another loop, of adding image equal to boardWidth
-    let html = '';
-    for (i = 0; i < boardHeight; i++) {
-      html +=
-        `
-        `
-    }
-    $('#game-board').html(html);
   }
 
 }
