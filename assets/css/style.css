@@ -16,7 +16,11 @@ main {
 }
 /* End of Main */
 
-/* Game area */
+/* Game area */ 
+#game-area {
+  padding-top: 1em;
+}
+
 .tile-row {
   padding-bottom: 0.5em;
 }
