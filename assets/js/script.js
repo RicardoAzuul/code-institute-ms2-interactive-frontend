@@ -8,7 +8,7 @@ if button pressed is easy or hard run those games
 
 */
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   $('#current-score').text('0'); // set score to 0 on page load
   $('#timer').text('0'); // set timer to 0 on page load
 
@@ -29,18 +29,11 @@ function createBoard(boardDifficulty) {
     // for each loop we have another loop, of adding image equal to boardWidth
     let html = '';
     for (i = 0; i < boardHeight; i++) {
-       html += `
-        <div class="row tile-row">
-          <div class="col-6">
-            <div class="tile">&nbsp;</div>
-          </div>
-          <div class="col-6">
-          <div class="tile">&nbsp;</div>
-          </div>
-        </div>
-       `
-       $('#game-board').html(html);     
+      html +=
+        `
+        `
     }
+    $('#game-board').html(html);
   }
 
 }
