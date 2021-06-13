@@ -21,10 +21,26 @@ document.addEventListener('DOMContentLoaded', function() {
 // the max layout: 1/2 padding | tile | padding | tile | padding | tile | padding | tile | padding | tile | padding | tile | 1/2 padding --> 6 * padding, 6 * tile
 function createBoard(boardDifficulty) {
   if (boardDifficulty === 'medium') {
-    console.log('Running game on medium difficulty...');
-    let boardWidth = 3;
-    let boardHeight = 4;
-    console.log('Board settings. Width: ' + boardWidth + '. Heigth: ' + boardHeight);
+    // as medium is the default right now, we set width and height to 2. Later this will be set to 3 and 4.
+    let boardWidth = 2;
+    let boardHeight = 2;
+    // each image on a row needs to be col-6
+    // we want to get all the div's with class tile-row, and then loop through this equal to boardHeight
+    // for each loop we have another loop, of adding image equal to boardWidth
+    let html = '';
+    for (i = 0; i < boardHeight; i++) {
+       html += `
+        <div class="row tile-row">
+          <div class="col-6">
+            <div class="tile">&nbsp;</div>
+          </div>
+          <div class="col-6">
+          <div class="tile">&nbsp;</div>
+          </div>
+        </div>
+       `
+       $('#game-area').html(html);     
+    }
   }
 
 }
