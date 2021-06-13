@@ -39,7 +39,7 @@ function createBoard(boardDifficulty) {
           </div>
         </div>
        `
-       $('#game-area').html(html);     
+       $('#game-board').html(html);     
     }
   }
 
