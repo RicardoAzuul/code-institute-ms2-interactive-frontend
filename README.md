@@ -4,6 +4,11 @@ Puggy Pair Up is a browser game for people who like pugs and memory games.
 
 Players will be be presented with a board of tiles, which they can click on to flip over. When flipped over, the tile reveals a picture of a pug: there are doubles of every picture on the board and it is up to the players to remember where they are and pair them up!
 
+**Puggy Poke-it**
+
+Alternate game idea: a game inspired by Bop-it, but using pug pictures. Players see a board of different pug pictures. The game randomly highlights a picture, which the player then has to click. Higher difficulties have more pictures and generate longer sequences of pictures that need to be clicked.
+
+
 Must haves for this project:
 - a clear interface.
 - a functioning game.
@@ -40,7 +45,7 @@ To visit the site, open [https://ricardoazuul.github.io/puggy-pair-up](https://r
 
 ## UI and UX
  
-### User stories
+### User stories - Puggy Pair Up
 - As a visitor to the site, I want to be able to play the game. It would be nice if I can keep track of high scores, and even nicer if there is a scoreboard for multiple players. 
 - In order to play the game I need to be able to:
     1. See a board of tiles that I can flip.
@@ -57,6 +62,23 @@ To visit the site, open [https://ricardoazuul.github.io/puggy-pair-up](https://r
 
 
     - Screenshots related to this user story:
+
+### User stories - Puggy Poke-it
+- As a visitor to the site, I want to be able to play the game. It would be nice if I can keep track of high scores, and even nicer if there is a scoreboard for multiple players. 
+- In order to play the game I need to:
+    1. See a board of pug pictures.
+    1. Have the game indicate which picture needs to be clicked on.
+    1. Be able to click on these pictures.
+    1. Have the game generate longer sequences of pictures that need to be clicked on in order, to make it more difficult as I progress.
+    1. Nice to have: scaling difficulty, by having more or less pictures on the board.
+    1. Nice to have: a scoreboard, at least for individual players. An all time highscore board, and a scoreboard for friends might also be nice.
+- To see my own scores, I will click on "My high scores" in the navbar. This will take me to a page with my highscores.
+- To see all high scores, I will click on "Alltime high scores" in the navbar. This will take me to a page with alltime highscores.
+- To see the scoreboard for me and my friends, I will click on "High scores with friends." This will take me to a page with my friends' and my highscores.
+
+
+    - Screenshots related to this user story:
+
 
 
 
@@ -109,7 +131,7 @@ All pages should have the same navigation bar and footer:
 <ins>The Home Page</ins>
 - a game logo
 - the main game interface:
-  - the tile board
+  - the picture board
   - a score tracker
   - a timer?
 
@@ -231,13 +253,6 @@ Testing was done using Google Chrome, Mozilla Firefox, Microsoft Edge, and also 
 
 <ins>Buttons</ins>
 <br/>
-
-<ins>Social Media Links in the footer:</ins>
-<br/>
-
-<ins>Newsletter signup in the footer:</ins>
-<br/>
-
 
 ---
 
