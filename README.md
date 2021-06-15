@@ -258,3 +258,4 @@ Pug stock photos from Pexels.com
 - I also received help and support from my mentor at Code Institute, [Jack Wachira](https://github.com/iamjackwachira). 
 - I would also like to thank to all the people at [Code Institute](https://codeinstitute.net/) for providing the Diploma in Software Development course and giving me the tools and guidance to create this site.
 - And also thanks to [Bootstrap](https://getbootstrap.com/) for helping with implementing their Bootstrap stylings, and [Stackoverflow](https://stackoverflow.com/) and [MDN](https://developer.mozilla.org/en-US/) for helping with finding solutions to coding problems, like the full background image.
+- https://www.w3schools.com/html/html5_canvas.asp

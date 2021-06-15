@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', function () {
 // the max layout: 1/2 padding | tile | padding | tile | padding | tile | padding | tile | padding | tile | padding | tile | 1/2 padding --> 6 * padding, 6 * tile
 function createBoard(boardDifficulty) {
   if (boardDifficulty === 'easy') {
-
+    let canvas = $('#gameCanvas');
+    console.log(canvas);
   }
 
 }

@@ -25,13 +25,8 @@ main {
   padding-top: 1em;
 }
 
-.tile-row {
-  padding-bottom: 0.5em;
-}
-
-.tile-row .tile-col {
-  padding-left: 5px;
-  padding-right: 5px;
+#canvas-col {
+  padding: 5px;
 }
 
 /* Footer */
