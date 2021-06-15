@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
   $('#current-score').text('0'); // set score to 0 on page load
   $('#timer').text('0'); // set timer to 0 on page load
 
+  let startButton = document.getElementById('start-button');
+  console.log(startButton);
+
   createBoard('easy'); // on page load we run the game at medium difficulty by default
 })
 
@@ -21,12 +24,12 @@ document.addEventListener('DOMContentLoaded', function () {
 // the max layout: 1/2 padding | tile | padding | tile | padding | tile | padding | tile | padding | tile | padding | tile | 1/2 padding --> 6 * padding, 6 * tile
 function createBoard(boardDifficulty) {
   if (boardDifficulty === 'easy') {
-
+    console.log(boardDifficulty);
   }
 
 }
 
-// function to generate a sequence of random numbers, with numbers equating to pictures.
+// function to generate a sequence of random numbers, with numbers equating to pictures. This function needs to run when the start button is clicked.
 function generateSequence() {
 
 }
