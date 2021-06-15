@@ -1,12 +1,8 @@
-# Puggy Pair Up
+# Puggy Poke-it
 
-Puggy Pair Up is a browser game for people who like pugs and memory games.
+Puggy Poke-it is a browser game for people who like pugs and memory games.
 
-Players will be be presented with a board of tiles, which they can click on to flip over. When flipped over, the tile reveals a picture of a pug: there are doubles of every picture on the board and it is up to the players to remember where they are and pair them up!
-
-**Puggy Poke-it**
-
-Alternate game idea: a game inspired by Bop-it, but using pug pictures. Players see a board of different pug pictures. The game randomly highlights a picture, which the player then has to click. Higher difficulties have more pictures and generate longer sequences of pictures that need to be clicked.
+It is a game inspired by Bop-it, but using pug pictures. Players see a board of different pug pictures. The game randomly highlights a picture, which the player then has to click. Higher difficulties have more pictures and generate longer sequences of pictures that need to be clicked in order.
 
 
 Must haves for this project:
@@ -45,25 +41,7 @@ To visit the site, open [https://ricardoazuul.github.io/puggy-pair-up](https://r
 
 ## UI and UX
  
-### User stories - Puggy Pair Up
-- As a visitor to the site, I want to be able to play the game. It would be nice if I can keep track of high scores, and even nicer if there is a scoreboard for multiple players. 
-- In order to play the game I need to be able to:
-    1. See a board of tiles that I can flip.
-    2. Be able to flip two tiles to see which picture is behind them.
-    3. If the pictures match, the tiles need to remain flipped, and the score needs to change.
-    4. If the pictures don't match, the tiles flip back.
-    5. I then need to select two more tiles to flip and find the remaining matching pairs.
-    6. Every time the game is run, it needs to have a random layout.
-    7. Nice to have: scaling difficulty, by having more or less tiles on the board.
-    8. Nice to have: a scoreboard, at least for individual players. An all time highscore board, and a scoreboard for friends might also be nice.
-- To see my own scores, I will click on "My high scores" in the navbar. This will take me to a page with my highscores.
-- To see all high scores, I will click on "Alltime high scores" in the navbar. This will take me to a page with alltime highscores.
-- To see the scoreboard for me and my friends, I will click on "High scores with friends." This will take me to a page with my friends' and my highscores.
-
-
-    - Screenshots related to this user story:
-
-### User stories - Puggy Poke-it
+### User stories
 - As a visitor to the site, I want to be able to play the game. It would be nice if I can keep track of high scores, and even nicer if there is a scoreboard for multiple players. 
 - In order to play the game I need to:
     1. See a board of pug pictures.
@@ -71,11 +49,8 @@ To visit the site, open [https://ricardoazuul.github.io/puggy-pair-up](https://r
     1. Be able to click on these pictures.
     1. Have the game generate longer sequences of pictures that need to be clicked on in order, to make it more difficult as I progress.
     1. Nice to have: scaling difficulty, by having more or less pictures on the board.
-    1. Nice to have: a scoreboard, at least for individual players. An all time highscore board, and a scoreboard for friends might also be nice.
+    1. Nice to have: a scoreboard, at least for individual players. 
 - To see my own scores, I will click on "My high scores" in the navbar. This will take me to a page with my highscores.
-- To see all high scores, I will click on "Alltime high scores" in the navbar. This will take me to a page with alltime highscores.
-- To see the scoreboard for me and my friends, I will click on "High scores with friends." This will take me to a page with my friends' and my highscores.
-
 
     - Screenshots related to this user story:
 
@@ -90,15 +65,9 @@ Jesse James Garret's 5 planes of UX design were used to design the site. We star
 
 #### Strategy Plane
 
-The main goal for visitors to the site is to play a game. This means that upon visiting the page, a game must be ready to be started. For this, we need an active board of tiles. The tiles should consist of pairs of pug pictures, that can be flipped over. Players then remember where particular pug pictures are, and if they find the twin, they try and flip both of them to score. 
+The main goal for visitors to the site is to play a game. This means that upon visiting the page, a game must be ready to be started. For this, we need a board of pictures. Because the game is about memorizing sequences, we need a start button, otherwise players might miss the first sequence and lose. 
 
-There are at least two ways of running the game: 
-1. Every game is one big board of tiles, with all possible pairs of pug pictures on the board in a random configuration.
-1. Upon loading the site, a (relatively) easy version of the game is loaded, with a small number of paired pictures. Once a player clears the board, a new board is generated, this time with increased difficulty: meaning more paired pictures.
-
-We want players to come back as well. Competition can stimulate players to return. There can be a scoreboard that keeps track of individual scores, but a shared scoreboard for all players can be even more stimulating.
-
-It might also be an idea to encourage players to invite their friends to play and compete by having them create a scoreboard for friends.
+We want players to come back as well. For this, we can implement a scoreboard, so players can keep track of their progress between sessions.  
 
 ---
 
@@ -108,12 +77,9 @@ The functional specifications of the site:
 - A responsive website, mobile first design - with at least the following content:
     - the main section, with the game interface. For this we need:
       - a collection of pug pictures. Potential problem: as the board increases in number of tiles, tile size will decrease and pictures might be become hard to keep apart.
-      - code to generate a board of tiles, with the pug pictures on the other side of the tiles in a random configuration.
-      - code that allows for flipping of the tiles and revealing the pug picture.
-      - code that checks whether the two flipped tiles match or not:
-        - if they match, keep them flipped and keep track.
-        - if they don't match, flip them back.
-    - a navbar, for quick navigation to individual scoreboards and collective scoreboards.
+      - code to generate a sequence of random numbers, with the numbers equating to pictures on the board.
+      - code that checks whether the player gave the right sequence as input.
+    - a navbar, for quick navigation to the scoreboard.
     - a basic footer
 
 Content requirements:
@@ -138,11 +104,8 @@ All pages should have the same navigation bar and footer:
 <ins>Individual scoreboard</ins>
 - a list of an individual player's scores. This list needs to update after games.
 
-<ins>Alltime high scores</ins>
-- a list of all collective high scores. This list needs to update after games.
-
-<ins>Friends high score board</ins>
-- a list of high scores from you and your friends, to see how you match up. This list needs to update after games.
+<ins>How to play page</ins>
+- explains how the game works.
 
 ---
 
@@ -196,8 +159,8 @@ Fonts are sourced from Google Fonts.
 - Score tracker
 - Timer?
 - Individual scoreboard
-- All time high scores
-- Scoreboard for friends
+- How to play page
+- Settings page
 
 ---
 
