@@ -25,10 +25,6 @@ main {
   padding-top: 1em;
 }
 
-#canvas-col {
-  padding: 5px;
-}
-
 /* Footer */
 .footer {
   background-color: lightslategray;
