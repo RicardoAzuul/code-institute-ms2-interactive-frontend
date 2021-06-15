@@ -12,8 +12,12 @@ document.addEventListener('DOMContentLoaded', function () {
   $('#current-score').text('0'); // set score to 0 on page load
   $('#timer').text('0'); // set timer to 0 on page load
 
+  // TODO: turn this into code that gets all the buttons
   let startButton = document.getElementById('start-button');
-  console.log(startButton);
+  startButton.addEventListener('click', function () {
+    generateSequence();
+  })
+
 
   createBoard('easy'); // on page load we run the game at medium difficulty by default
 })
@@ -31,7 +35,7 @@ function createBoard(boardDifficulty) {
 
 // function to generate a sequence of random numbers, with numbers equating to pictures. This function needs to run when the start button is clicked.
 function generateSequence() {
-
+  console.log('INFO: Generating sequence...');
 }
 
 // function that uses the generated sequence to bop pictures
