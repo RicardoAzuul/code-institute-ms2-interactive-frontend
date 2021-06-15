@@ -136,12 +136,6 @@ Fonts are sourced from Google Fonts.
 - [Individual high scores](readme-assets/wireframes/your_highscores.png)
 - [Individual high scores tablet version](readme-assets/wireframes/your_highscores_tablet_view.png)
 - [Individual high scores mobile version](readme-assets/wireframes/your_highscores_mobile_view.png)
-- [Alltime high scores](readme-assets/wireframes/alltime_highscores.png)
-- [Alltime high scores tablet version](readme-assets/wireframes/alltime_highscores_tablet_view.png)
-- [Alltime high scores mobile Version](readme-assets/wireframes/alltime_highscores_mobile_view.png)
-- [Friends' highscores](readme-assets/wireframes/highscores_with_friends.png)
-- [Friends' highscores tablet](readme-assets/wireframes/highscores_with_friends_tablet_view.png)
-- [Friends' highscores mobile Version](readme-assets/wireframes/highscores_with_friends_mobile_view.png)
 
 ---
 
