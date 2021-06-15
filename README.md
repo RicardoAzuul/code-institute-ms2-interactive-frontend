@@ -259,3 +259,4 @@ Pug stock photos from Pexels.com
 - I would also like to thank to all the people at [Code Institute](https://codeinstitute.net/) for providing the Diploma in Software Development course and giving me the tools and guidance to create this site.
 - And also thanks to [Bootstrap](https://getbootstrap.com/) for helping with implementing their Bootstrap stylings, and [Stackoverflow](https://stackoverflow.com/) and [MDN](https://developer.mozilla.org/en-US/) for helping with finding solutions to coding problems, like the full background image.
 - https://www.w3schools.com/html/html5_canvas.asp
+- https://stackoverflow.com/questions/63526002/unable-to-load-image-from-assets-folder-in-angular

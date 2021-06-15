@@ -21,8 +21,13 @@ document.addEventListener('DOMContentLoaded', function () {
 // the max layout: 1/2 padding | tile | padding | tile | padding | tile | padding | tile | padding | tile | padding | tile | 1/2 padding --> 6 * padding, 6 * tile
 function createBoard(boardDifficulty) {
   if (boardDifficulty === 'easy') {
-    let canvas = $('#gameCanvas');
-    console.log(canvas);
+    let canvas = document.getElementById('gameCanvas');
+    let context = canvas.getContext('2d');
+    let image = new Image(); //create new img HTML element
+    image.src = "assets/images/pug_face_looking_up.jpg"
+    image.addEventListener('load', function () {
+      context.drawImage(image, 0, 0, 170, 170);
+    });
   }
 
 }
