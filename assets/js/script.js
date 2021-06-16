@@ -27,13 +27,15 @@ function createBoard(boardDifficulty) {
 // function to generate a sequence of random numbers, with numbers equating to pictures. This function needs to run when the start button is clicked.
 function generateSequence() {
   let sequence = [];
-  sequence = Math.floor(Math.random() * 4) + 1; // generate random number between 1 and 4
+  sequence = Math.floor(Math.random() * 4); // generate random number between 0 and 3 --> we have 4 pictures.
   bopPictures(sequence);
 }
 
 // function that uses the generated sequence to bop pictures
 function bopPictures(sequence) {
-  console.log('INFO: Bopping picture' + sequence);
+  console.log('INFO: Bopping picture ' + sequence);
+  let pictures = $('img'); // get all img elements
+  console.log(pictures[sequence]); // select img from pictures array with index = sequence
 }
 
 // function to increase score if the player gets the correct sequence
