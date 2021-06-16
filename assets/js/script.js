@@ -28,12 +28,12 @@ function createBoard(boardDifficulty) {
 function generateSequence() {
   let sequence = [];
   sequence = Math.floor(Math.random() * 4) + 1; // generate random number between 1 and 4
-  console.log(sequence);
+  bopPictures(sequence);
 }
 
 // function that uses the generated sequence to bop pictures
-function bopPicture() {
-
+function bopPictures(sequence) {
+  console.log('INFO: Bopping picture' + sequence);
 }
 
 // function to increase score if the player gets the correct sequence
