@@ -260,3 +260,4 @@ Pug stock photos from Pexels.com
 - And also thanks to [Bootstrap](https://getbootstrap.com/) for helping with implementing their Bootstrap stylings, and [Stackoverflow](https://stackoverflow.com/) and [MDN](https://developer.mozilla.org/en-US/) for helping with finding solutions to coding problems, like the full background image.
 - https://www.w3schools.com/html/html5_canvas.asp
 - https://stackoverflow.com/questions/63526002/unable-to-load-image-from-assets-folder-in-angular
+- https://stackoverflow.com/questions/17767759/css3-scale-animation-keyframes/34226236

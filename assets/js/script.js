@@ -36,7 +36,7 @@ function bopPictures(sequence) {
   console.log('INFO: Bopping picture ' + sequence);
   let pictures = $('img'); // get all img elements
   console.log(pictures[sequence]); // select img from pictures array with index = sequence
-  pictures[sequence].classList.add('bopping');
+  pictures[sequence].classList.add('bop');
 }
 
 // function to increase score if the player gets the correct sequence
