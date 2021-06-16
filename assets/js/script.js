@@ -1,13 +1,4 @@
-/* 
-function to load game at default setting of easy on page load: we start off loading a board of just 4 tiles
-eventlistener that waits for DOMContentLoaded
-then: 
-get all the buttons (easy, medium, hard)
-
-if button pressed is medium or hard run those games
-
-*/
-
+// run easy game on page load
 document.addEventListener('DOMContentLoaded', function () {
   $('#current-score').text('0'); // set score to 0 on page load
   $('#timer').text('0'); // set timer to 0 on page load
@@ -35,7 +26,9 @@ function createBoard(boardDifficulty) {
 
 // function to generate a sequence of random numbers, with numbers equating to pictures. This function needs to run when the start button is clicked.
 function generateSequence() {
-  console.log('INFO: Generating sequence...');
+  let sequence = [];
+  sequence = Math.floor(Math.random() * 4) + 1; // generate random number between 1 and 4
+  console.log(sequence);
 }
 
 // function that uses the generated sequence to bop pictures
