@@ -29,6 +29,10 @@ main {
   padding: 5px;
 }
 
+.bopping {
+  transform: scale(1.1, 1.1);
+}
+
 /* Footer */
 .footer {
   background-color: lightslategray;
