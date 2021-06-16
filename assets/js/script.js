@@ -33,11 +33,17 @@ function generateSequence() {
 
 // function that uses the generated sequence to bop pictures
 function bopPictures(sequence) {
-  console.log('INFO: Bopping picture ' + sequence);
-  let pictures = $('img'); // get all img elements
-  console.log(pictures[sequence]); // select img from pictures array with index = sequence
-  pictures[sequence].classList.add('bop');
+  $('img')[sequence].animate({
+    width: "90%",
+    opacity: 0.4
+  }, 1000 );
+  checkSequence(sequence); // we pass the generated sequence to checkSequence after we have bopped the pictures
 }
+
+function checkSequence(sequence) {
+  let playerSequence = []; // initialize empty playerSequence array
+}
+
 
 // function to increase score if the player gets the correct sequence
 function increaseScore() {
