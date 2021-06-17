@@ -48,8 +48,13 @@ function checkSequence(sequence) {
   for (let image of images) {
     image.addEventListener('click', function() { // add eventlistener to all images
       playerSequence += images.index(image);
-      console.log(playerSequence);
-      console.log(sequence);
+
+      if (playerSequence === sequence) { // this will only work for sequences of length 1
+        increaseScore();
+      }
+      else {
+        alert('INFO: Wrong!');
+      }
     })
   }
 }
@@ -57,7 +62,7 @@ function checkSequence(sequence) {
 
 // function to increase score if the player gets the correct sequence
 function increaseScore() {
-
+  console.log('INFO: Increasing score!');
 }
 
 // timer function
