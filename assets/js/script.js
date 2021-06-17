@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // the max layout: 1/2 padding | tile | padding | tile | padding | tile | padding | tile | padding | tile | padding | tile | 1/2 padding --> 6 * padding, 6 * tile
 function createBoard(boardDifficulty) {
   if (boardDifficulty === 'easy') {
-    
+
   }
 
 }
@@ -51,6 +51,7 @@ function checkSequence(sequence) {
 
       if (playerSequence === sequence) { // this will only work for sequences of length 1
         increaseScore();
+        increaseSequenceScore(sequence);
       }
       else {
         alert('INFO: Wrong!');
@@ -63,10 +64,16 @@ function checkSequence(sequence) {
 // function to increase score if the player gets the correct sequence
 function increaseScore() {
   let oldScore = parseInt($('#current-score').text());
-  $('#current-score').text(++oldScore);
+  $('#current-score').text(++oldScore);  
 }
 
-// timer function
-function increaseTimer() {
-
+// function to increase longest sequence score if the player gets the correct sequence
+function increaseSequenceScore(sequence) {
+  let oldSequenceScore = parseInt($('#longest-sequence').text());
+  if (sequence.length > oldSequenceScore) {
+    $('#longest-sequence').text(sequence.length);
+  }
+  else {
+    return;
+  }
 }
