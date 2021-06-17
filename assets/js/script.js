@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // the max layout: 1/2 padding | tile | padding | tile | padding | tile | padding | tile | padding | tile | padding | tile | 1/2 padding --> 6 * padding, 6 * tile
 function createBoard(boardDifficulty) {
   if (boardDifficulty === 'easy') {
-    console.log(boardDifficulty);
+    
   }
 
 }
@@ -62,7 +62,8 @@ function checkSequence(sequence) {
 
 // function to increase score if the player gets the correct sequence
 function increaseScore() {
-  console.log('INFO: Increasing score!');
+  let oldScore = parseInt($('#current-score').text());
+  $('#current-score').text(++oldScore);
 }
 
 // timer function
