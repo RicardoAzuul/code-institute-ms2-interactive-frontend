@@ -94,9 +94,9 @@ function checkSequence(sequence) {
       console.log('Player sequence: ' + playerSequence);
       console.log('Sequence: ' + sequence);
     })
+  } 
 
-
-  }
+  
 
   // TODO: We need a submit button as a trigger for the game to check the player sequence. It would be cool to have the game check for the length of the sequence the player put in, but a submit button is easier.
 
