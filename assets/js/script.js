@@ -91,21 +91,38 @@ function checkSequence(sequence) {
   for (let image of images) {
     image.addEventListener('click', function () { // add eventlistener to all images
       playerSequence.push(images.index(image));
-      console.log('Player sequence: ' + playerSequence);
-      console.log('Sequence: ' + sequence);
     })
   }
 
   // TODO: We need a submit button as a trigger for the game to check the player sequence. It would be cool to have the game check for the length of the sequence the player put in, but a submit button is easier.
   $('#submit-button').click(function () {
-    if (playerSequence === sequence) { // this will only work for sequences of length 1
-      alert('Correct!');
-      increaseScore();
-      increaseSequenceScore(sequence);
+    // the first check is if playerSequence and sequence have the same length: if this is not true, the player failed.
+    if (playerSequence.length === sequence.length) {
+      // then we need to check all the pictures the player clicked. We loop through them, assuming they got it right. But if they get it wrong, we break the loop.
+      let correctAnswer = true;
+      for (let index = 0; index < playerSequence.length; index++) {
+        if (playerSequence[index] !== sequence[index]) {
+          correctAnswer = false;
+          break;
+        }
+        else {
+          continue;
+        }        
+      }
+
+      if (correctAnswer === true) { 
+        alert('Correct!');
+        increaseScore();
+        increaseSequenceScore(sequence);
+      }
+      else {
+        alert('Sorry, you got it wrong!');
+      }
     }
     else {
-      alert('Sorry, you got it wrong!');
+      alert('Sorry, you didn\'t click the right amount of pictures!');
     }
+
   });
 }
 
