@@ -94,22 +94,20 @@ function checkSequence(sequence) {
       console.log('Player sequence: ' + playerSequence);
       console.log('Sequence: ' + sequence);
     })
-  } 
-
-  
+  }
 
   // TODO: We need a submit button as a trigger for the game to check the player sequence. It would be cool to have the game check for the length of the sequence the player put in, but a submit button is easier.
-
-  if (playerSequence === sequence) { // this will only work for sequences of length 1
-    alert('Correct!');
-    increaseScore();
-    increaseSequenceScore(sequence);
-  }
-  else {
-    alert('Sorry, you got it wrong!');
-  }
+  $('#submit-button').click(function () {
+    if (playerSequence === sequence) { // this will only work for sequences of length 1
+      alert('Correct!');
+      increaseScore();
+      increaseSequenceScore(sequence);
+    }
+    else {
+      alert('Sorry, you got it wrong!');
+    }
+  });
 }
-
 
 // function to increase score if the player gets the correct sequence
 function increaseScore() {
