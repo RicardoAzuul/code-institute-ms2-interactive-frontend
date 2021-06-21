@@ -17,7 +17,11 @@ document.addEventListener('DOMContentLoaded', function () {
       console.log('You clicked an image!');
       console.log('Player sequence after clicking: ' + playerSequence);
     })
-  }  
+  }
+  
+  $('#submit-button').click(function () {
+    checkSequence()
+     });
 
   // TODO: turn this into code that gets all the buttons
   let startButton = document.getElementById('start-button');
@@ -98,12 +102,12 @@ function bopPictures(sequence) {
     }, 1000);
   }
 
-  checkSequence(sequence); // we pass the generated sequence to checkSequence after we have bopped the pictures
+  
 }
 
-function checkSequence(sequence) {
+function checkSequence() {
   // TODO: It would be cool to have the game check for the length of the sequence the player put in, but a submit button is easier.
-  $('#submit-button').click(function () {
+
     console.log('Player sequence length: ' + playerSequence.length);
     console.log('Game sequence length: ' + sequence.length);
     
@@ -135,7 +139,6 @@ function checkSequence(sequence) {
     }
 
     playerSequence = []; // after comparing the playersequence and the gamesequence, we clear the playersequence for the next round
-  });
 }
 
 // function to increase score if the player gets the correct sequence
