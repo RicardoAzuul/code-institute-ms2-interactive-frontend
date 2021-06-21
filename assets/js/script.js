@@ -1,3 +1,7 @@
+// global variables
+var playerSequence = []; // initialize empty playerSequence array
+var sequence = []; // initialize sequence array
+
 // run easy game on page load
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -5,8 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   createBoard(difficulty); // on page load we run the game at easy difficulty by default 
 
-  let playerSequence = []; // initialize empty playerSequence array
-  console.log('Player sequence before clicking: ' + playerSequence);
   let images = $('img'); // get all images: this is an object
 
   for (let image of images) {
@@ -52,7 +54,6 @@ function createBoard(difficulty) {
 
 // function to generate a sequence of random numbers, with numbers equating to pictures. This function needs to run when the start button is clicked.
 function generateSequence(difficulty) {
-  let sequence = []; // initialize sequence array
   console.log('Sequence before code: ' + sequence);
   let sequenceLength = 1;
   let multiplier = 0; // initialize the multiplier we use to generate random numbers
