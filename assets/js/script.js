@@ -77,26 +77,35 @@ function generateSequence(difficulty) {
 
 // function that uses the generated sequence to bop pictures
 function bopPictures(sequence) {
-  $('img')[sequence].animate({
-    width: "90%",
-    opacity: 0.4
-  }, 1000);
+  for (let index = 0; index < sequence.length; index++) {
+    $('img')[sequence[index]].animate({
+      width: "90%",
+      opacity: 0.4
+    }, 1000);
+  }
+
   checkSequence(sequence); // we pass the generated sequence to checkSequence after we have bopped the pictures
 }
 
 function checkSequence(sequence) {
   let playerSequence = []; // initialize empty playerSequence array
+  console.log('Player sequence before clicking: ' + playerSequence);
   let images = $('img'); // get all images: this is an object
 
   for (let image of images) {
     image.addEventListener('click', function () { // add eventlistener to all images
       playerSequence.push(images.index(image));
+      console.log('You clicked an image!');
+      console.log('Player sequence after clicking: ' + playerSequence);
     })
   }
 
   // TODO: We need a submit button as a trigger for the game to check the player sequence. It would be cool to have the game check for the length of the sequence the player put in, but a submit button is easier.
   $('#submit-button').click(function () {
     // the first check is if playerSequence and sequence have the same length: if this is not true, the player failed.
+    console.log('Player sequence length: ' + playerSequence.length);
+    console.log('Game sequence length: ' + sequence.length);
+    
     if (playerSequence.length === sequence.length) {
       // then we need to check all the pictures the player clicked. We loop through them, assuming they got it right. But if they get it wrong, we break the loop.
       let correctAnswer = true;
@@ -107,10 +116,10 @@ function checkSequence(sequence) {
         }
         else {
           continue;
-        }        
+        }
       }
 
-      if (correctAnswer === true) { 
+      if (correctAnswer === true) {
         alert('Correct!');
         increaseScore();
         increaseSequenceScore(sequence);

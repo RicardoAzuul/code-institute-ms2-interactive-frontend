@@ -31,6 +31,7 @@ To visit the site, open [https://ricardoazuul.github.io/puggy-pair-up](https://r
 1. [Technologies Used](#technologies-used)
 1. [Responsiveness of Pages](#responsiveness-of-pages)
 1. [Testing](#Testing)
+    1. [Notable Bugs](#notable-bugs)
 1. [Deployment](#Deployment)
 1. [Credits](#Credits)
     1. [Content](#Content)
@@ -210,6 +211,15 @@ Testing was done using Google Chrome, Mozilla Firefox, Microsoft Edge, and also 
 
 <ins>Buttons</ins>
 <br/>
+
+### Notable Bugs
+
+While working on making the game loop, I ran into the following bug:
+- the first round of an easy game worked as expected: a picture was highlighted, the player clicked the picture and submitted, and the game checked the score properly.
+- on the second round, things went wrong: two pictures would highlight, the player would click the two pictures and submit, but the game would indicate it was wrong
+
+Steps to troubleshoot:
+1. Console.logging at various steps in the code. This revealed that on the second round, when the player clicked an image, it registered as 2 clicks, and then would register as 1 click. It seemed to not be clearing the saved playersequence properly.
 
 ---
 
