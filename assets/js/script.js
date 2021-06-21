@@ -104,10 +104,10 @@ function bopPictures(sequence) {
 function checkSequence(sequence) {
   // TODO: It would be cool to have the game check for the length of the sequence the player put in, but a submit button is easier.
   $('#submit-button').click(function () {
-    // the first check is if playerSequence and sequence have the same length: if this is not true, the player failed.
     console.log('Player sequence length: ' + playerSequence.length);
     console.log('Game sequence length: ' + sequence.length);
     
+    // the first check is if playerSequence and sequence have the same length: if this is not true, the player failed.
     if (playerSequence.length === sequence.length) {
       // then we need to check all the pictures the player clicked. We loop through them, assuming they got it right. But if they get it wrong, we break the loop.
       let correctAnswer = true;
@@ -134,6 +134,7 @@ function checkSequence(sequence) {
       alert('Sorry, you didn\'t click the right amount of pictures!');
     }
 
+    playerSequence = []; // after comparing the playersequence and the gamesequence, we clear the playersequence for the next round
   });
 }
 
