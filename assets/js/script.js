@@ -14,8 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
   for (let image of images) {
     image.addEventListener('click', function () { // add eventlistener to all images
       playerSequence.push(images.index(image));
-      console.log('You clicked an image!');
-      console.log('Player sequence after clicking: ' + playerSequence);
     })
   }
 
@@ -43,9 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     generateSequence(difficulty);
   })
-
 })
-
 
 // function to load game based on chosen difficulty: easy (4 pictures), medium (6 pictures) or hard (8 pictures)
 // NOTE: max board size that fits comfortably on a smartphone screen seems to be 6 by 8, with each pic at 50 by 50 px
@@ -59,7 +55,6 @@ function createBoard(difficulty) {
 // function to generate a sequence of random numbers, with numbers equating to pictures. This function needs to run when the start button is clicked.
 function generateSequence(difficulty) {
   sequence = []; //empty the array
-  console.log('Sequence before code: ' + sequence);
   let sequenceLength = 1;
   let multiplier = 0; // initialize the multiplier we use to generate random numbers
   let maxLengthSequence = 0;
@@ -86,8 +81,6 @@ function generateSequence(difficulty) {
   for (let index = 0; index < sequenceLength; index++) {
     sequence.push(Math.floor(Math.random() * multiplier)); // generate random number between 0 and 3 --> we have 4 pictures.    
   }
-  console.log('Previous sequence length: ' + previousSequenceLength);
-  console.log('Sequence length: ' + sequenceLength);
   console.log('Sequence: ' + sequence);
 
   bopPictures(sequence);
@@ -105,10 +98,6 @@ function bopPictures(sequence) {
 
 function checkSequence() {
   // TODO: It would be cool to have the game check for the length of the sequence the player put in, but a submit button is easier.
-
-  console.log('Player sequence length: ' + playerSequence.length);
-  console.log('Game sequence length: ' + sequence.length);
-
   // the first check is if playerSequence and sequence have the same length: if this is not true, the player failed.
   if (playerSequence.length === sequence.length) {
     // then we need to check all the pictures the player clicked. We loop through them, assuming they got it right. But if they get it wrong, we break the loop.
@@ -119,7 +108,7 @@ function checkSequence() {
         break;
       }
       else {
-        continue;
+        continue; // if both values in the same position of both arrays match, we simply continue to the next two values.
       }
     }
 
@@ -152,6 +141,6 @@ function increaseSequenceScore() {
     $('#longest-sequence').text(sequence.length);
   }
   else {
-    return;
+    return; // if the sequence wasn't longer than the previous one, we don't have to increase the score
   }
 }
