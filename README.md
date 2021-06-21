@@ -220,6 +220,7 @@ While working on making the game loop, I ran into the following bug:
 
 Steps to troubleshoot:
 1. Console.logging at various steps in the code. This revealed that on the second round, when the player clicked an image, it registered as 2 clicks, and then would register as 1 click. It seemed to not be clearing the saved playersequence properly.
+1. As a side-step, I set playerSequence to be a globally scoped variable, and took the code to add eventListeners to the images to the function that runs on page load. This changed the bug: on the second round, the code to compare the playersequence and the gamesequence runs twice.
 
 ---
 
