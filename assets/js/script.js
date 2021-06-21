@@ -3,7 +3,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let difficulty = 'easy';
 
-  createBoard(difficulty); // on page load we run the game at easy difficulty by default
+  createBoard(difficulty); // on page load we run the game at easy difficulty by default 
+
+  let playerSequence = []; // initialize empty playerSequence array
+  console.log('Player sequence before clicking: ' + playerSequence);
+  let images = $('img'); // get all images: this is an object
+
+  for (let image of images) {
+    image.addEventListener('click', function () { // add eventlistener to all images
+      playerSequence.push(images.index(image));
+      console.log('You clicked an image!');
+      console.log('Player sequence after clicking: ' + playerSequence);
+    })
+  }  
 
   // TODO: turn this into code that gets all the buttons
   let startButton = document.getElementById('start-button');
@@ -88,19 +100,7 @@ function bopPictures(sequence) {
 }
 
 function checkSequence(sequence) {
-  let playerSequence = []; // initialize empty playerSequence array
-  console.log('Player sequence before clicking: ' + playerSequence);
-  let images = $('img'); // get all images: this is an object
-
-  for (let image of images) {
-    image.addEventListener('click', function () { // add eventlistener to all images
-      playerSequence.push(images.index(image));
-      console.log('You clicked an image!');
-      console.log('Player sequence after clicking: ' + playerSequence);
-    })
-  }
-
-  // TODO: We need a submit button as a trigger for the game to check the player sequence. It would be cool to have the game check for the length of the sequence the player put in, but a submit button is easier.
+  // TODO: It would be cool to have the game check for the length of the sequence the player put in, but a submit button is easier.
   $('#submit-button').click(function () {
     // the first check is if playerSequence and sequence have the same length: if this is not true, the player failed.
     console.log('Player sequence length: ' + playerSequence.length);
