@@ -126,7 +126,7 @@ function checkSequence() {
     if (correctAnswer === true) {
       alert('Correct!');
       increaseScore();
-      increaseSequenceScore(sequence);
+      increaseSequenceScore();
     }
     else {
       alert('Sorry, you got it wrong!');
@@ -146,7 +146,7 @@ function increaseScore() {
 }
 
 // function to increase longest sequence score if the player gets the correct sequence
-function increaseSequenceScore(sequence) {
+function increaseSequenceScore() {
   let oldSequenceScore = parseInt($('#longest-sequence').text());
   if (sequence.length > oldSequenceScore) {
     $('#longest-sequence').text(sequence.length);
