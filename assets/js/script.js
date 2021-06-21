@@ -18,10 +18,10 @@ document.addEventListener('DOMContentLoaded', function () {
       console.log('Player sequence after clicking: ' + playerSequence);
     })
   }
-  
+
   $('#submit-button').click(function () {
     checkSequence()
-     });
+  });
 
   // TODO: turn this into code that gets all the buttons
   let startButton = document.getElementById('start-button');
@@ -101,44 +101,42 @@ function bopPictures(sequence) {
       opacity: 0.4
     }, 1000);
   }
-
-  
 }
 
 function checkSequence() {
   // TODO: It would be cool to have the game check for the length of the sequence the player put in, but a submit button is easier.
 
-    console.log('Player sequence length: ' + playerSequence.length);
-    console.log('Game sequence length: ' + sequence.length);
-    
-    // the first check is if playerSequence and sequence have the same length: if this is not true, the player failed.
-    if (playerSequence.length === sequence.length) {
-      // then we need to check all the pictures the player clicked. We loop through them, assuming they got it right. But if they get it wrong, we break the loop.
-      let correctAnswer = true;
-      for (let index = 0; index < playerSequence.length; index++) {
-        if (playerSequence[index] !== sequence[index]) {
-          correctAnswer = false;
-          break;
-        }
-        else {
-          continue;
-        }
-      }
+  console.log('Player sequence length: ' + playerSequence.length);
+  console.log('Game sequence length: ' + sequence.length);
 
-      if (correctAnswer === true) {
-        alert('Correct!');
-        increaseScore();
-        increaseSequenceScore(sequence);
+  // the first check is if playerSequence and sequence have the same length: if this is not true, the player failed.
+  if (playerSequence.length === sequence.length) {
+    // then we need to check all the pictures the player clicked. We loop through them, assuming they got it right. But if they get it wrong, we break the loop.
+    let correctAnswer = true;
+    for (let index = 0; index < playerSequence.length; index++) {
+      if (playerSequence[index] !== sequence[index]) {
+        correctAnswer = false;
+        break;
       }
       else {
-        alert('Sorry, you got it wrong!');
+        continue;
       }
     }
-    else {
-      alert('Sorry, you didn\'t click the right amount of pictures!');
-    }
 
-    playerSequence = []; // after comparing the playersequence and the gamesequence, we clear the playersequence for the next round
+    if (correctAnswer === true) {
+      alert('Correct!');
+      increaseScore();
+      increaseSequenceScore(sequence);
+    }
+    else {
+      alert('Sorry, you got it wrong!');
+    }
+  }
+  else {
+    alert('Sorry, you didn\'t click the right amount of pictures!');
+  }
+
+  playerSequence = []; // after comparing the playersequence and the gamesequence, we clear the playersequence for the next round
 }
 
 // function to increase score if the player gets the correct sequence
