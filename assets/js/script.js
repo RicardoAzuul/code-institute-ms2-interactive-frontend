@@ -54,6 +54,7 @@ function createBoard(difficulty) {
 
 // function to generate a sequence of random numbers, with numbers equating to pictures. This function needs to run when the start button is clicked.
 function generateSequence(difficulty) {
+  sequence = []; //empty the array
   console.log('Sequence before code: ' + sequence);
   let sequenceLength = 1;
   let multiplier = 0; // initialize the multiplier we use to generate random numbers
