@@ -29,6 +29,14 @@ main {
   padding: 5px;
 }
 
+img {
+  opacity: 1;
+}
+
+.dim {
+  opacity: 0.4;
+}
+
 /* Footer */
 .footer {
   background-color: lightslategray;

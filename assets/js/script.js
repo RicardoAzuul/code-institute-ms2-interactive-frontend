@@ -92,21 +92,62 @@ function generateSequence(difficulty) {
   bopPictures(sequence);
 }
 
-// function that uses the generated sequence to bop pictures
+// function that uses the generated sequence to bop pictures: used this answer on Stackoverflow: https://stackoverflow.com/questions/35071794/js-jquery-animate-divs-in-order
 function bopPictures(sequence) {
-  for (let index = 0; index < sequence.length; index++) {
-    let targetImage = $('img')[sequence[index]];
-    animateImage(targetImage);    
+  sequence = [1, 2];
+  console.log('Sequence: ' + sequence);
+  let index = 0;
+  let targetImage = $('img')[sequence[index]];
+  targetImage.classList.add('dim');
+
+  pauseBeforeNextImage();
+
+  function pauseBeforeNextImage() {
+    window.setTimeout(function () {
+      console.log('Waiting');
+      let previousImage = $('img')[sequence[index]];
+      console.log(previousImage);
+      console.log('Removing dim class');
+      previousImage.classList.remove('dim');
+      index++;
+
+      console.log('Index:' + index);
+      console.log('Sequence length: ' + sequence.length);
+
+      if (index >= sequence.length) {
+        console.log(index);
+        console.log(sequence.length);
+        return; // we've reached the end of the sequence. Discontinue
+      }      
+      
+      console.log('Index after increment: ' + index);
+
+      // process the next image
+      var nextImage = $('img')[sequence[index]];
+      nextImage.classList.add('dim');
+
+      pauseBeforeNextImage()
+    }, 500);
   }
 }
+
+
+
+// function bopPictures(sequence) {
+//   for (let index = 0; index < sequence.length; index++) {
+//     let targetImage = $('img')[sequence[index]];
+//     animateImage(targetImage);    
+//   }
+// }
 
 // function that animates an image that is passed to the function
 function animateImage(targetImage) {
   targetImage.animate({
     width: "90%",
     opacity: 0.4
-  }, {duration: 1000,   
-  });    
+  }, {
+    duration: 1000,
+  });
 }
 
 function checkSequence() {
