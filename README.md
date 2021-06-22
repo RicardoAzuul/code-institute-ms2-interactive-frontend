@@ -212,6 +212,13 @@ Testing was done using Google Chrome, Mozilla Firefox, Microsoft Edge, and also 
 <ins>Buttons</ins>
 <br/>
 
+<ins>The game</ins>
+- Images that need to be clicked are animated.
+- When the player clicks an image, it is animated.
+- The score increments when the player gets it right.
+- The longest sequence score increments when the player beats a sequence that is the longest so far.
+- The game gets progressively harder, by generating longer sequences.
+
 ### Notable Bugs
 
 While working on making the game loop, I ran into the following bug:
