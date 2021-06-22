@@ -130,8 +130,6 @@ function checkSequence() {
     alert('Sorry, you didn\'t click the right amount of pictures!');
     resetScores();
   }
-
-
 }
 
 // function to increase score if the player gets the correct sequence
