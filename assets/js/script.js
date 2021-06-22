@@ -94,8 +94,6 @@ function generateSequence(difficulty) {
 
 // function that uses the generated sequence to bop pictures: used this answer on Stackoverflow: https://stackoverflow.com/questions/35071794/js-jquery-animate-divs-in-order
 function bopPictures(sequence) {
-  sequence = [1, 2];
-  console.log('Sequence: ' + sequence);
   let index = 0;
   let targetImage = $('img')[sequence[index]];
   targetImage.classList.add('dim');
@@ -104,15 +102,9 @@ function bopPictures(sequence) {
 
   function pauseBeforeNextImage() {
     window.setTimeout(function () {
-      console.log('Waiting');
       let previousImage = $('img')[sequence[index]];
-      console.log(previousImage);
-      console.log('Removing dim class');
       previousImage.classList.remove('dim');
       index++;
-
-      console.log('Index:' + index);
-      console.log('Sequence length: ' + sequence.length);
 
       if (index >= sequence.length) {
         console.log(index);
@@ -120,8 +112,6 @@ function bopPictures(sequence) {
         return; // we've reached the end of the sequence. Discontinue
       }      
       
-      console.log('Index after increment: ' + index);
-
       // process the next image
       var nextImage = $('img')[sequence[index]];
       nextImage.classList.add('dim');
