@@ -123,17 +123,15 @@ function checkSequence() {
     }
     else {
       alert('Sorry, you got it wrong!');
-      $('#current-score').text(0); // TODO this and the same code in the else statement below can be turned into a function
-      $('#longest-sequence').text(0);
+      resetScores();
     }
   }
   else {
     alert('Sorry, you didn\'t click the right amount of pictures!');
-    $('#current-score').text(0);
-    $('#longest-sequence').text(0);
+    resetScores();
   }
 
-  
+
 }
 
 // function to increase score if the player gets the correct sequence
@@ -151,4 +149,9 @@ function increaseSequenceScore() {
   else {
     return; // if the sequence wasn't longer than the previous one, we don't have to increase the score
   }
+}
+
+function resetScores() {
+  $('#current-score').text(0);
+  $('#longest-sequence').text(0);
 }
