@@ -140,16 +140,6 @@ function bopPictures(sequence) {
 //   }
 // }
 
-// function that animates an image that is passed to the function
-function animateImage(targetImage) {
-  targetImage.animate({
-    width: "90%",
-    opacity: 0.4
-  }, {
-    duration: 1000,
-  });
-}
-
 function checkSequence() {
   // TODO: It would be cool to have the game check for the length of the sequence the player put in, but a submit button is easier.
   // the first check is if playerSequence and sequence have the same length: if this is not true, the player failed.
