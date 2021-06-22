@@ -55,6 +55,7 @@ function createBoard(difficulty) {
 // function to generate a sequence of random numbers, with numbers equating to pictures. This function needs to run when the start button is clicked.
 function generateSequence(difficulty) {
   sequence = []; //empty the array
+  playerSequence = []; // empty the player sequence array: after this point whatever the player clicks becomes stored.
   let sequenceLength = 1;
   let multiplier = 0; // initialize the multiplier we use to generate random numbers
   let maxLengthSequence = 0;
@@ -125,7 +126,7 @@ function checkSequence() {
     alert('Sorry, you didn\'t click the right amount of pictures!');
   }
 
-  playerSequence = []; // after comparing the playersequence and the gamesequence, we clear the playersequence for the next round
+  
 }
 
 // function to increase score if the player gets the correct sequence
