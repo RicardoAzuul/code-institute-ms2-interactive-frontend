@@ -6,14 +6,16 @@ var sequence = []; // initialize sequence array
 document.addEventListener('DOMContentLoaded', function () {
 
   let difficulty = 'easy';
-
   createBoard(difficulty); // on page load we run the game at easy difficulty by default 
 
   let images = $('img'); // get all images: this is an object
-
   for (let image of images) {
     image.addEventListener('click', function () { // add eventlistener to all images
-      playerSequence.push(images.index(image));
+      this.animate({
+        width: "90%",
+        opacity: 0.4
+      }, 1000);
+      playerSequence.push(images.index(this));
     })
   }
 
@@ -48,14 +50,14 @@ document.addEventListener('DOMContentLoaded', function () {
 // the max layout: 1/2 padding | tile | padding | tile | padding | tile | padding | tile | padding | tile | padding | tile | 1/2 padding --> 6 * padding, 6 * tile
 function createBoard(difficulty) {
   if (difficulty === 'easy') {
-    $('#easy-button').addClass('btn-lg'); // add active class to button so we can use this for the game loop
+    $('#easy-button').addClass('btn-lg'); // add bnt-lg class to button so we can use this for the game loop
   }
 }
 
 // function to generate a sequence of random numbers, with numbers equating to pictures. This function needs to run when the start button is clicked.
 function generateSequence(difficulty) {
   sequence = []; //empty the array
-  playerSequence = []; // empty the player sequence array: after this point whatever the player clicks becomes stored.
+  playerSequence = []; // empty the player sequence array: after this point whatever the player clicks is stored.
   let sequenceLength = 1;
   let multiplier = 0; // initialize the multiplier we use to generate random numbers
   let maxLengthSequence = 0;
