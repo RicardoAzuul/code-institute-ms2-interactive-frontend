@@ -123,10 +123,14 @@ function checkSequence() {
     }
     else {
       alert('Sorry, you got it wrong!');
+      $('#current-score').text(0); // TODO this and the same code in the else statement below can be turned into a function
+      $('#longest-sequence').text(0);
     }
   }
   else {
     alert('Sorry, you didn\'t click the right amount of pictures!');
+    $('#current-score').text(0);
+    $('#longest-sequence').text(0);
   }
 
   
