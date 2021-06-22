@@ -230,6 +230,10 @@ Steps to troubleshoot:
 1. As a side-step, I set playerSequence to be a globally scoped variable, and took the code to add eventListeners to the images to the function that runs on page load. This changed the bug: on the second round, the code to compare the playersequence and the gamesequence runs twice.
 1. To further disentangle the code from being a mess of functions calling functions calling functions, I moved the code that adds an eventListener to the submit button to the function that runs on page load. This seems to have fixed the bug. I think the bug was caused by a loop not running as I expected it to.
 
+### Problems
+1. The code to animate pictures was animating all pictures at the same time. Ultimately I found code that processed each image in order, but it had a mistake. The code: https://stackoverflow.com/questions/35071794/js-jquery-animate-divs-in-order
+The mistake: the code would first check if index was equal to or greater than the length of the array, and after that check increment the index. This meant that before the if check, index was smaller, but after it was equal, which meant that the code tried to get to an index in the array that wasn't there.
+
 ---
 
 ## Deployment
