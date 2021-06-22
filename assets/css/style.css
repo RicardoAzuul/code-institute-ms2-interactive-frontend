@@ -29,20 +29,6 @@ main {
   padding: 5px;
 }
 
-.bop {
-  transform-origin: 0 0;
-  animation: bopping 0.3s ease-in-out 2 alternate;
-}
-
-@keyframes bopping {
-  0% {
-    transform: scale(1.0);
-  }
-  100% {
-    transform:scale(1.1);
-  }
-}
-
 /* Footer */
 .footer {
   background-color: lightslategray;

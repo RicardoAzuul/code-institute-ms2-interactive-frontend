@@ -95,11 +95,18 @@ function generateSequence(difficulty) {
 // function that uses the generated sequence to bop pictures
 function bopPictures(sequence) {
   for (let index = 0; index < sequence.length; index++) {
-    $('img')[sequence[index]].animate({
-      width: "90%",
-      opacity: 0.4
-    }, 1000);
+    let targetImage = $('img')[sequence[index]];
+    animateImage(targetImage);    
   }
+}
+
+// function that animates an image that is passed to the function
+function animateImage(targetImage) {
+  targetImage.animate({
+    width: "90%",
+    opacity: 0.4
+  }, {duration: 1000,   
+  });    
 }
 
 function checkSequence() {
