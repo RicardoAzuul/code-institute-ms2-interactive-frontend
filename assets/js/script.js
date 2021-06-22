@@ -78,6 +78,9 @@ function generateSequence(difficulty) {
   if (previousSequenceLength < maxLengthSequence) {
     sequenceLength = previousSequenceLength + 1;
   }
+  else {
+    sequenceLength = maxLengthSequence;
+  }
 
   for (let index = 0; index < sequenceLength; index++) {
     sequence.push(Math.floor(Math.random() * multiplier)); // generate random number between 0 and 3 --> we have 4 pictures.    
