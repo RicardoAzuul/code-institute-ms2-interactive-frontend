@@ -2,15 +2,14 @@
 var playerSequence = []; // initialize empty playerSequence array
 var sequence = []; // initialize sequence array
 
-// run easy game on page load
 document.addEventListener('DOMContentLoaded', function () {
 
   let difficulty = 'easy';
   createBoard(difficulty); // on page load we run the game at easy difficulty by default 
 
-  let images = $('img'); // get all images: this is an object
+  let images = $('img'); 
   for (let image of images) {
-    image.addEventListener('click', function () { // add eventlistener to all images
+    image.addEventListener('click', function () { 
       this.animate({
         opacity: 0.4
       }, 500);
@@ -84,7 +83,7 @@ function generateSequence(difficulty) {
   }
 
   for (let index = 0; index < sequenceLength; index++) {
-    sequence.push(Math.floor(Math.random() * multiplier)); // generate random number between 0 and 3 --> we have 4 pictures.    
+    sequence.push(Math.floor(Math.random() * multiplier));    
   }
   console.log('Sequence: ' + sequence);
 
@@ -170,7 +169,7 @@ function increaseSequenceScore() {
     $('#longest-sequence').text(sequence.length);
   }
   else {
-    return; // if the sequence wasn't longer than the previous one, we don't have to increase the score
+    return; // if the sequence wasn't longer than the previous one, we don't have to increase the score, and we can exit the function.
   }
 }
 
