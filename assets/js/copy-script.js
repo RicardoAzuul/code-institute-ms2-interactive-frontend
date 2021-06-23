@@ -98,9 +98,10 @@ function bopPictures(sequence) {
   let targetImage = $('img')[sequence[index]];
   targetImage.classList.add('dim');
 
-  removeClassAndPause();
+  pauseBeforeNextImage();
 
-  function removeClassAndPause() {
+  // TODO: Problem with this function is that when we have the same numbers following each other in the sequence, the class gets removed and then immediately added. Which means that it seems as if it was only dimmed once.
+  function pauseBeforeNextImage() {
     window.setTimeout(function () {
       let previousImage = $('img')[sequence[index]];
       previousImage.classList.remove('dim');
@@ -112,16 +113,11 @@ function bopPictures(sequence) {
         return; // we've reached the end of the sequence. Discontinue
       }
 
-      addClassAndPause()
-    }, 500);
-  }
-
-  function addClassAndPause() {
-    window.setTimeout(function () {
-      let nextImage = $('img')[sequence[index]];
+      // process the next image
+      var nextImage = $('img')[sequence[index]];
       nextImage.classList.add('dim');
 
-      removeClassAndPause();
+      pauseBeforeNextImage()
     }, 500);
   }
 }
