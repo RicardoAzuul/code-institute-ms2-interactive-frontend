@@ -6,7 +6,19 @@ var sequence = []; // TODO: rename to gameSequence?
 document.addEventListener('DOMContentLoaded', function () {
 
   let difficulty = 'easy';
-  createBoard(difficulty);  
+  createBoard(difficulty);
+  
+  let difficultyButtons = document.getElementById('difficulty-buttons-col').children;
+  for (let button of difficultyButtons) {
+    button.addEventListener('click', function () {
+      for (let button of difficultyButtons) {
+        button.classList.remove('btn-lg');
+      }
+      this.classList.add('btn-lg');
+      difficulty = this.innerHTML.toLowerCase();
+      createBoard(difficulty);
+    })
+  }
 
   let images = $('img'); 
   for (let image of images) {
@@ -22,10 +34,10 @@ document.addEventListener('DOMContentLoaded', function () {
     checkSequence()
   });
 
-  // TODO: turn this into code that gets all the buttons
   let startButton = document.getElementById('start-button');
   startButton.addEventListener('click', function () {
     // we check which button has the btn-lg class: that is our difficulty
+    // TODO: convert the button text to lowercase, because that can be used for difficulty
     let largeButton = $('button.btn-lg').text();
     if (largeButton === 'Easy') {
       difficulty = 'easy';
@@ -51,6 +63,12 @@ function createBoard(difficulty) {
   if (difficulty === 'easy') {
     $('#easy-button').addClass('btn-lg'); // the selected difficulty becomes the default difficulty for next loops
   }
+  else if (difficulty === 'medium') {
+    $('#medium-button').addClass('btn-lg');
+  }
+  else if (difficulty === 'hard') {
+    $('#hard-button').addClass('btn-lg');
+  }
 }
 
 // function to generate a sequence of random numbers, with numbers equating to pictures. This function needs to run when the start button is clicked.
@@ -68,9 +86,13 @@ function generateSequence(difficulty) {
   }
   else if (difficulty === 'medium') {
     console.log('Difficulty: ' + difficulty);
+    multiplier = 4;
+    maxLengthSequence = multiplier * 2;
   }
   else if (difficulty === 'hard') {
     console.log('Difficulty: ' + difficulty);
+    multiplier = 4;
+    maxLengthSequence = multiplier * 2; 
   }
   else {
     alert('ERROR: Unknown difficulty setting');
