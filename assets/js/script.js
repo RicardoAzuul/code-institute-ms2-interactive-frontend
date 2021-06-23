@@ -20,16 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   }
 
-  let images = $('img');
-  for (let image of images) {
-    image.addEventListener('click', function () {
-      this.animate({
-        opacity: 0.4
-      }, 500);
-      playerSequence.push(images.index(this));
-    })
-  }
-
   $('#submit-button').click(function () {
     checkSequence()
   });
@@ -63,7 +53,6 @@ function createBoard(difficulty) {
   if (difficulty === 'easy') {
     $('#easy-button').addClass('btn-lg'); // the selected difficulty becomes the default difficulty for next loops
     $('#game-board').html('');
-    // TODO Add HTML that generates a board with 4 pictures, 2 per column, 2 rows.
     let gameBoardHTML =
       `
       <div class="row">
@@ -84,11 +73,21 @@ function createBoard(difficulty) {
       </div>
       `;
     $('#game-board').html(gameBoardHTML);
+    
+    // add eventListeners to all imgs, so the player can click them 
+    let images = $('img');
+    for (let image of images) {
+      image.addEventListener('click', function () {
+        this.animate({
+          opacity: 0.4
+        }, 500);
+        playerSequence.push(images.index(this));
+      })
+    }
   }
   else if (difficulty === 'medium') {
     $('#medium-button').addClass('btn-lg');
     $('#game-board').html('');
-    // TODO Add HTML that generates a board with 6 pictures, 2 per column, 3 rows.
     let gameBoardHTML =
       `
     <div class="row">
@@ -117,11 +116,21 @@ function createBoard(difficulty) {
     </div>
     `;
     $('#game-board').html(gameBoardHTML);
+
+    // add eventListeners to all imgs, so the player can click them 
+    let images = $('img');
+    for (let image of images) {
+      image.addEventListener('click', function () {
+        this.animate({
+          opacity: 0.4
+        }, 500);
+        playerSequence.push(images.index(this));
+      })
+    }
   }
   else if (difficulty === 'hard') {
     $('#hard-button').addClass('btn-lg');
     $('#game-board').html('');
-    // TODO Add HTML that generates a board with 4 pictures, 2 per column, 4 rows.
     let gameBoardHTML =
       `
     <div class="row">
@@ -158,6 +167,17 @@ function createBoard(difficulty) {
     </div>
     `;
     $('#game-board').html(gameBoardHTML);
+
+    // add eventListeners to all imgs, so the player can click them 
+    let images = $('img');
+    for (let image of images) {
+      image.addEventListener('click', function () {
+        this.animate({
+          opacity: 0.4
+        }, 500);
+        playerSequence.push(images.index(this));
+      })
+    }
   }
 }
 
@@ -166,27 +186,30 @@ function generateSequence(difficulty) {
   sequence = []; //empty the array
   playerSequence = []; // empty the player sequence array: after this point whatever the player clicks is stored. This is the start of the game.
   let sequenceLength = 1;
+  // TODO Rename multiplier to a better fitting name: numberOfImages?
   let multiplier = 0; // initialize the multiplier we use to generate random numbers
   let maxLengthSequence = 0;
   let previousSequenceLength = parseInt($('#longest-sequence').text()); // get the length of the last sequence: the sequence generated this round needs to be one longer
 
   if (difficulty === 'easy') {
     multiplier = 4;
-    maxLengthSequence = multiplier * 2; // every round the sequence becomes longer. For now we set it at double the multiplier: so 8 for easy, 12 for medium, 16 for hard
   }
   else if (difficulty === 'medium') {
     console.log('Difficulty: ' + difficulty);
-    multiplier = 4;
+    multiplier = 6;
     maxLengthSequence = multiplier * 2;
   }
   else if (difficulty === 'hard') {
     console.log('Difficulty: ' + difficulty);
-    multiplier = 4;
+    multiplier = 8;
     maxLengthSequence = multiplier * 2;
   }
   else {
     alert('ERROR: Unknown difficulty setting');
   }
+
+  maxLengthSequence = multiplier * 2; // every round the sequence becomes longer. For now we set it at double the multiplier: so 8 for easy, 12 for medium, 16 for hard
+
 
   if (previousSequenceLength < maxLengthSequence) {
     sequenceLength = previousSequenceLength + 1;
@@ -198,9 +221,8 @@ function generateSequence(difficulty) {
   for (let index = 0; index < sequenceLength; index++) {
     sequence.push(Math.floor(Math.random() * multiplier));
   }
-  console.log('Sequence: ' + sequence);
 
-  bopPictures(sequence);
+  bopPictures(sequence); // TODO Give function a better name.
 }
 
 // function that uses the generated sequence to bop pictures: used this answer on Stackoverflow: https://stackoverflow.com/questions/35071794/js-jquery-animate-divs-in-order
@@ -235,6 +257,7 @@ function bopPictures(sequence) {
       removeClassAndPause();
     }, 500);
   }
+
 }
 
 function checkSequence() {
