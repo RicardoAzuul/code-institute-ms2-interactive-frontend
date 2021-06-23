@@ -12,9 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
   for (let image of images) {
     image.addEventListener('click', function () { // add eventlistener to all images
       this.animate({
-        width: "90%",
         opacity: 0.4
-      }, 1000);
+      }, 500);
       playerSequence.push(images.index(this));
     })
   }
