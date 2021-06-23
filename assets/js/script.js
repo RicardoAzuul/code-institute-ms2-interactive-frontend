@@ -1,5 +1,5 @@
 // global variables
-var playerSequence = []; 
+var playerSequence = [];
 var sequence = []; // TODO: rename to gameSequence?
 
 // on page load: run game on easy, add eventListeners to all images and buttons
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let difficulty = 'easy';
   createBoard(difficulty);
-  
+
   let difficultyButtons = document.getElementById('difficulty-buttons-col').children;
   for (let button of difficultyButtons) {
     button.addEventListener('click', function () {
@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   }
 
-  let images = $('img'); 
+  let images = $('img');
   for (let image of images) {
-    image.addEventListener('click', function () { 
+    image.addEventListener('click', function () {
       this.animate({
         opacity: 0.4
       }, 500);
@@ -62,12 +62,102 @@ document.addEventListener('DOMContentLoaded', function () {
 function createBoard(difficulty) {
   if (difficulty === 'easy') {
     $('#easy-button').addClass('btn-lg'); // the selected difficulty becomes the default difficulty for next loops
+    $('#game-board').html('');
+    // TODO Add HTML that generates a board with 4 pictures, 2 per column, 2 rows.
+    let gameBoardHTML =
+      `
+      <div class="row">
+        <div class="col-6 col-md-3 col-lg-2 offset-md-3 offset-lg-4">
+          <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 col-md-3 offset-md-3 col-lg-2 offset-md-3 offset-lg-4">
+          <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
+        </div>
+      </div>
+      `;
+    $('#game-board').html(gameBoardHTML);
   }
   else if (difficulty === 'medium') {
     $('#medium-button').addClass('btn-lg');
+    $('#game-board').html('');
+    // TODO Add HTML that generates a board with 6 pictures, 2 per column, 3 rows.
+    let gameBoardHTML =
+      `
+    <div class="row">
+      <div class="col-6 col-md-3 col-lg-2 offset-md-3 offset-lg-4">
+        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
+      </div>
+      <div class="col-6 col-md-3 col-lg-2">
+        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 col-md-3 offset-md-3 col-lg-2 offset-md-3 offset-lg-4">
+        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
+      </div>
+      <div class="col-6 col-md-3 col-lg-2">
+        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 col-md-3 offset-md-3 col-lg-2 offset-md-3 offset-lg-4">
+        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
+      </div>
+      <div class="col-6 col-md-3 col-lg-2">
+        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
+      </div>
+    </div>
+    `;
+    $('#game-board').html(gameBoardHTML);
   }
   else if (difficulty === 'hard') {
     $('#hard-button').addClass('btn-lg');
+    $('#game-board').html('');
+    // TODO Add HTML that generates a board with 4 pictures, 2 per column, 4 rows.
+    let gameBoardHTML =
+      `
+    <div class="row">
+      <div class="col-6 col-md-3 col-lg-2 offset-md-3 offset-lg-4">
+        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
+      </div>
+      <div class="col-6 col-md-3 col-lg-2">
+        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 col-md-3 offset-md-3 col-lg-2 offset-md-3 offset-lg-4">
+        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
+      </div>
+      <div class="col-6 col-md-3 col-lg-2">
+        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 col-md-3 offset-md-3 col-lg-2 offset-md-3 offset-lg-4">
+        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
+      </div>
+      <div class="col-6 col-md-3 col-lg-2">
+        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 col-md-3 offset-md-3 col-lg-2 offset-md-3 offset-lg-4">
+        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
+      </div>
+      <div class="col-6 col-md-3 col-lg-2">
+        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
+      </div>
+    </div>
+    `;
+    $('#game-board').html(gameBoardHTML);
   }
 }
 
@@ -92,7 +182,7 @@ function generateSequence(difficulty) {
   else if (difficulty === 'hard') {
     console.log('Difficulty: ' + difficulty);
     multiplier = 4;
-    maxLengthSequence = multiplier * 2; 
+    maxLengthSequence = multiplier * 2;
   }
   else {
     alert('ERROR: Unknown difficulty setting');
@@ -106,7 +196,7 @@ function generateSequence(difficulty) {
   }
 
   for (let index = 0; index < sequenceLength; index++) {
-    sequence.push(Math.floor(Math.random() * multiplier));    
+    sequence.push(Math.floor(Math.random() * multiplier));
   }
   console.log('Sequence: ' + sequence);
 
