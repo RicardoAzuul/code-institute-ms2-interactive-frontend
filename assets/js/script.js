@@ -1,11 +1,12 @@
 // global variables
-var playerSequence = []; // initialize empty playerSequence array
-var sequence = []; // initialize sequence array
+var playerSequence = []; 
+var sequence = []; // TODO: rename to gameSequence?
 
+// on page load: run game on easy, add eventListeners to all images and buttons
 document.addEventListener('DOMContentLoaded', function () {
 
   let difficulty = 'easy';
-  createBoard(difficulty); // on page load we run the game at easy difficulty by default 
+  createBoard(difficulty);  
 
   let images = $('img'); 
   for (let image of images) {
@@ -38,9 +39,9 @@ document.addEventListener('DOMContentLoaded', function () {
     else {
       alert('ERROR: Unknown difficulty setting');
     }
-
     generateSequence(difficulty);
   })
+
 })
 
 // function to load game based on chosen difficulty: easy (4 pictures), medium (6 pictures) or hard (8 pictures)
@@ -48,14 +49,14 @@ document.addEventListener('DOMContentLoaded', function () {
 // the max layout: 1/2 padding | tile | padding | tile | padding | tile | padding | tile | padding | tile | padding | tile | 1/2 padding --> 6 * padding, 6 * tile
 function createBoard(difficulty) {
   if (difficulty === 'easy') {
-    $('#easy-button').addClass('btn-lg'); // add bnt-lg class to button so we can use this for the game loop
+    $('#easy-button').addClass('btn-lg'); // the selected difficulty becomes the default difficulty for next loops
   }
 }
 
 // function to generate a sequence of random numbers, with numbers equating to pictures. This function needs to run when the start button is clicked.
 function generateSequence(difficulty) {
   sequence = []; //empty the array
-  playerSequence = []; // empty the player sequence array: after this point whatever the player clicks is stored.
+  playerSequence = []; // empty the player sequence array: after this point whatever the player clicks is stored. This is the start of the game.
   let sequenceLength = 1;
   let multiplier = 0; // initialize the multiplier we use to generate random numbers
   let maxLengthSequence = 0;
