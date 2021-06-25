@@ -273,7 +273,7 @@ git clone
 
 
 ### Media
-Pug stock photos from Pexels.com
+The pug photos were sourced from [Pexels](https://www.pexels.com/), [Unsplash](https://unsplash.com/) and [Stockvault](https://www.stockvault.net/).
 
 ### Acknowledgements
 
