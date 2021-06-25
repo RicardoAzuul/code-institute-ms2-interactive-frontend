@@ -42,6 +42,9 @@ document.addEventListener('DOMContentLoaded', function () {
       alert('ERROR: Unknown difficulty setting');
     }
     generateSequence(difficulty);
+
+    $('#start-button').addClass('d-none');
+    $('#submit-button').removeClass('d-none');
   })
 
 })
@@ -290,6 +293,9 @@ function checkSequence() {
     alert('Sorry, you didn\'t click the right amount of pictures!');
     resetScores();
   }
+
+  $('#start-button').removeClass('d-none');
+  $('#submit-button').addClass('d-none');
 }
 
 // function to increase score if the player gets the correct sequence
