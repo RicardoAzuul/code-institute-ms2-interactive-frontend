@@ -191,7 +191,7 @@ function generateSequence(difficulty) {
   let sequenceLength = 1;
   // TODO Rename multiplier to a better fitting name: numberOfImages?
   let multiplier = 0; // initialize the multiplier we use to generate random numbers
-  let maxLengthSequence = 0;
+  let maxLengthSequence = 0; // TODO: If I'm sticking to just one difficulty, then we can remove this and instead set maxLengthSequence at the top of the script.
   let previousSequenceLength = parseInt($('#longest-sequence').text()); // get the length of the last sequence: the sequence generated this round needs to be one longer
 
   if (difficulty === 'easy') {
@@ -200,18 +200,16 @@ function generateSequence(difficulty) {
   else if (difficulty === 'medium') {
     console.log('Difficulty: ' + difficulty);
     multiplier = 6;
-    maxLengthSequence = multiplier * 2;
   }
   else if (difficulty === 'hard') {
     console.log('Difficulty: ' + difficulty);
     multiplier = 8;
-    maxLengthSequence = multiplier * 2;
   }
   else {
     alert('ERROR: Unknown difficulty setting');
   }
 
-  maxLengthSequence = multiplier * 2; // every round the sequence becomes longer. For now we set it at double the multiplier: so 8 for easy, 12 for medium, 16 for hard
+  maxLengthSequence = 31; // every round the sequence becomes longer. For now we set it at double the multiplier: so 8 for easy, 12 for medium, 16 for hard
 
 
   if (previousSequenceLength < maxLengthSequence) {
