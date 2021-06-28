@@ -25,6 +25,22 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: #2a1f1a;
 }
+
+.active-link {
+  text-decoration: underline;
+}
+
+.navbar a i {
+  display: none;
+}
+
+.navbar a:hover {
+  text-decoration: none;
+  color: #2a1f1a;
+} 
+.navbar a:hover i{
+  display: inline;
+}
 /* End of Navbar */
 
 /* Main */
