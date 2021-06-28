@@ -1,18 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&display=swap');
+
 * {
 	margin: 0;
 	border: none;
 	padding: 0;
 }
 
+body {
+  background-color: #faf8f2;
+}
+
 /* Navbar */
 .navbar {
-  background-color: oldlace;
+  background-color: #f4dfc3;
+}
+
+.navbar-brand {
+  font-family: 'Lobster', cursive;
+  font-size: 2em;
+  color: #2a1f1a;
+}
+
+.nav-link {
+  font-family: 'Open Sans', sans-serif;
+  color: #2a1f1a;
 }
 /* End of Navbar */
 
 /* Main */
 main {
-  padding-top: 56px;
+  padding-top: 5em;
+  min-height: 56em;
+  font-family: 'Open Sans', sans-serif;
+  color: #2a1f1a;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
 }
 
 #difficulty-buttons-col {
@@ -37,8 +61,39 @@ img {
   opacity: 0.4;
 }
 
+p {
+  margin-top: 0;
+  margin-bottom: 0;  
+}
+
+#current-score-p {
+  margin-top: 1rem;
+}
+
 /* Footer */
 .footer {
-  background-color: lightslategray;
+  background-color: #f3e2c9;
 }
 /* End of Footer */
+
+/* Media queries */
+@media(max-width: 576px) {
+  main {
+    padding-top: 5em;
+    min-height: auto;
+  }
+}
+
+@media(min-width: 768px) {
+  main {
+    padding-top: 12em;
+    min-height: 51em;
+  }
+} 
+
+@media(min-width: 992px) {
+  main {
+    padding-top: 10em;
+    min-height: 51em;
+  }
+}

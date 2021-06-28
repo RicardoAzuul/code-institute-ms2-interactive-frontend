@@ -127,7 +127,7 @@ Color palette
 
 The icons are sourced from Font Awesome.
 
-Fonts are sourced from Google Fonts. 
+Fonts are sourced from Google Fonts. I decided on Lobster, because it seemed playful while remaining legible and professional. Open Sans was one of the recommended pairings, which was a nice clean font.
 
 <ins>Wireframes</ins>
 

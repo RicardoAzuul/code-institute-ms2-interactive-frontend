@@ -26,8 +26,13 @@
           <a class="nav-link" href="index.html">Home <span class="sr-only">(Link to Home Page)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="your_highscores.html">Your high scores <span class="sr-only">(Link to your
-              highscores)</span></a>
+          <a class="nav-link" href="highscores.html">High scores <span class="sr-only">(Link to highscores)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="game-settings.html">Game settings <span class="sr-only">(Link to game settings)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="how-to-play.html">How to play<span class="sr-only">(Link to how to play)</span></a>
         </li>
       </ul>
     </div>
@@ -50,8 +55,8 @@
     </div>
     <div class="row">
       <div class="col text-center" id="game-buttons-col">
-        <button type="button" class="btn btn-primary" id="start-button">Start</button>
-        <button type="submit" class="btn btn-primary d-none" id="submit-button">Submit</button>
+        <button type="button" class="btn btn-success" id="start-button">Start</button>
+        <button type="submit" class="btn btn-danger d-none" id="submit-button">Submit</button>
       </div>
     </div>
     <!-- Game area -->
@@ -59,15 +64,23 @@
     </section>
     <!-- End of Game area -->
     <div class="row">
-      <div class="col">
+      <div class="col col-md-6 col-lg-4 offset-md-3 offset-lg-4">
         <!-- Score area -->
         <section>
-          <p class="text-center">Current score: <span id="current-score">0</span></p>
+          <table class="table">
+            <tr>
+              <td><i class="fas fa-dog"></i> Current score: </td>
+              <td> <span id="current-score">0</span> </td>
+            </tr>
+            <tr>
+              <td><i class="fas fa-bone"></i> Longest sequence: </td>
+              <td> <span id="longest-sequence">0</span> </td>
+            </tr>
+          </table>
         </section>
         <!-- End of Score area -->
         <!-- Timer area -->
         <section>
-          <p class="text-center">Longest sequence: <span id="longest-sequence">0</span> </p>
         </section>
         <!-- End of Timer area -->
       </div>
