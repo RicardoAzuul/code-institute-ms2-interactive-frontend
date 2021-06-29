@@ -1,8 +1,8 @@
 # Puggy Poke-it
 
-Puggy Poke-it is a browser game for people who like pugs and memory games.
+Puggy Patterns is a browser game for people who like pugs and memory games.
 
-It is a game inspired by Bop-it, but using pug pictures. Players see a board of different pug pictures. The game randomly highlights a picture, which the player then has to click. Higher difficulties have more pictures and generate longer sequences of pictures that need to be clicked in order.
+It is a game inspired by Simon, but using pug pictures. Instead of a circle with four different colours, players see four pug pictures. The game randomly animates a picture, which the player then has to click. Each round the game generates a longer sequence of pictures that need to be clicked in order.
 
 
 Must haves for this project:
@@ -12,7 +12,7 @@ Must haves for this project:
 Nice to have: 
 - a way to keep track of scores, maybe even a scoreboard.
 
-To visit the site, open [https://ricardoazuul.github.io/puggy-pair-up](https://ricardoazuul.github.io/puggy-pair-up)
+To visit the site, open [https://ricardoazuul.github.io/puggy-patterns](https://ricardoazuul.github.io/puggy-patterns)
 
 ---
 
