@@ -76,16 +76,6 @@ img {
 .dim {
   opacity: 0.4;
 }
-
-p {
-  margin-top: 0;
-  margin-bottom: 0;  
-}
-
-#current-score-p {
-  margin-top: 1rem;
-}
-
 /* Footer */
 .footer {
   background-color: #f3e2c9;
