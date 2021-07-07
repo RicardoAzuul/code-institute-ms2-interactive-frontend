@@ -1,6 +1,6 @@
 // global variables
 var playerSequence = [];
-var gameSequence = []; // TODO: rename to gameSequence?
+var gameSequence = [];
 
 // on page load: run game on easy, add eventListeners to all images and buttons
 document.addEventListener('DOMContentLoaded', function () {
@@ -205,31 +205,29 @@ function createBoard(difficulty) {
 
 // function to generate a sequence of random numbers, with numbers equating to pictures. This function needs to run when the start button is clicked.
 function generateSequence(difficulty) {
-  gameSequence = []; //empty the array
-  playerSequence = []; // empty the player sequence array: after this point whatever the player clicks is stored. This is the start of the game.
+  gameSequence = []; 
+  playerSequence = []; 
   let sequenceLength = 1;
-  // TODO Rename multiplier to a better fitting name: numberOfImages?
-  let multiplier = 0; // initialize the multiplier we use to generate random numbers
+  let numberOfImages = 0; 
   let maxLengthSequence = 0; // TODO: If I'm sticking to just one difficulty, then we can remove this and instead set maxLengthSequence at the top of the script.
   let previousSequenceLength = parseInt($('#longest-sequence').text()); // get the length of the last sequence: the sequence generated this round needs to be one longer
 
   if (difficulty === 'easy') {
-    multiplier = 4;
+    numberOfImages = 4;
   }
   else if (difficulty === 'medium') {
     console.log('Difficulty: ' + difficulty);
-    multiplier = 6;
+    numberOfImages = 6;
   }
   else if (difficulty === 'hard') {
     console.log('Difficulty: ' + difficulty);
-    multiplier = 8;
+    numberOfImages = 8;
   }
   else {
     alert('ERROR: Unknown difficulty setting');
   }
 
-  maxLengthSequence = 31; // every round the sequence becomes longer. For now we set it at double the multiplier: so 8 for easy, 12 for medium, 16 for hard
-
+  maxLengthSequence = 31; 
 
   if (previousSequenceLength < maxLengthSequence) {
     sequenceLength = previousSequenceLength + 1;
@@ -239,7 +237,7 @@ function generateSequence(difficulty) {
   }
 
   for (let index = 0; index < sequenceLength; index++) {
-    gameSequence.push(Math.floor(Math.random() * multiplier));
+    gameSequence.push(Math.floor(Math.random() * numberOfImages));
   }
 
   bopPictures(gameSequence); // TODO Give function a better name.
