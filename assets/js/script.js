@@ -5,7 +5,6 @@ var sequence = []; // TODO: rename to gameSequence?
 // on page load: run game on easy, add eventListeners to all images and buttons
 document.addEventListener('DOMContentLoaded', function () {
 
-  // TODO get some data that identifies the page we're on
   let pageTitle = $('title').text();
   if (pageTitle === 'Puggy Patterns') {
     // TODO this needs to be a separate function
