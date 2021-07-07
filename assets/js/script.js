@@ -9,36 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let pageTitle = $('title').text();
   if (pageTitle === 'Puggy Patterns') {
     // TODO this needs to be a separate function
-    let difficulty = 'easy';
-    createBoard(difficulty);
-
-    let difficultyButtons = document.getElementById('difficulty-buttons-col').children;
-    for (let button of difficultyButtons) {
-      button.addEventListener('click', function () {
-        for (let button of difficultyButtons) {
-          button.classList.remove('btn-lg');
-        }
-        this.classList.add('btn-lg');
-        difficulty = this.innerHTML.toLowerCase();
-        createBoard(difficulty);
-      })
-    }
-
-    $('#submit-button').click(function () {
-      checkSequence()
-    });
-
-    let startButton = document.getElementById('start-button');
-    startButton.addEventListener('click', function () {
-      // we check which button has the btn-lg class: that is our difficulty
-      let largeButtonDifficulty = $('button.btn-lg').text();
-      difficulty = largeButtonDifficulty.toLowerCase();
-      generateSequence(difficulty);
-
-      $('#start-button').addClass('d-none');
-      $('#submit-button').removeClass('d-none');
-    })
-
+    setupGamePage()
   }
 
   else if (pageTitle === 'Your Highscores') {
@@ -224,11 +195,11 @@ function generateSequence(difficulty) {
     gameSequence.push(Math.floor(Math.random() * numberOfImages));
   }
 
-  bopPictures(gameSequence); // TODO Give function a better name.
+  animatePictures(gameSequence); // TODO Give function a better name.
 }
 
 // function that uses the generated sequence to bop pictures: used this answer on Stackoverflow: https://stackoverflow.com/questions/35071794/js-jquery-animate-divs-in-order
-function bopPictures(gameSequence) {
+function animatePictures(gameSequence) {
   let index = 0;
   let targetImage = $('img')[gameSequence[index]];
   targetImage.classList.add('dim');
@@ -345,4 +316,36 @@ function displayScores() {
       document.getElementById(scoreKey).innerHTML = scoreValue;
     }
   }
+}
+
+function setupGamePage() {
+  let difficulty = 'easy';
+  createBoard(difficulty);
+
+  let difficultyButtons = document.getElementById('difficulty-buttons-col').children;
+  for (let button of difficultyButtons) {
+    button.addEventListener('click', function () {
+      for (let button of difficultyButtons) {
+        button.classList.remove('btn-lg');
+      }
+      this.classList.add('btn-lg');
+      difficulty = this.innerHTML.toLowerCase();
+      createBoard(difficulty);
+    })
+  }
+
+  $('#submit-button').click(function () {
+    checkSequence()
+  });
+
+  let startButton = document.getElementById('start-button');
+  startButton.addEventListener('click', function () {
+    // we check which button has the btn-lg class: that is our difficulty
+    let largeButtonDifficulty = $('button.btn-lg').text();
+    difficulty = largeButtonDifficulty.toLowerCase();
+    generateSequence(difficulty);
+
+    $('#start-button').addClass('d-none');
+    $('#submit-button').removeClass('d-none');
+  })
 }
