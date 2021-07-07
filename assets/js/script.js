@@ -5,47 +5,67 @@ var sequence = []; // TODO: rename to gameSequence?
 // on page load: run game on easy, add eventListeners to all images and buttons
 document.addEventListener('DOMContentLoaded', function () {
 
-  let difficulty = 'easy';
-  createBoard(difficulty);
+  // TODO get some data that identifies the page we're on
+  let pageTitle = $('title').text();
+  if (pageTitle === 'Puggy Patterns') {
+    // TODO this needs to be a separate function
+    let difficulty = 'easy';
+    createBoard(difficulty);
 
-  let difficultyButtons = document.getElementById('difficulty-buttons-col').children;
-  for (let button of difficultyButtons) {
-    button.addEventListener('click', function () {
-      for (let button of difficultyButtons) {
-        button.classList.remove('btn-lg');
+    let difficultyButtons = document.getElementById('difficulty-buttons-col').children;
+    for (let button of difficultyButtons) {
+      button.addEventListener('click', function () {
+        for (let button of difficultyButtons) {
+          button.classList.remove('btn-lg');
+        }
+        this.classList.add('btn-lg');
+        difficulty = this.innerHTML.toLowerCase();
+        createBoard(difficulty);
+      })
+    }
+
+    $('#submit-button').click(function () {
+      checkSequence()
+    });
+
+    let startButton = document.getElementById('start-button');
+    startButton.addEventListener('click', function () {
+      // we check which button has the btn-lg class: that is our difficulty
+      // TODO: convert the button text to lowercase, because that can be used for difficulty
+      let largeButton = $('button.btn-lg').text();
+      if (largeButton === 'Easy') {
+        difficulty = 'easy';
       }
-      this.classList.add('btn-lg');
-      difficulty = this.innerHTML.toLowerCase();
-      createBoard(difficulty);
+      else if (largeButton === 'Medium') {
+        difficulty = 'medium';
+      }
+      else if (largeButton === 'Hard') {
+        difficulty = 'hard';
+      }
+      else {
+        alert('ERROR: Unknown difficulty setting');
+      }
+      generateSequence(difficulty);
+
+      $('#start-button').addClass('d-none');
+      $('#submit-button').removeClass('d-none');
     })
+
+  }
+  else if (pageTitle === 'Your Highscores') {
+    // TODO Turn into function
+    let scoreArray = ['score1', 'score2', 'score3', 'score4', 'score5', 'score6', 'score7', 'score8', 'score9', 'score10'];
+    for (let scoreKey of scoreArray) {
+      let scoreValue = localStorage.getItem(scoreKey);
+      if (scoreValue !== '') {
+        document.getElementById(scoreKey).innerHTML = scoreValue;
+      }
+    }
+  }
+  else if (pageTitle === 'Game Settings') {
+    // TODO Load game settings
   }
 
-  $('#submit-button').click(function () {
-    checkSequence()
-  });
-
-  let startButton = document.getElementById('start-button');
-  startButton.addEventListener('click', function () {
-    // we check which button has the btn-lg class: that is our difficulty
-    // TODO: convert the button text to lowercase, because that can be used for difficulty
-    let largeButton = $('button.btn-lg').text();
-    if (largeButton === 'Easy') {
-      difficulty = 'easy';
-    }
-    else if (largeButton === 'Medium') {
-      difficulty = 'medium';
-    }
-    else if (largeButton === 'Hard') {
-      difficulty = 'hard';
-    }
-    else {
-      alert('ERROR: Unknown difficulty setting');
-    }
-    generateSequence(difficulty);
-
-    $('#start-button').addClass('d-none');
-    $('#submit-button').removeClass('d-none');
-  })
 
 })
 
@@ -76,7 +96,7 @@ function createBoard(difficulty) {
       </div>
       `;
     $('#game-board').html(gameBoardHTML);
-    
+
     // add eventListeners to all imgs, so the player can click them 
     let images = $('img');
     for (let image of images) {
@@ -314,6 +334,25 @@ function increaseSequenceScore() {
 }
 
 function resetScores() {
+  let endScore = parseInt($('#current-score').text());
   $('#current-score').text(0);
   $('#longest-sequence').text(0);
+  saveScore(endScore);
+}
+
+// this function just saves scores in localstorage
+// TODO have this function run through all score localStorage
+function saveScore(endScore) {
+  let scoreKey = 'score1';
+  let scoreValue = localStorage.getItem(scoreKey);
+  if (scoreValue === null) {
+    scoreValue = 0;
+  }
+  if (endScore > scoreValue) {
+    alert('You beat your highscore! ' + endScore + ' is larger than ' + scoreValue);
+    localStorage.setItem(scoreKey, endScore);
+  }
+  else {
+    alert('You didn\'t beat your highscore! ' + endScore + ' is smaller than ' + scoreValue);
+  }
 }

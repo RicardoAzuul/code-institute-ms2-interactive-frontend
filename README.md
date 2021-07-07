@@ -1,4 +1,4 @@
-# Puggy Poke-it
+# Puggy Patterns
 
 Puggy Patterns is a browser game for people who like pugs and memory games.
 

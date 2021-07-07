@@ -53,3 +53,14 @@ https://getbootstrap.com/docs/4.6/layout/overview/
         </div>
       </div>
     </div>
+
+
+    // create localstorage
+// TODO: this needs to change: we want to store scores only as necessary
+if (!localStorage.getItem('score1')) {
+  let value = '';
+  for (let index = 1; index < 11; index++) {
+    let name = 'score' + index;
+    localStorage.setItem(name, value);
+  }
+}
