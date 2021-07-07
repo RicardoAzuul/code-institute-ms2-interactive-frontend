@@ -1,6 +1,7 @@
 // global variables
 var playerSequence = [];
 var gameSequence = [];
+const scoreArray = ['score1', 'score2', 'score3', 'score4', 'score5', 'score6', 'score7', 'score8', 'score9', 'score10'];
 
 // on page load: run game on easy, add eventListeners to all images and buttons
 document.addEventListener('DOMContentLoaded', function () {
@@ -52,8 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   }
   else if (pageTitle === 'Your Highscores') {
-    // TODO Turn into function
-    let scoreArray = ['score1', 'score2', 'score3', 'score4', 'score5', 'score6', 'score7', 'score8', 'score9', 'score10'];
+    // TODO Turn into function    
     for (let scoreKey of scoreArray) {
       let scoreValue = localStorage.getItem(scoreKey);
       if (scoreValue !== '') {
