@@ -1,6 +1,6 @@
 // global variables
 var playerSequence = [];
-var sequence = []; // TODO: rename to gameSequence?
+var gameSequence = []; // TODO: rename to gameSequence?
 
 // on page load: run game on easy, add eventListeners to all images and buttons
 document.addEventListener('DOMContentLoaded', function () {
@@ -205,7 +205,7 @@ function createBoard(difficulty) {
 
 // function to generate a sequence of random numbers, with numbers equating to pictures. This function needs to run when the start button is clicked.
 function generateSequence(difficulty) {
-  sequence = []; //empty the array
+  gameSequence = []; //empty the array
   playerSequence = []; // empty the player sequence array: after this point whatever the player clicks is stored. This is the start of the game.
   let sequenceLength = 1;
   // TODO Rename multiplier to a better fitting name: numberOfImages?
@@ -239,29 +239,29 @@ function generateSequence(difficulty) {
   }
 
   for (let index = 0; index < sequenceLength; index++) {
-    sequence.push(Math.floor(Math.random() * multiplier));
+    gameSequence.push(Math.floor(Math.random() * multiplier));
   }
 
-  bopPictures(sequence); // TODO Give function a better name.
+  bopPictures(gameSequence); // TODO Give function a better name.
 }
 
 // function that uses the generated sequence to bop pictures: used this answer on Stackoverflow: https://stackoverflow.com/questions/35071794/js-jquery-animate-divs-in-order
-function bopPictures(sequence) {
+function bopPictures(gameSequence) {
   let index = 0;
-  let targetImage = $('img')[sequence[index]];
+  let targetImage = $('img')[gameSequence[index]];
   targetImage.classList.add('dim');
 
   removeClassAndPause();
 
   function removeClassAndPause() {
     window.setTimeout(function () {
-      let previousImage = $('img')[sequence[index]];
+      let previousImage = $('img')[gameSequence[index]];
       previousImage.classList.remove('dim');
       index++;
 
-      if (index >= sequence.length) {
+      if (index >= gameSequence.length) {
         console.log(index);
-        console.log(sequence.length);
+        console.log(gameSequence.length);
         return; // we've reached the end of the sequence. Discontinue
       }
 
@@ -271,7 +271,7 @@ function bopPictures(sequence) {
 
   function addClassAndPause() {
     window.setTimeout(function () {
-      let nextImage = $('img')[sequence[index]];
+      let nextImage = $('img')[gameSequence[index]];
       nextImage.classList.add('dim');
 
       removeClassAndPause();
@@ -283,11 +283,11 @@ function bopPictures(sequence) {
 function checkSequence() {
   // TODO: It would be cool to have the game check for the length of the sequence the player put in, but a submit button is easier.
   // the first check is if playerSequence and sequence have the same length: if this is not true, the player failed.
-  if (playerSequence.length === sequence.length) {
+  if (playerSequence.length === gameSequence.length) {
     // then we need to check all the pictures the player clicked. We loop through them, assuming they got it right. But if they get it wrong, we break the loop.
     let correctAnswer = true;
     for (let index = 0; index < playerSequence.length; index++) {
-      if (playerSequence[index] !== sequence[index]) {
+      if (playerSequence[index] !== gameSequence[index]) {
         correctAnswer = false;
         break;
       }
@@ -324,8 +324,8 @@ function increaseScore() {
 // function to increase longest sequence score if the player gets the correct sequence
 function increaseSequenceScore() {
   let oldSequenceScore = parseInt($('#longest-sequence').text());
-  if (sequence.length > oldSequenceScore) {
-    $('#longest-sequence').text(sequence.length);
+  if (gameSequence.length > oldSequenceScore) {
+    $('#longest-sequence').text(gameSequence.length);
   }
   else {
     return; // if the sequence wasn't longer than the previous one, we don't have to increase the score, and we can exit the function.
