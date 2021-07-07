@@ -31,20 +31,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let startButton = document.getElementById('start-button');
     startButton.addEventListener('click', function () {
       // we check which button has the btn-lg class: that is our difficulty
-      // TODO: convert the button text to lowercase, because that can be used for difficulty
-      let largeButton = $('button.btn-lg').text();
-      if (largeButton === 'Easy') {
-        difficulty = 'easy';
-      }
-      else if (largeButton === 'Medium') {
-        difficulty = 'medium';
-      }
-      else if (largeButton === 'Hard') {
-        difficulty = 'hard';
-      }
-      else {
-        alert('ERROR: Unknown difficulty setting');
-      }
+      let largeButtonDifficulty = $('button.btn-lg').text();
+      difficulty = largeButtonDifficulty.toLowerCase();
       generateSequence(difficulty);
 
       $('#start-button').addClass('d-none');
