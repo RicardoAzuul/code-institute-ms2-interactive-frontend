@@ -52,15 +52,11 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
   }
+
   else if (pageTitle === 'Your Highscores') {
-    // TODO Turn into function    
-    for (let scoreKey of scoreArray) {
-      let scoreValue = localStorage.getItem(scoreKey);
-      if (scoreValue !== '') {
-        document.getElementById(scoreKey).innerHTML = scoreValue;
-      }
-    }
+    displayScores()
   }
+
   else if (pageTitle === 'Game Settings') {
     // TODO Load game settings
   }
@@ -205,10 +201,10 @@ function createBoard(difficulty) {
 
 // function to generate a sequence of random numbers, with numbers equating to pictures. This function needs to run when the start button is clicked.
 function generateSequence(difficulty) {
-  gameSequence = []; 
-  playerSequence = []; 
+  gameSequence = [];
+  playerSequence = [];
   let sequenceLength = 1;
-  let numberOfImages = 0; 
+  let numberOfImages = 0;
   let maxLengthSequence = 0; // TODO: If I'm sticking to just one difficulty, then we can remove this and instead set maxLengthSequence at the top of the script.
   let previousSequenceLength = parseInt($('#longest-sequence').text()); // get the length of the last sequence: the sequence generated this round needs to be one longer
 
@@ -227,7 +223,7 @@ function generateSequence(difficulty) {
     alert('ERROR: Unknown difficulty setting');
   }
 
-  maxLengthSequence = 31; 
+  maxLengthSequence = 31;
 
   if (previousSequenceLength < maxLengthSequence) {
     sequenceLength = previousSequenceLength + 1;
@@ -351,5 +347,14 @@ function saveScore(endScore) {
   }
   else {
     alert('You didn\'t beat your highscore! ' + endScore + ' is smaller than ' + scoreValue);
+  }
+}
+
+function displayScores() {
+  for (let scoreKey of scoreArray) {
+    let scoreValue = localStorage.getItem(scoreKey);
+    if (scoreValue !== '') {
+      document.getElementById(scoreKey).innerHTML = scoreValue;
+    }
   }
 }
