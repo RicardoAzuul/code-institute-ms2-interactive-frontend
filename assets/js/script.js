@@ -1,9 +1,10 @@
-// global variables
+// Global variables
 var playerSequence = [];
 var gameSequence = [];
 const scoreArray = ['score1', 'score2', 'score3', 'score4', 'score5', 'score6', 'score7', 'score8', 'score9', 'score10']; // TODO Better Name: scoreKeyArray?
+// End of Global variables
 
-// on page load: run game on easy, add eventListeners to all images and buttons
+// Pageload function: runs other functions based on page title
 document.addEventListener('DOMContentLoaded', function () {
 
   let pageTitle = $('title').text();
@@ -18,13 +19,13 @@ document.addEventListener('DOMContentLoaded', function () {
   else if (pageTitle === 'Game Settings') {
     // TODO Load game settings
   }
-
-
 })
+// End of pageload function
 
 // function to load game based on chosen difficulty: easy (4 pictures), medium (6 pictures) or hard (8 pictures)
 // NOTE: max board size that fits comfortably on a smartphone screen seems to be 6 by 8, with each pic at 50 by 50 px
 // the max layout: 1/2 padding | tile | padding | tile | padding | tile | padding | tile | padding | tile | padding | tile | 1/2 padding --> 6 * padding, 6 * tile
+// Function for creating the gameboard
 function createBoard(difficulty) {
   if (difficulty === 'easy') {
     $('#easy-button').addClass('btn-lg'); // the selected difficulty becomes the default difficulty for next loops
@@ -50,7 +51,6 @@ function createBoard(difficulty) {
       `;
     $('#game-board').html(gameBoardHTML);
 
-    // add eventListeners to all imgs, so the player can click them 
     let images = $('img');
     for (let image of images) {
       image.addEventListener('click', function () {
@@ -93,7 +93,6 @@ function createBoard(difficulty) {
     `;
     $('#game-board').html(gameBoardHTML);
 
-    // add eventListeners to all imgs, so the player can click them 
     let images = $('img');
     for (let image of images) {
       image.addEventListener('click', function () {
@@ -144,7 +143,6 @@ function createBoard(difficulty) {
     `;
     $('#game-board').html(gameBoardHTML);
 
-    // add eventListeners to all imgs, so the player can click them 
     let images = $('img');
     for (let image of images) {
       image.addEventListener('click', function () {
@@ -156,8 +154,9 @@ function createBoard(difficulty) {
     }
   }
 }
+// End of function that creates gameboard
 
-// function to generate a sequence of random numbers, with numbers equating to pictures. This function needs to run when the start button is clicked.
+// Function that generates a sequence of random numbers for the pattern
 function generateSequence(difficulty) {
   gameSequence = [];
   playerSequence = [];
@@ -196,8 +195,10 @@ function generateSequence(difficulty) {
 
   animatePictures(gameSequence);
 }
+// End of function that generates a sequence of random numbers
 
 // function that uses the generated sequence to bop pictures: used this answer on Stackoverflow: https://stackoverflow.com/questions/35071794/js-jquery-animate-divs-in-order
+// Function that animates pictures using the generated sequence
 function animatePictures(gameSequence) {
   let index = 0;
   let targetImage = $('img')[gameSequence[index]];
@@ -229,7 +230,9 @@ function animatePictures(gameSequence) {
   }
 
 }
+// End of function that animates pictures
 
+// Function that checks the generated sequence and the player sequence
 function checkSequence() {
   // TODO: It would be cool to have the game check for the length of the sequence the player put in, but a submit button is easier.
   // the first check is if playerSequence and sequence have the same length: if this is not true, the player failed.
@@ -264,14 +267,16 @@ function checkSequence() {
   $('#start-button').removeClass('d-none');
   $('#submit-button').addClass('d-none');
 }
+// End of function that checks the generated sequence and the player sequence
 
-// function to increase score if the player gets the correct sequence
+// Function to increase score if the player gets the correct sequence
 function increaseScore() {
   let oldScore = parseInt($('#current-score').text());
   $('#current-score').text(++oldScore);
 }
+// End of function to increase score if the player gets the correct sequence
 
-// function to increase longest sequence score if the player gets the correct sequence
+// Function to increase longest sequence score if the player gets the correct sequence
 function increaseSequenceScore() {
   let oldSequenceScore = parseInt($('#longest-sequence').text());
   if (gameSequence.length > oldSequenceScore) {
@@ -281,17 +286,20 @@ function increaseSequenceScore() {
     return; // if the sequence wasn't longer than the previous one, we don't have to increase the score, and we can exit the function.
   }
 }
+// End of function to increase longest sequence score
 
+// Function that resets scores once the player fails
 function resetScores() {
   let endScore = parseInt($('#current-score').text());
   $('#current-score').text(0);
   $('#longest-sequence').text(0);
   saveScore(endScore);
 }
+// End of Function that resets scores 
 
-// this function just saves scores in localstorage
 // TODO have this function run through all score localStorage
 // TODO the scores can be turned into an array. That allows me to pop() and unshift()
+// Function that checks the endscore with the scores in highscores
 function saveScore(endScore) {
   let highScoreBeaten = false;
   let scoreKey = '';
@@ -334,7 +342,9 @@ function saveScore(endScore) {
     localStorage.setItem(scoreKey, scoreValue);
   }
 }
+// End of function that checks the endscore with the scores in highscores
 
+// Function that loads scores from localstorage
 function displayScores() {
   for (let scoreKey of scoreArray) {
     let scoreValue = localStorage.getItem(scoreKey);
@@ -343,7 +353,9 @@ function displayScores() {
     }
   }
 }
+// End of function that loads scores
 
+// Function that starts an easy game on pageload
 function setupGamePage() {
   let difficulty = 'easy';
   createBoard(difficulty);
@@ -375,3 +387,4 @@ function setupGamePage() {
     $('#submit-button').removeClass('d-none');
   })
 }
+// End of function that starts an easy game on pageload
