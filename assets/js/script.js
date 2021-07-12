@@ -1,14 +1,13 @@
 // global variables
 var playerSequence = [];
 var gameSequence = [];
-const scoreArray = ['score1', 'score2', 'score3', 'score4', 'score5', 'score6', 'score7', 'score8', 'score9', 'score10'];
+const scoreArray = ['score1', 'score2', 'score3', 'score4', 'score5', 'score6', 'score7', 'score8', 'score9', 'score10']; // TODO Better Name: scoreKeyArray?
 
 // on page load: run game on easy, add eventListeners to all images and buttons
 document.addEventListener('DOMContentLoaded', function () {
 
   let pageTitle = $('title').text();
   if (pageTitle === 'Puggy Patterns') {
-    // TODO this needs to be a separate function
     setupGamePage()
   }
 
@@ -195,7 +194,7 @@ function generateSequence(difficulty) {
     gameSequence.push(Math.floor(Math.random() * numberOfImages));
   }
 
-  animatePictures(gameSequence); // TODO Give function a better name.
+  animatePictures(gameSequence);
 }
 
 // function that uses the generated sequence to bop pictures: used this answer on Stackoverflow: https://stackoverflow.com/questions/35071794/js-jquery-animate-divs-in-order
@@ -213,8 +212,6 @@ function animatePictures(gameSequence) {
       index++;
 
       if (index >= gameSequence.length) {
-        console.log(index);
-        console.log(gameSequence.length);
         return; // we've reached the end of the sequence. Discontinue
       }
 
@@ -294,18 +291,47 @@ function resetScores() {
 
 // this function just saves scores in localstorage
 // TODO have this function run through all score localStorage
+// TODO the scores can be turned into an array. That allows me to pop() and unshift()
 function saveScore(endScore) {
-  let scoreKey = 'score1';
-  let scoreValue = localStorage.getItem(scoreKey);
-  if (scoreValue === null) {
-    scoreValue = 0;
+  let highScoreBeaten = false;
+  let scoreKey = '';
+  let scoreValueArray = [];
+  let scoreValue = '';
+  // first create the array of highscores
+  for (let index = 0; index < scoreArray.length; index++) {
+    scoreKey = scoreArray[index];
+    scoreValue = localStorage.getItem(scoreKey);
+    // if the scoreValue is blank, we set it to 0 
+    if (scoreValue === null) {
+      scoreValue = 0;
+    }
+    scoreValueArray.push(scoreValue);
   }
-  if (endScore > scoreValue) {
-    alert('You beat your highscore! ' + endScore + ' is larger than ' + scoreValue);
-    localStorage.setItem(scoreKey, endScore);
+
+  for (let index = 0; index < scoreValueArray.length; index++) {
+    if (endScore > scoreValueArray[index]) {
+      alert('You beat your highscore! ' + endScore + ' is larger than ' + scoreValue);
+      highScoreBeaten = true;
+      scoreToMoveDown = index;
+      break
+    }
+    else {
+      continue
+    }
   }
-  else {
-    alert('You didn\'t beat your highscore! ' + endScore + ' is smaller than ' + scoreValue);
+
+  if (highScoreBeaten === false) {
+    alert('You didn\'t beat your highscore!');
+  }
+  else if (highScoreBeaten === true) {
+    scoreValueArray.splice(scoreToMoveDown, 0, endScore);
+    scoreValueArray = scoreValueArray.slice(0, -1);
+  }
+
+  for (let index = 0; index < scoreArray.length; index++) {
+    scoreKey = scoreArray[index];
+    scoreValue = scoreValueArray[index];
+    localStorage.setItem(scoreKey, scoreValue);
   }
 }
 
