@@ -17,7 +17,9 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   else if (pageTitle === 'Game Settings') {
-    // TODO Load game settings
+    $('#reset-highscores-button').click(function () {
+      resetHighScores()
+    });
   }
 })
 // End of pageload function
@@ -342,17 +344,6 @@ function saveScore(endScore) {
 }
 // End of function that checks the endscore with the scores in highscores
 
-// Function that loads scores from localstorage
-function displayScores() {
-  for (let scoreKey of scoreKeyArray) {
-    let scoreValue = localStorage.getItem(scoreKey);
-    if (scoreValue !== '') {
-      document.getElementById(scoreKey).innerHTML = scoreValue;
-    }
-  }
-}
-// End of function that loads scores
-
 // Function that starts an easy game on pageload
 function setupGamePage() {
   let difficulty = 'easy';
@@ -386,3 +377,24 @@ function setupGamePage() {
   })
 }
 // End of function that starts an easy game on pageload
+
+// -- Function for the page highscores.html --
+
+// Function that loads scores from localstorage
+function displayScores() {
+  for (let scoreKey of scoreKeyArray) {
+    let scoreValue = localStorage.getItem(scoreKey);
+    if (scoreValue !== '') {
+      document.getElementById(scoreKey).innerHTML = scoreValue;
+    }
+  }
+}
+// End of function that loads scores
+
+// -- Function for the page gamesettings.html --
+
+// Function that resets highscores when the player clicks the reset button
+function resetHighScores() {
+  localStorage.clear();
+}
+// End of function that resets highscores when the player clicks the reset button
