@@ -1,7 +1,7 @@
 // Global variables
 var playerSequence = [];
 var gameSequence = [];
-const scoreArray = ['score1', 'score2', 'score3', 'score4', 'score5', 'score6', 'score7', 'score8', 'score9', 'score10']; // TODO Better Name: scoreKeyArray?
+const scoreKeyArray = ['score1', 'score2', 'score3', 'score4', 'score5', 'score6', 'score7', 'score8', 'score9', 'score10']; 
 // End of Global variables
 
 // Pageload function: runs other functions based on page title
@@ -297,8 +297,6 @@ function resetScores() {
 }
 // End of Function that resets scores 
 
-// TODO have this function run through all score localStorage
-// TODO the scores can be turned into an array. That allows me to pop() and unshift()
 // Function that checks the endscore with the scores in highscores
 function saveScore(endScore) {
   let highScoreBeaten = false;
@@ -306,8 +304,8 @@ function saveScore(endScore) {
   let scoreValueArray = [];
   let scoreValue = '';
   // first create the array of highscores
-  for (let index = 0; index < scoreArray.length; index++) {
-    scoreKey = scoreArray[index];
+  for (let index = 0; index < scoreKeyArray.length; index++) {
+    scoreKey = scoreKeyArray[index];
     scoreValue = localStorage.getItem(scoreKey);
     // if the scoreValue is blank, we set it to 0 
     if (scoreValue === null) {
@@ -336,8 +334,8 @@ function saveScore(endScore) {
     scoreValueArray = scoreValueArray.slice(0, -1);
   }
 
-  for (let index = 0; index < scoreArray.length; index++) {
-    scoreKey = scoreArray[index];
+  for (let index = 0; index < scoreKeyArray.length; index++) {
+    scoreKey = scoreKeyArray[index];
     scoreValue = scoreValueArray[index];
     localStorage.setItem(scoreKey, scoreValue);
   }
@@ -346,7 +344,7 @@ function saveScore(endScore) {
 
 // Function that loads scores from localstorage
 function displayScores() {
-  for (let scoreKey of scoreArray) {
+  for (let scoreKey of scoreKeyArray) {
     let scoreValue = localStorage.getItem(scoreKey);
     if (scoreValue !== '') {
       document.getElementById(scoreKey).innerHTML = scoreValue;
