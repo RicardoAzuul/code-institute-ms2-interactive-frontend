@@ -63,6 +63,7 @@ function createBoard(difficulty) {
       })
     }
   }
+
   else if (difficulty === 'medium') {
     $('#medium-button').addClass('btn-lg');
     $('#game-board').html('');
@@ -104,7 +105,8 @@ function createBoard(difficulty) {
         playerSequence.push(images.index(this));
       })
     }
-  }
+  } 
+
   else if (difficulty === 'hard') {
     $('#hard-button').addClass('btn-lg');
     $('#game-board').html('');
@@ -167,20 +169,8 @@ function generateSequence(difficulty) {
   let maxLengthSequence = 0; // TODO: If I'm sticking to just one difficulty, then we can remove this and instead set maxLengthSequence at the top of the script.
   let previousSequenceLength = parseInt($('#longest-sequence').text()); // get the length of the last sequence: the sequence generated this round needs to be one longer
 
-  if (difficulty === 'easy') {
-    numberOfImages = 4;
-  }
-  else if (difficulty === 'medium') {
-    console.log('Difficulty: ' + difficulty);
-    numberOfImages = 6;
-  }
-  else if (difficulty === 'hard') {
-    console.log('Difficulty: ' + difficulty);
-    numberOfImages = 8;
-  }
-  else {
-    alert('ERROR: Unknown difficulty setting');
-  }
+  let images = $('img');
+  numberOfImages = images.length;
 
   maxLengthSequence = 31;
 
