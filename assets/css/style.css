@@ -53,8 +53,10 @@ main {
 
 h1 {
   font-family: 'Lobster', cursive;
+  padding-bottom: 1em;
 }
 
+/* TODO: Remove if no longer used */
 #difficulty-buttons-col {
   padding: 1em 0;
 }
@@ -81,6 +83,20 @@ img {
   background-color: #f3e2c9;
 }
 /* End of Footer */
+
+/* Highscores page */
+.table {
+  margin-bottom: 3em;
+}
+/* End of highscores page */
+
+/* Game settings page */
+
+/* End of game settings page */
+
+/* How to play page */
+
+/* End of how to play page */
 
 /* Media queries */
 @media(max-width: 576px) {
