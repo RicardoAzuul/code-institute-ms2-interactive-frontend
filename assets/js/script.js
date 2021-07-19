@@ -25,43 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 // End of pageload function
 
-// Function for creating the gameboard
-function createBoard() {
-    $('#game-board').html('');
-    // TODO We no longer need this, as we're not generating new gameboards
-    let gameBoardHTML =
-      `
-      <div class="row">
-        <div class="col-6 col-md-3 col-lg-2 offset-md-3 offset-lg-4">
-          <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid rounded" alt="Pug face looking up">
-        </div>
-        <div class="col-6 col-md-3 col-lg-2">
-          <img src="/assets/images/black_pug_in_black_vest.jpg" class="img-fluid rounded" alt="Black pug in black vest">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-6 col-md-3 offset-md-3 col-lg-2 offset-md-3 offset-lg-4">
-          <img src="/assets/images/pug_with_butterfly_on_nose.jpg" class="img-fluid rounded" alt="Pug with butterfly on nose">
-        </div>
-        <div class="col-6 col-md-3 col-lg-2">
-          <img src="/assets/images/pug_lying_in_grass.jpg" class="img-fluid rounded" alt="Pug lying in grass">
-        </div>
-      </div>
-      `;
-    $('#game-board').html(gameBoardHTML);
-
-    let images = $('img');
-    for (let image of images) {
-      image.addEventListener('click', function () {
-        this.animate({
-          opacity: 0.4
-        }, 500);
-        playerSequence.push(images.index(this));
-      })
-    } 
-}
-// End of function that creates gameboard
-
 // Function that generates a sequence of random numbers for the pattern
 function generateSequence() {
   gameSequence = [];
@@ -235,7 +198,6 @@ function saveScore(endScore) {
 
 // Function that starts an easy game on pageload
 function setupGamePage() {
-  createBoard();
 
   $('#submit-button').click(function () {
     checkSequence()
@@ -247,6 +209,16 @@ function setupGamePage() {
     $('#start-button').addClass('d-none');
     $('#submit-button').removeClass('d-none');
   })
+
+  let images = $('img');
+  for (let image of images) {
+    image.addEventListener('click', function () {
+      this.animate({
+        opacity: 0.4
+      }, 500);
+      playerSequence.push(images.index(this));
+    })
+  } 
 }
 // End of function that starts an easy game on pageload
 
