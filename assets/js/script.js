@@ -1,7 +1,8 @@
 // Global variables
 var playerSequence = [];
 var gameSequence = [];
-const scoreKeyArray = ['score1', 'score2', 'score3', 'score4', 'score5', 'score6', 'score7', 'score8', 'score9', 'score10']; 
+var maxLengthSequence = 31; 
+const scoreKeyArray = ['score1', 'score2', 'score3', 'score4', 'score5', 'score6', 'score7', 'score8', 'score9', 'score10'];
 // End of Global variables
 
 // Pageload function: runs other functions based on page title
@@ -24,14 +25,10 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 // End of pageload function
 
-// function to load game based on chosen difficulty: easy (4 pictures), medium (6 pictures) or hard (8 pictures)
-// NOTE: max board size that fits comfortably on a smartphone screen seems to be 6 by 8, with each pic at 50 by 50 px
-// the max layout: 1/2 padding | tile | padding | tile | padding | tile | padding | tile | padding | tile | padding | tile | 1/2 padding --> 6 * padding, 6 * tile
 // Function for creating the gameboard
-function createBoard(difficulty) {
-  if (difficulty === 'easy') {
-    $('#easy-button').addClass('btn-lg'); // the selected difficulty becomes the default difficulty for next loops
+function createBoard() {
     $('#game-board').html('');
+    // TODO We no longer need this, as we're not generating new gameboards
     let gameBoardHTML =
       `
       <div class="row">
@@ -61,118 +58,20 @@ function createBoard(difficulty) {
         }, 500);
         playerSequence.push(images.index(this));
       })
-    }
-  }
-
-  else if (difficulty === 'medium') {
-    $('#medium-button').addClass('btn-lg');
-    $('#game-board').html('');
-    let gameBoardHTML =
-      `
-    <div class="row">
-      <div class="col-6 col-md-3 col-lg-2 offset-md-3 offset-lg-4">
-        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
-      </div>
-      <div class="col-6 col-md-3 col-lg-2">
-        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-6 col-md-3 offset-md-3 col-lg-2 offset-md-3 offset-lg-4">
-        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
-      </div>
-      <div class="col-6 col-md-3 col-lg-2">
-        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-6 col-md-3 offset-md-3 col-lg-2 offset-md-3 offset-lg-4">
-        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
-      </div>
-      <div class="col-6 col-md-3 col-lg-2">
-        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
-      </div>
-    </div>
-    `;
-    $('#game-board').html(gameBoardHTML);
-
-    let images = $('img');
-    for (let image of images) {
-      image.addEventListener('click', function () {
-        this.animate({
-          opacity: 0.4
-        }, 500);
-        playerSequence.push(images.index(this));
-      })
-    }
-  } 
-
-  else if (difficulty === 'hard') {
-    $('#hard-button').addClass('btn-lg');
-    $('#game-board').html('');
-    let gameBoardHTML =
-      `
-    <div class="row">
-      <div class="col-6 col-md-3 col-lg-2 offset-md-3 offset-lg-4">
-        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
-      </div>
-      <div class="col-6 col-md-3 col-lg-2">
-        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-6 col-md-3 offset-md-3 col-lg-2 offset-md-3 offset-lg-4">
-        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
-      </div>
-      <div class="col-6 col-md-3 col-lg-2">
-        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-6 col-md-3 offset-md-3 col-lg-2 offset-md-3 offset-lg-4">
-        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
-      </div>
-      <div class="col-6 col-md-3 col-lg-2">
-        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-6 col-md-3 offset-md-3 col-lg-2 offset-md-3 offset-lg-4">
-        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
-      </div>
-      <div class="col-6 col-md-3 col-lg-2">
-        <img src="/assets/images/pug_face_looking_up.jpg" class="img-fluid" alt="">
-      </div>
-    </div>
-    `;
-    $('#game-board').html(gameBoardHTML);
-
-    let images = $('img');
-    for (let image of images) {
-      image.addEventListener('click', function () {
-        this.animate({
-          opacity: 0.4
-        }, 500);
-        playerSequence.push(images.index(this));
-      })
-    }
-  }
+    } 
 }
 // End of function that creates gameboard
 
 // Function that generates a sequence of random numbers for the pattern
-function generateSequence(difficulty) {
+function generateSequence() {
   gameSequence = [];
   playerSequence = [];
   let sequenceLength = 1;
   let numberOfImages = 0;
-  let maxLengthSequence = 0; // TODO: If I'm sticking to just one difficulty, then we can remove this and instead set maxLengthSequence at the top of the script.
   let previousSequenceLength = parseInt($('#longest-sequence').text()); // get the length of the last sequence: the sequence generated this round needs to be one longer
 
   let images = $('img');
-  numberOfImages = images.length;
-
-  maxLengthSequence = 31;
+  numberOfImages = images.length;  
 
   if (previousSequenceLength < maxLengthSequence) {
     sequenceLength = previousSequenceLength + 1;
@@ -205,7 +104,7 @@ function animatePictures(gameSequence) {
       index++;
 
       if (index >= gameSequence.length) {
-        return; // we've reached the end of the sequence. Discontinue
+        return; // we've reached the end of the sequence. Stop the loop.
       }
 
       addClassAndPause()
@@ -336,20 +235,7 @@ function saveScore(endScore) {
 
 // Function that starts an easy game on pageload
 function setupGamePage() {
-  let difficulty = 'easy';
-  createBoard(difficulty);
-
-  let difficultyButtons = document.getElementById('difficulty-buttons-col').children;
-  for (let button of difficultyButtons) {
-    button.addEventListener('click', function () {
-      for (let button of difficultyButtons) {
-        button.classList.remove('btn-lg');
-      }
-      this.classList.add('btn-lg');
-      difficulty = this.innerHTML.toLowerCase();
-      createBoard(difficulty);
-    })
-  }
+  createBoard();
 
   $('#submit-button').click(function () {
     checkSequence()
@@ -357,11 +243,7 @@ function setupGamePage() {
 
   let startButton = document.getElementById('start-button');
   startButton.addEventListener('click', function () {
-    // we check which button has the btn-lg class: that is our difficulty
-    let largeButtonDifficulty = $('button.btn-lg').text();
-    difficulty = largeButtonDifficulty.toLowerCase();
-    generateSequence(difficulty);
-
+    generateSequence();
     $('#start-button').addClass('d-none');
     $('#submit-button').removeClass('d-none');
   })
@@ -381,10 +263,14 @@ function displayScores() {
 }
 // End of function that loads scores
 
-// -- Function for the page gamesettings.html --
+// -- Functions for the page gamesettings.html --
 
 // Function that resets highscores when the player clicks the reset button
 function resetHighScores() {
   localStorage.clear();
 }
 // End of function that resets highscores when the player clicks the reset button
+
+// Function that checks difficulty chosen and saves this
+
+// End of function that checks difficulty
