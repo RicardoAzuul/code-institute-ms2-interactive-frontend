@@ -12,7 +12,7 @@ Must haves for this project:
 Nice to have: 
 - a way to keep track of scores, maybe even a scoreboard.
 
-To visit the site, open [https://ricardoazuul.github.io/puggy-patterns](https://ricardoazuul.github.io/puggy-patterns)
+To visit the site, open [https://ricardoazuul.github.io/code-institute-ms2-interactive-frontend/](https://ricardoazuul.github.io/code-institute-ms2-interactive-frontend/)
 
 ---
 
@@ -43,20 +43,23 @@ To visit the site, open [https://ricardoazuul.github.io/puggy-patterns](https://
 ## UI and UX
  
 ### User stories
-- As a visitor to the site, I want to be able to play the game. It would be nice if I can keep track of high scores, and even nicer if there is a scoreboard for multiple players. 
+- As a visitor to the site, I want to be able to play the game. It would be nice if I can keep track of high scores, and even nicer if there is a scoreboard for multiple players. **Update:** having a scoreboard for multiple players that is centrally accessible would require a backend database that saves the scores, which is out of scope for this project.
 - In order to play the game I need to:
     1. See a board of pug pictures.
-    1. Have the game indicate which picture needs to be clicked on.
+    1. Have the game animate which picture needs to be clicked on.
     1. Be able to click on these pictures.
     1. Have the game generate longer sequences of pictures that need to be clicked on in order, to make it more difficult as I progress.
-    1. Nice to have: scaling difficulty, by having more or less pictures on the board.
+    1. Nice to have: scaling difficulty, by having more or less pictures on the board. **Update:** the difficulty isn't in the amount of pictures, but the length of sequence. Scaling difficulty is now implemented by having the game start off with longer or shorter sequences.
     1. Nice to have: a scoreboard, at least for individual players. 
 - To see my own scores, I will click on "My high scores" in the navbar. This will take me to a page with my highscores.
 
     - Screenshots related to this user story:
 
+- To adjust the game settings, I will click on "Game settings" in the navbar. This will take me to the page where I can set the difficulty or reset my highscores.
 
+    - Screenshots related to this user story:
 
+- To view my highscores, I will click on "High scores" in the navbar. This will take me to the page where I can see my highscores.
 
 ---
 
@@ -68,7 +71,7 @@ Jesse James Garret's 5 planes of UX design were used to design the site. We star
 
 The main goal for visitors to the site is to play a game. This means that upon visiting the page, a game must be ready to be started. For this, we need a board of pictures. Because the game is about memorizing sequences, we need a start button, otherwise players might miss the first sequence and lose. 
 
-We want players to come back as well. For this, we can implement a scoreboard, so players can keep track of their progress between sessions.  
+We want players to come back as well. For this, we can implement a scoreboard, so players can keep track of their progress between sessions and work on getting better at the game.  
 
 ---
 
