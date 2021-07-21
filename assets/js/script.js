@@ -25,8 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     getDifficultySetting()
 
-    // TODO: Add function that reads the value of difficulty from localStorage and sets classes to buttons accordingly.
-
     let difficultyButtons = $('.difficulty-button');
     for (let difficultyButton of difficultyButtons) {
       difficultyButton.addEventListener('click', function () {
