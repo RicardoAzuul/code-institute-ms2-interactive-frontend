@@ -91,7 +91,10 @@ img {
 /* End of highscores page */
 
 /* Game settings page */
-
+#reset-button-col {
+  padding-top: 1em;
+  padding-bottom: 2em
+}
 /* End of game settings page */
 
 /* How to play page */

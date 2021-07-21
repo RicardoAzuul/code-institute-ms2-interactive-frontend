@@ -47,23 +47,51 @@
       </div>
     </div>
     <div class="row">
-      <div id="reset-button-col" class="col text-center">
-        <button type="button" class="btn btn-danger" id="reset-highscores-button">Reset Highscores</button>
+      <div class="col">
+        <h2 class="text-center">Reset Highscores</h2>
       </div>
     </div>
-        <div class="row">
-          <div class="col text-center" id="difficulty-buttons-col">
-            <button type="button" class="btn btn-primary" id="easy-button">Easy</button>
-            <button type="button" class="btn btn-primary" id="medium-button">Medium</button>
-            <button type="button" class="btn btn-primary" id="hard-button">Hard</button>
+    <div class="row">
+      <div id="reset-button-col" class="col text-center">
+        <button type="button" class="btn btn-danger" id="reset-highscores-button">Reset</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h2 class="text-center">Difficulty</h2>
+        <p class="text-center">Your choice determines the starting length of the pattern</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col" id="difficulty-buttons-col">
+        <form>
+          <div class="form-group row">
+            <label for="easy-button" class="col-3 col-md-2 offset-3 offset-md-4 col-form-label text-center">Start at 1</label>
+            <div class="col">
+              <button type="button" class="btn btn-primary difficulty-button" id="easy-button" data-difficulty="easy">Easy</button>
+            </div>
           </div>
-        </div>
+          <div class="form-group row">
+            <label for="medium-button" class="col-3 col-md-2 offset-3 offset-md-4 col-form-label text-center">Start at 5</label>
+            <div class="col">
+              <button type="button" class="btn btn-outline-primary difficulty-button" id="medium-button" data-difficulty="medium">Medium</button>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="hard-button" class="col-3 col-md-2 offset-3 offset-md-4 col-form-label text-center">Start at 9</label>
+            <div class="col">
+              <button type="button" class="btn btn-outline-primary difficulty-button" id="hard-button" data-difficulty="hard">Hard</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
   </main>
   <!-- End of main area: scorelist -->
   <!-- Footer -->
   <footer class="footer mt-auto py-3">
     <div class="container">
-      <p>Copyright 2021</p>
+      <p class="text-center"> <small>&copy; Copyright 2021, Richard Blaauw</small> </p>
     </div>
   </footer>
   <!-- End of footer -->
