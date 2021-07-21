@@ -12,18 +12,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let pageTitle = $('title').text();
   if (pageTitle === 'Puggy Patterns') {
-    setupGamePage()
+    setupGamePage();
   }
 
   else if (pageTitle === 'Your Highscores') {
-    displayScores()
+    displayScores();
   }
 
   else if (pageTitle === 'Game Settings') {
     $('#reset-highscores-button').click(function () {
-      resetHighScores()
+      resetHighScores();
     });
-    getDifficultySetting()
+    getDifficultySetting();
 
     let difficultyButtons = $('.difficulty-button');
     for (let difficultyButton of difficultyButtons) {
@@ -35,10 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
         this.classList.add('btn-primary');
         this.classList.remove('btn-outline-primary');
         localStorage.setItem('difficulty', this.dataset.difficulty);
-      })
+      });
     }
   }
-})
+});
 // End of pageload function
 
 // Function that generates a sequence of random numbers for the pattern
@@ -99,7 +99,7 @@ function animatePictures(gameSequence) {
         return; // we've reached the end of the sequence. Stop the loop.
       }
 
-      addClassAndPause()
+      addClassAndPause();
     }, 500);
   }
 
@@ -202,10 +202,10 @@ function saveScore(endScore) {
       alert('You beat your highscore! ' + endScore + ' is larger than ' + scoreValue);
       highScoreBeaten = true;
       scoreToMoveDown = index;
-      break
+      break;
     }
     else {
-      continue
+      continue;
     }
   }
 
@@ -229,7 +229,7 @@ function saveScore(endScore) {
 function setupGamePage() {
 
   $('#submit-button').click(function () {
-    checkSequence()
+    checkSequence();
   });
 
   let startButton = document.getElementById('start-button');
@@ -237,7 +237,7 @@ function setupGamePage() {
     generateSequence();
     $('#start-button').addClass('d-none');
     $('#submit-button').removeClass('d-none');
-  })
+  });
 
   let images = $('img');
   for (let image of images) {
@@ -246,7 +246,7 @@ function setupGamePage() {
         opacity: 0.4
       }, 500);
       playerSequence.push(images.index(this));
-    })
+    });
   }
 }
 // End of function that starts an easy game on pageload

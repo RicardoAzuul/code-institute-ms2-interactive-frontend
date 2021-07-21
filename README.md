@@ -202,7 +202,18 @@ Testing was done using Google Chrome, Mozilla Firefox, Microsoft Edge, and also 
 
 <ins>Code validation:</ins>
 1. [HTML validation](https://validator.w3.org/nu/)
-2. [CSS validation](https://jigsaw.w3.org/css-validator/)
+- :heavy_check_mark: 
+- index.html: 3 warnings, 1 error
+- highscores.html: 1 error
+- game-settings.html: 1 error
+- how-to-play.html: 1 error
+1. [CSS validation](https://jigsaw.w3.org/css-validator/)
+- 2 errors in Bootstrap
+- 750 warnings in Bootstrap
+1. [VS Code JSHint extension]9https://marketplace.visualstudio.com/items?itemName=dbaeumer.jshint)
+- first check on 21-7-2021: 51 errors. Many of these errors were caused by JSHint not checking using ECMAScript 6. Added a .jshintrc file with this setting enabled.
+- second check on 21-7-2021: 14 errors. 12 of these are missing semicolons.
+
 
 <br/>
 
