@@ -44,7 +44,7 @@ function generateSequence() {
   gameSequence = [];
   playerSequence = [];
 
-  let previousSequenceLength = parseInt($('#longest-sequence').text()); // get the length of the last sequence: the sequence generated this round needs to be one longer
+  let previousSequenceLength = parseInt($('#longest-sequence').text()); 
  
   if (previousSequenceLength === 0) {
     if (!localStorage.getItem('difficulty') || localStorage.getItem('difficulty') === 'easy') {
@@ -105,12 +105,10 @@ function animatePictures(gameSequence) {
       removeClassAndPause();
     }, 500);
   }
-
 }
 
 // Function that checks the generated sequence and the player sequence
 function checkSequence() {
-  // TODO: It would be cool to have the game check for the length of the sequence the player put in, but a submit button is easier.
   if (playerSequence.length === gameSequence.length) {
  
     let correctAnswer = true;
@@ -122,17 +120,17 @@ function checkSequence() {
     }
 
     if (correctAnswer === true) {
-      alert('Correct!');
+      $('#game-alert').text('Correct!');
       increaseScore();
       increaseSequenceScore();
     }
     else {
-      alert('Sorry, you got it wrong!');
+      $('#game-alert').text('Game over! Sorry, you didn\'t remember the pattern!');
       resetScores();
     }
   }
   else {
-    alert('Sorry, you didn\'t click the right amount of pictures!');
+    $('#game-alert').text('Game over! Sorry, you didn\'t click the right amount of pictures!');
     resetScores();
   }
 
@@ -179,17 +177,17 @@ function saveScore(endScore) {
 
   for (let index = 0; index < scoreValueArray.length; index++) {
     if (endScore > scoreValueArray[index]) {
-      alert('You beat your highscore! ' + endScore + ' is larger than ' + scoreValueArray[index]);
+      $('#highscore-alert').text('Congratulations! You beat your highscore!');
       highScoreBeaten = true;
       scoreToMoveDown = index;
       break;
     }
   }
 
-  if (highScoreBeaten === false) {
-    alert('You didn\'t beat your highscore!');
+  if (!highScoreBeaten) {
+    $('#highscore-alert').text('Sorry! You didn\'t beat your highscore!');
   }
-  else if (highScoreBeaten === true) {
+  else {
     scoreValueArray.splice(scoreToMoveDown, 0, endScore);
     scoreValueArray = scoreValueArray.slice(0, -1);
   }
@@ -213,6 +211,7 @@ function setupGamePage() {
     generateSequence();
     $('#start-button').addClass('d-none');
     $('#submit-button').removeClass('d-none');
+    $('#game-alert').text('Remember the pattern!');
   });
 
   let images = $('img');

@@ -56,17 +56,9 @@ h1 {
   padding-bottom: 1em;
 }
 
-/* TODO: Remove if no longer used */
-#difficulty-buttons-col {
-  padding: 1em 0;
-}
 /* End of Main */
 
 /* Game area */ 
-#game-board {
-  padding-top: 1em;
-}
-
 #game-board .col-6 {
   padding: 5px;
 }
