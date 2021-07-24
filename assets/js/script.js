@@ -5,7 +5,6 @@ var maxLengthSequence = 31;
 var sequenceLength = 1;
 var numberOfImages = 0;
 const scoreKeyArray = ['score1', 'score2', 'score3', 'score4', 'score5', 'score6', 'score7', 'score8', 'score9', 'score10'];
-// End of Global variables
 
 // Pageload function: runs other functions based on page title
 document.addEventListener('DOMContentLoaded', function () {
@@ -39,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 });
-// End of pageload function
 
 // Function that generates a sequence of random numbers for the pattern
 function generateSequence() {
@@ -78,10 +76,9 @@ function generateSequence() {
 
   animatePictures(gameSequence);
 }
-// End of function that generates a sequence of random numbers
 
-// function that uses the generated sequence to bop pictures: used this answer on Stackoverflow: https://stackoverflow.com/questions/35071794/js-jquery-animate-divs-in-order
-// Function that animates pictures using the generated sequence
+
+// function that uses the generated sequence to animate pictures: used this answer on Stackoverflow: https://stackoverflow.com/questions/35071794/js-jquery-animate-divs-in-order
 function animatePictures(gameSequence) {
   let index = 0;
   let targetImage = $('img')[gameSequence[index]];
@@ -96,7 +93,7 @@ function animatePictures(gameSequence) {
       index++;
 
       if (index >= gameSequence.length) {
-        return; // we've reached the end of the sequence. Stop the loop.
+        return; 
       }
 
       addClassAndPause();
@@ -113,22 +110,17 @@ function animatePictures(gameSequence) {
   }
 
 }
-// End of function that animates pictures
 
 // Function that checks the generated sequence and the player sequence
 function checkSequence() {
   // TODO: It would be cool to have the game check for the length of the sequence the player put in, but a submit button is easier.
-  // the first check is if playerSequence and sequence have the same length: if this is not true, the player failed.
   if (playerSequence.length === gameSequence.length) {
-    // then we need to check all the pictures the player clicked. We loop through them, assuming they got it right. But if they get it wrong, we break the loop.
+ 
     let correctAnswer = true;
     for (let index = 0; index < playerSequence.length; index++) {
       if (playerSequence[index] !== gameSequence[index]) {
         correctAnswer = false;
         break;
-      }
-      else {
-        continue; // if both values in the same position of both arrays match, we simply continue to the next two values.
       }
     }
 
@@ -150,14 +142,12 @@ function checkSequence() {
   $('#start-button').removeClass('d-none');
   $('#submit-button').addClass('d-none');
 }
-// End of function that checks the generated sequence and the player sequence
 
 // Function to increase score if the player gets the correct sequence
 function increaseScore() {
   let oldScore = parseInt($('#current-score').text());
   $('#current-score').text(++oldScore);
 }
-// End of function to increase score if the player gets the correct sequence
 
 // Function to increase longest sequence score if the player gets the correct sequence
 function increaseSequenceScore() {
@@ -165,11 +155,7 @@ function increaseSequenceScore() {
   if (gameSequence.length > oldSequenceScore) {
     $('#longest-sequence').text(gameSequence.length);
   }
-  else {
-    return; // if the sequence wasn't longer than the previous one, we don't have to increase the score, and we can exit the function.
-  }
 }
-// End of function to increase longest sequence score
 
 // Function that resets scores once the player fails
 function resetScores() {
@@ -178,7 +164,6 @@ function resetScores() {
   $('#longest-sequence').text(0);
   saveScore(endScore);
 }
-// End of Function that resets scores 
 
 // Function that checks the endscore with the scores in highscores
 function saveScore(endScore) {
@@ -186,11 +171,9 @@ function saveScore(endScore) {
   let scoreKey = '';
   let scoreValueArray = [];
   let scoreValue = '';
-  // first create the array of highscores
   for (let index = 0; index < scoreKeyArray.length; index++) {
     scoreKey = scoreKeyArray[index];
     scoreValue = localStorage.getItem(scoreKey);
-    // if the scoreValue is blank, we set it to 0 
     if (scoreValue === null) {
       scoreValue = 0;
     }
@@ -199,13 +182,10 @@ function saveScore(endScore) {
 
   for (let index = 0; index < scoreValueArray.length; index++) {
     if (endScore > scoreValueArray[index]) {
-      alert('You beat your highscore! ' + endScore + ' is larger than ' + scoreValue);
+      alert('You beat your highscore! ' + endScore + ' is larger than ' + scoreValueArray[index]);
       highScoreBeaten = true;
       scoreToMoveDown = index;
       break;
-    }
-    else {
-      continue;
     }
   }
 
@@ -223,7 +203,6 @@ function saveScore(endScore) {
     localStorage.setItem(scoreKey, scoreValue);
   }
 }
-// End of function that checks the endscore with the scores in highscores
 
 // Function that starts an easy game on pageload
 function setupGamePage() {
@@ -249,9 +228,6 @@ function setupGamePage() {
     });
   }
 }
-// End of function that starts an easy game on pageload
-
-// -- Function for the page highscores.html --
 
 // Function that loads scores from localstorage
 function displayScores() {
@@ -262,9 +238,6 @@ function displayScores() {
     }
   }
 }
-// End of function that loads scores
-
-// -- Functions for the page gamesettings.html --
 
 // Function that resets highscores when the player clicks the reset button
 function resetHighScores() {
@@ -272,7 +245,6 @@ function resetHighScores() {
     localStorage.setItem(scoreKey, '');
   }
 }
-// End of function that resets highscores when the player clicks the reset button
 
 // Function that checks difficulty in localStorage and displays  this
 function getDifficultySetting() {
@@ -289,4 +261,3 @@ function getDifficultySetting() {
     }
   }
 }
-// End of function that checks difficulty
