@@ -120,17 +120,17 @@ function checkSequence() {
     }
 
     if (correctAnswer === true) {
-      $('#game-alert').text('Correct!');
+      $('#game-alert').text('Correct!').addClass('alert-success').removeClass('alert-info');
       increaseScore();
       increaseSequenceScore();
     }
     else {
-      $('#game-alert').text('Game over! Sorry, you didn\'t remember the pattern!');
+      $('#game-alert').text('Game over! Sorry, you didn\'t remember the pattern!').addClass('alert-danger').removeClass('alert-info');
       resetScores();
     }
   }
   else {
-    $('#game-alert').text('Game over! Sorry, you didn\'t click the right amount of pictures!');
+    $('#game-alert').text('Game over! Sorry, you didn\'t click the right amount of pictures!').addClass('alert-danger').removeClass('alert-info');
     resetScores();
   }
 
@@ -177,7 +177,7 @@ function saveScore(endScore) {
 
   for (let index = 0; index < scoreValueArray.length; index++) {
     if (endScore > scoreValueArray[index]) {
-      $('#highscore-alert').text('Congratulations! You beat your highscore!');
+      $('#highscore-alert').text('Congratulations! You beat your highscore!').addClass('alert-success').removeClass('alert-dark');
       highScoreBeaten = true;
       scoreToMoveDown = index;
       break;
@@ -185,7 +185,7 @@ function saveScore(endScore) {
   }
 
   if (!highScoreBeaten) {
-    $('#highscore-alert').text('Sorry! You didn\'t beat your highscore!');
+    $('#highscore-alert').text('Sorry! You didn\'t beat your highscore!').addClass('alert-danger').removeClass('alert-dark');
   }
   else {
     scoreValueArray.splice(scoreToMoveDown, 0, endScore);
@@ -211,7 +211,7 @@ function setupGamePage() {
     generateSequence();
     $('#start-button').addClass('d-none');
     $('#submit-button').removeClass('d-none');
-    $('#game-alert').text('Remember the pattern!');
+    $('#game-alert').text('Remember the pattern!').addClass('alert-info').removeClass('alert-success');
   });
 
   let images = $('img');

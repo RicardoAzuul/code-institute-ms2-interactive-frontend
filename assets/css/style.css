@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&display=swap");
 
 * {
-	margin: 0;
-	border: none;
-	padding: 0;
+  margin: 0;
+  border: none;
+  padding: 0;
 }
 
 body {
@@ -16,13 +16,13 @@ body {
 }
 
 .navbar-brand {
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
   font-size: 2em;
   color: #2a1f1a;
 }
 
 .nav-link {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #2a1f1a;
 }
 
@@ -37,8 +37,8 @@ body {
 .navbar a:hover {
   text-decoration: none;
   color: #2a1f1a;
-} 
-.navbar a:hover i{
+}
+.navbar a:hover i {
   display: inline;
 }
 /* End of Navbar */
@@ -46,19 +46,23 @@ body {
 /* Main */
 main {
   padding-top: 5em;
-  min-height: 56em;
-  font-family: 'Open Sans', sans-serif;
+  min-height: 95vh;
+  font-family: "Open Sans", sans-serif;
   color: #2a1f1a;
 }
 
 h1 {
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
   padding-bottom: 1em;
 }
 
 /* End of Main */
 
-/* Game area */ 
+/* Game area */
+#game-buttons-col {
+  padding-bottom: 1em;
+}
+
 #game-board .col-6 {
   padding: 5px;
 }
@@ -70,8 +74,18 @@ img {
 .dim {
   opacity: 0.4;
 }
+
+#score-display {
+  padding-top: 1em;
+}
+
+.table {
+  color: #2a1f1a;
+}
+
 /* Footer */
 .footer {
+  color: #2a1f1a;
   background-color: #f3e2c9;
 }
 /* End of Footer */
@@ -85,7 +99,7 @@ img {
 /* Game settings page */
 #reset-button-col {
   padding-top: 1em;
-  padding-bottom: 2em
+  padding-bottom: 2em;
 }
 /* End of game settings page */
 
@@ -94,23 +108,20 @@ img {
 /* End of how to play page */
 
 /* Media queries */
-@media(max-width: 576px) {
+@media (max-width: 576px) {
   main {
     padding-top: 5em;
-    min-height: auto;
   }
 }
 
-@media(min-width: 768px) {
+@media (min-width: 768px) {
   main {
     padding-top: 12em;
-    min-height: 51em;
   }
-} 
+}
 
-@media(min-width: 992px) {
+@media (min-width: 992px) {
   main {
     padding-top: 10em;
-    min-height: 51em;
   }
 }
