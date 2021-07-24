@@ -49,15 +49,12 @@ function generateSequence() {
   if (previousSequenceLength === 0) {
     if (!localStorage.getItem('difficulty') || localStorage.getItem('difficulty') === 'easy') {
       sequenceLength = 1;
-      console.log('Easy difficulty');
     }
     else if (localStorage.getItem('difficulty') === 'medium') {
       sequenceLength = 5;
-      console.log('Medium difficulty');
     }
     else if (localStorage.getItem('difficulty') === 'hard') {
       sequenceLength = 9;
-      console.log('Hard difficulty');
     }
   }
   else if (previousSequenceLength < maxLengthSequence) {
