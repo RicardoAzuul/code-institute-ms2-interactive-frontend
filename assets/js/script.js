@@ -219,24 +219,22 @@ function saveScore(endScore) {
   let scoreValueArray = [];
   let scoreValue = "";
   for (let index = 0; index < scoreKeyArray.length; index++) {
-    // TODO: Can I merge the two for loops?
     scoreKey = scoreKeyArray[index];
     scoreValue = localStorage.getItem(scoreKey);
     if (scoreValue === null) {
       scoreValue = 0;
     }
     scoreValueArray.push(scoreValue);
-  }
 
-  for (let index = 0; index < scoreValueArray.length; index++) {
-    if (endScore > scoreValueArray[index]) {
-      $("#highscore-alert")
-        .text("Congratulations! You beat your highscore!")
-        .addClass("alert-success")
-        .removeClass("alert-dark");
-      highScoreBeaten = true;
-      scoreToMoveDown = index;
-      break;
+    if (!highScoreBeaten) {
+      if (endScore > scoreValue) {
+        $("#highscore-alert")
+          .text("Congratulations! You beat your highscore!")
+          .addClass("alert-success")
+          .removeClass("alert-dark");
+        highScoreBeaten = true;
+        scoreToMoveDown = index;
+      }
     }
   }
 
