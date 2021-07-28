@@ -142,9 +142,15 @@ Fonts are sourced from Google Fonts. I decided on Lobster, because it seemed pla
 - [Game page](readme-assets/wireframes/game.png)
 - [Game page tablet version](readme-assets/wireframes/game_tablet_view.png)
 - [Game page mobile Version](readme-assets/wireframes/game_mobile_view.png)
-- [Individual high scores](readme-assets/wireframes/your_highscores.png)
-- [Individual high scores tablet version](readme-assets/wireframes/your_highscores_tablet_view.png)
-- [Individual high scores mobile version](readme-assets/wireframes/your_highscores_mobile_view.png)
+- [High scores](readme-assets/wireframes/your_highscores.png)
+- [High scores tablet version](readme-assets/wireframes/your_highscores_tablet_view.png)
+- [High scores mobile version](readme-assets/wireframes/your_highscores_mobile_view.png)
+- [Game settings](readme-assets/wireframes/game_settings.png)
+- [Game settings tablet version](readme-assets/wireframes/game_settings_tablet_view.png)
+- [Game settings mobile version](readme-assets/wireframes/game_settings_mobile_view.png)
+- [How to play](readme-assets/wireframes/how_to_play.png)
+- [How to play tablet version](readme-assets/wireframes/how_to_play_tablet_view.png)
+- [How to play mobile version](readme-assets/wireframes/how_to_play_mobile_view.png)
 
 ---
 
