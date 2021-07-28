@@ -43,15 +43,17 @@ To visit the site, open [https://ricardoazuul.github.io/code-institute-ms2-inter
 ## UI and UX
  
 ### User stories
-- As a visitor to the site, I want to be able to play the game. It would be nice if I can keep track of high scores, and even nicer if there is a scoreboard for multiple players. **Update:** having a scoreboard for multiple players that is centrally accessible would require a backend database that saves the scores, which is out of scope for this project.
+- As a visitor to the site, I want to be able to play the game. It would be nice if I can keep track of high scores, and even nicer if there is a scoreboard for multiple players. 
+**Update:** having a scoreboard for multiple players that is centrally accessible would require a backend database that saves the scores, which is out of scope for this project.
 - In order to play the game I need to:
     1. See a board of pug pictures.
     1. Have the game animate which picture needs to be clicked on.
     1. Be able to click on these pictures.
     1. Have the game generate longer sequences of pictures that need to be clicked on in order, to make it more difficult as I progress.
-    1. Nice to have: scaling difficulty, by having more or less pictures on the board. **Update:** the difficulty isn't in the amount of pictures, but the length of sequence. Scaling difficulty is now implemented by having the game start off with longer or shorter sequences.
+    1. Nice to have: scaling difficulty, by having more or less pictures on the board. 
+    **Update:** the difficulty isn't in the amount of pictures, but the length of sequence. Scaling difficulty is now implemented by having the game start off with longer or shorter sequences.
     1. Nice to have: a scoreboard, at least for individual players. 
-- To see my own scores, I will click on "My high scores" in the navbar. This will take me to a page with my highscores.
+- To view my highscores, I will click on "My high scores" in the navbar. This will take me to a page with my highscores.
 
     - Screenshots related to this user story:
 
@@ -59,7 +61,7 @@ To visit the site, open [https://ricardoazuul.github.io/code-institute-ms2-inter
 
     - Screenshots related to this user story:
 
-- To view my highscores, I will click on "High scores" in the navbar. This will take me to the page where I can see my highscores.
+- To find out how to play, I will click on "How to play in" in the navbar. This will take me to the page with game instructions.
 
 ---
 
@@ -88,8 +90,6 @@ The functional specifications of the site:
 
 Content requirements:
 - Photos of pugs.
-- Maybe a logo.
-- Some background music, but not a necessity.
 
 ---
 
@@ -101,12 +101,17 @@ All pages should have the same navigation bar and footer:
 <ins>The Home Page</ins>
 - a game logo
 - the main game interface:
-  - the picture board
-  - a score tracker
-  - a timer?
+  - the Start button, which changes to a Submit button when clicked.
+  - the picture board.
+  - a score tracker.
+  - two alert areas where game messages will appear.
+ 
 
-<ins>Individual scoreboard</ins>
-- a list of an individual player's scores. This list needs to update after games.
+<ins>High scores</ins>
+- a page with a table of the 10 highest scores. Whenever the player fails the game, this page will update with any new high scores.
+
+<ins>Game settings</ins>
+- a page where you can reset your high scores, but also change the starting difficulty of the game.
 
 <ins>How to play page</ins>
 - explains how the game works.
@@ -118,7 +123,7 @@ All pages should have the same navigation bar and footer:
 The navigation bar will be added to the top of every page and will always remain visible. There are links to all pages on this navbar. 
 On the left will be the logo, which when clicked upon will take the player back to the game page.
 
-The active page is indicated with a line under the navigation item. When hovering over navigation items, the navigation item will be highlighted.
+The active page is indicated with a line under the navigation item. When hovering over navigation items, the navigation item will be indicated with a dog paw.
 
 At the bottom of every page will be the same footer.
 
@@ -147,18 +152,19 @@ Fonts are sourced from Google Fonts. I decided on Lobster, because it seemed pla
 
 ### Existing Features
 
+- Navigation bar: contains links to all the pages and allows users to browse to pages.
+- Footer: contains copyright info.
+- Game interface:
+- Score tracker
+- High scores page
+- How to play page
+- Settings page
+
 ---
 
 ### Features Left to Implement
 
-- Navigation bar: contains links to all the pages and allows users to browse to pages.
-- Footer: contains general info.
-- Game interface:
-- Score tracker
-- Timer?
-- Individual scoreboard
-- How to play page
-- Settings page
+- Classic Simon Mode: a setting on the Game settings page that allows you the run the game like Simon: each time the same sequence is used, but one more step is added to the sequence.
 
 ---
 
@@ -181,6 +187,8 @@ Fonts are sourced from Google Fonts. I decided on Lobster, because it seemed pla
 - [Am I Responsive?](http://ami.responsivedesign.is/): to generate screenshots of the site at various viewpoints, indicating responsiveness.
 - [EyeDropper](https://eyedropper.org/): to pick colours from an image.
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse): an automated tool in Chrome DevTools that audits for performance, accessibility, progressive web apps, SEO and more.
+- [JSHint]
+- [Prettier]
 
 ---
 
@@ -190,6 +198,10 @@ The website is fully responsive on the following screens: smartphone, iPad, iPad
 
 These screenshots indicate the responsiveness of the pages on various screens.
 
+- [Index.html](readme-assets/responsive/main_page_responsive.png)
+- [Highscores.html](readme-assets/responsive/highscores_responsive.png)
+- [Game-Settings.html](readme-assets/responsive/game-settings_responsive.png)
+- [How-to-play.html](readme-assets/responsive/how-to-play_responsive.png)
 
 ---
 

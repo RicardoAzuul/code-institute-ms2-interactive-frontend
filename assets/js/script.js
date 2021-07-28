@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let difficultyButtons = $(".difficulty-button");
     for (let difficultyButton of difficultyButtons) {
-      difficultyButton.addEventListener("click", function () {
+      difficultyButton.addEventListener("click", function () { // TODO change into actual function?
         for (let difficultyButton of difficultyButtons) {
           difficultyButton.classList.remove("btn-primary");
           difficultyButton.classList.add("btn-outline-primary");
@@ -278,7 +278,7 @@ function setupGamePage() {
 
   let images = $("img");
   for (let image of images) {
-    image.addEventListener("click", function () {
+    image.addEventListener("click", function () { // TODO change into actual function?
       this.animate(
         {
           opacity: 0.4,
