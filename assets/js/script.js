@@ -1,7 +1,6 @@
-// Global variables
+// Global variables // TODO Global variables are discouraged in JavaScript
 var playerSequence = [];
 var gameSequence = [];
-var maxLengthSequence = 31;
 var sequenceLength = 1;
 const scoreKeyArray = [
   "score1",
@@ -31,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let difficultyButtons = $(".difficulty-button");
     for (let difficultyButton of difficultyButtons) {
-      difficultyButton.addEventListener("click", function () { // TODO change into actual function?
+      difficultyButton.addEventListener("click", function () {
         for (let difficultyButton of difficultyButtons) {
           difficultyButton.classList.remove("btn-primary");
           difficultyButton.classList.add("btn-outline-primary");
@@ -56,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function generateSequence() {
   gameSequence = [];
   playerSequence = [];
+  let maxLengthSequence = 31;
 
   let previousSequenceLength = parseInt($("#longest-sequence").text());
 
@@ -278,7 +278,7 @@ function setupGamePage() {
 
   let images = $("img");
   for (let image of images) {
-    image.addEventListener("click", function () { // TODO change into actual function?
+    image.addEventListener("click", function () {
       this.animate(
         {
           opacity: 0.4,
