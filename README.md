@@ -196,8 +196,6 @@ Fonts are sourced from Google Fonts. I decided on Lobster, because it seemed pla
 - [git](https://git-scm.com/): as one of the most popular source code management tools.
 - [Balsamiq](https://balsamiq.com): for creating wireframes of all the pages.
 - [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/): for quick debugging and testing of HTML and CSS. 
-- [WAVE - web accessibility evalution tool](https://wave.webaim.org/): to check the accessibility of the pages.
-- [Accessible Color Generator](https://learnui.design/tools/accessible-color-generator.html): to generate colors that contrast better.
 - [Am I Responsive?](http://ami.responsivedesign.is/): to generate screenshots of the site at various viewpoints, indicating responsiveness.
 - [EyeDropper](https://eyedropper.org/): to pick colours from an image.
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse): an automated tool in Chrome DevTools that audits for performance, accessibility, progressive web apps, SEO and more.
@@ -239,11 +237,18 @@ Testing was done using Google Chrome, Mozilla Firefox, Microsoft Edge, and also 
 1. [CSS validation](https://jigsaw.w3.org/css-validator/)
 - 2 errors in Bootstrap
 - 750 warnings in Bootstrap
-1. [VS Code JSHint extension]9https://marketplace.visualstudio.com/items?itemName=dbaeumer.jshint)
+1. [VS Code JSHint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.jshint)
 - first check on 21-7-2021: 51 errors. Many of these errors were caused by JSHint not checking using ECMAScript 6. Added a .jshintrc file with this setting enabled.
 - second check on 21-7-2021: 14 errors. 12 of these are missing semicolons.
 
 
+<br/>
+
+<ins>Lighthouse:</ins>
+- first report [index.html](readme-assets/lighthouse-reports/lighthouse-report_index_1.html)
+- first report [highscores.html](readme-assets/lighthouse-reports/lighthouse-report-highscores_1.html)
+- first report [game-settings.html](readme-assets/lighthouse-reports/lighthouse-report-game-settings_1.html)
+- first report [how-to-play.html](readme-assets/lighthouse-reports/lighthouse-report-how-to-play_1.html)
 <br/>
 
 <ins>Navigation Links in the nav bar:</ins>
