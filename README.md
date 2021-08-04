@@ -246,9 +246,17 @@ Testing was done using Google Chrome, Mozilla Firefox, Microsoft Edge, and also 
 
 <ins>Lighthouse:</ins>
 - first report [index.html](readme-assets/lighthouse-reports/lighthouse-report_index_1.html)
+    - resized the pug pictures to be much smaller.
+    - added meta elements to the html.
+    - Lighthouse wants images to have a fixed width and height, but this means not being able to use Bootstrap's img-fluid class.
+    - Lighthouse wants me to increase the caching time of the pug pictures, but this is something I have no control over, as I'm hosting the site on Github pages.
+    - Lighthouse reports that the start button does not have sufficient contrast ratio. I ran into this with my first project as well: adjusting this actually made the contrast worse. The start button is styled using Bootstrap classes, I am assuming these are sufficiently thought out to accept them as is.
 - first report [highscores.html](readme-assets/lighthouse-reports/lighthouse-report-highscores_1.html)
+    - added meta elements to the html.
 - first report [game-settings.html](readme-assets/lighthouse-reports/lighthouse-report-game-settings_1.html)
+    - added meta elements to the html.
 - first report [how-to-play.html](readme-assets/lighthouse-reports/lighthouse-report-how-to-play_1.html)
+    - added meta elements to the html.
 <br/>
 
 <ins>Navigation Links in the nav bar:</ins>
