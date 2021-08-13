@@ -234,9 +234,14 @@ Testing was done using Google Chrome, Mozilla Firefox, Microsoft Edge, and also 
 <ins>Code validation:</ins>
 1. [HTML validation](https://validator.w3.org/nu/)
 - index.html: 3 warnings, 1 error
+    - the 3 warnings are about the sections in the HTML not having headings. However, in this case I feel that headings are not necessary: I'm using the section element to differentiate between different sections of the game, but there is no text that warrants the use of headings.
+    - the error is about an aria-controls attribute not pointing to an element in the same document. This was a typo.
 - highscores.html: 1 error
+    - the error is about an aria-controls attribute not pointing to an element in the same document. This was a typo.
 - game-settings.html: 1 error
+    - the error is about an aria-controls attribute not pointing to an element in the same document. This was a typo.
 - how-to-play.html: 1 error
+    - the error is about an aria-controls attribute not pointing to an element in the same document. This was a typo.
 1. [CSS validation](https://jigsaw.w3.org/css-validator/)
 - 2 errors in Bootstrap. These I will ignore, as they are errors in a third-party extension.
 - 750 warnings in Bootstrap. These I will ignore, as they are errors in a third-party extension.
@@ -308,7 +313,8 @@ Steps to troubleshoot:
 
 ### Problems
 1. The code to animate pictures was animating all pictures at the same time. Ultimately I found code that processed each image in order, but it had a mistake. The code: https://stackoverflow.com/questions/35071794/js-jquery-animate-divs-in-order
-The mistake: the code would first check if index was equal to or greater than the length of the array, and after that check increment the index. This meant that before the if check, index was smaller, but after it was equal, which meant that the code tried to get to an index in the array that wasn't there.
+The mistake: the code would first check if index was equal to or greater than the length of the array, and after that check increment the index. This won't work: given a sequence with a length of 1, the index of the one item will be 0, not 1. So instead of incrementing the index after this check, I moved this incrementing to before the check. 
+Another option would have been to start index at 1 instead of 0.
 
 ---
 
