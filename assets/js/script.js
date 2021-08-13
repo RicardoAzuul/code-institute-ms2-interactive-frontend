@@ -1,7 +1,6 @@
-// Global variables // TODO Global variables are discouraged in JavaScript
+// Global variables
 var playerSequence = [];
 var gameSequence = [];
-var sequenceLength = 1;
 const scoreKeyArray = [
   "score1",
   "score2",
@@ -29,9 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
     getDifficultySetting();
 
     let difficultyButtons = $(".difficulty-button");
-    for (let difficultyButton of difficultyButtons) {
+    for (const difficultyButton of difficultyButtons) {
       difficultyButton.addEventListener("click", function () {
-        for (let difficultyButton of difficultyButtons) {
+        for (const difficultyButton of difficultyButtons) {
           difficultyButton.classList.remove("btn-primary");
           difficultyButton.classList.add("btn-outline-primary");
         }
@@ -55,7 +54,8 @@ document.addEventListener("DOMContentLoaded", function () {
 function generateSequence() {
   gameSequence = [];
   playerSequence = [];
-  let maxLengthSequence = 31;
+  let sequenceLength = 0;
+  const maxLengthSequence = 31;
 
   let previousSequenceLength = parseInt($("#longest-sequence").text());
 
@@ -265,7 +265,7 @@ function setupGamePage() {
     checkSequence();
   });
 
-  let startButton = document.getElementById("start-button");
+  const startButton = document.getElementById("start-button");
   startButton.addEventListener("click", function () {
     generateSequence();
     $("#start-button").addClass("d-none");
@@ -276,8 +276,8 @@ function setupGamePage() {
       .removeClass("alert-success");
   });
 
-  let images = $("img");
-  for (let image of images) {
+  const images = $("img");
+  for (const image of images) {
     image.addEventListener("click", function () {
       this.animate(
         {
@@ -294,7 +294,7 @@ function setupGamePage() {
  * This function, when called, gets the highscores from localStorage and writes them to the DOM.
  */
 function displayScores() {
-  for (let scoreKey of scoreKeyArray) {
+  for (const scoreKey of scoreKeyArray) {
     let scoreValue = localStorage.getItem(scoreKey);
     if (scoreValue !== "") {
       document.getElementById(scoreKey).innerHTML = scoreValue;
@@ -306,7 +306,7 @@ function displayScores() {
  * This function, when called, resets all the highscores in localStorage to an empty string.
  */
 function resetHighScores() {
-  for (let scoreKey of scoreKeyArray) {
+  for (const scoreKey of scoreKeyArray) {
     localStorage.setItem(scoreKey, "");
   }
 }
@@ -316,8 +316,8 @@ function resetHighScores() {
  */
 function getDifficultySetting() {
   let difficulty = localStorage.getItem("difficulty");
-  let difficultyButtons = $(".difficulty-button");
-  for (let difficultyButton of difficultyButtons) {
+  const difficultyButtons = $(".difficulty-button");
+  for (const difficultyButton of difficultyButtons) {
     if (difficultyButton.dataset.difficulty === difficulty) {
       difficultyButton.classList.add("btn-primary");
       difficultyButton.classList.remove("btn-outline-primary");

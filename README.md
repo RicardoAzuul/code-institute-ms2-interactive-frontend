@@ -226,9 +226,9 @@ These screenshots indicate the responsiveness of the pages on various screens.
 Testing was done using Google Chrome, Mozilla Firefox, Microsoft Edge, and also Internet Explorer. I also tested it on a Huawei P smart+ 2019 Android smartphone. The site works fine on all modern browsers, but not Internet Explorer. Internet Explorer requires you to enable JavaScript (or Active Scripting as they call it) first. See [here](https://www.whatismybrowser.com/guides/how-to-enable-javascript/internet-explorer). However, Internet Explorer is no longer supported, so this is not an issue. 
 
 <ins>Tests for Readme.md:</ins>
-- :heavy_check_mark: When you click on the links in the TOC, you navigate to the section you clicked on.
-- :heavy_check_mark: All links to images open images.
-- :heavy_check_mark: All links to external websites open properly.
+:heavy_check_mark: When you click on the links in the TOC, you navigate to the section you clicked on.
+:heavy_check_mark: All links to images open images.
+:heavy_check_mark: All links to external websites open properly.
 <br/>
 
 <ins>Code validation:</ins>
@@ -268,32 +268,32 @@ Testing was done using Google Chrome, Mozilla Firefox, Microsoft Edge, and also 
 <br/>
 
 <ins>Navigation Links in the nav bar:</ins>
-- :heavy_check_mark: The brand logo takes you back to the main page.
-- :heavy_check_mark: All links in the navbar take you to their respective page.
-- :heavy_check_mark: The active page is indicated with an underline below the related link.
-- :heavy_check_mark: When you hover over a link, a dog paw appears next to it.
+:heavy_check_mark: The brand logo takes you back to the main page.
+:heavy_check_mark: All links in the navbar take you to their respective page.
+:heavy_check_mark: The active page is indicated with an underline below the related link.
+:heavy_check_mark: When you hover over a link, a dog paw appears next to it.
 <br/>
 
 <ins>Buttons</ins>
-- :heavy_check_mark: Clicking the start button runs the game: one of the pictures is animated.
-- :heavy_check_mark: Clinking the submit button submits the player sequence. The player either gets an alert that they got it right, or that they lost.
-- :heavy_check_mark: Choosing any of the difficulties means the game starts with a pattern length as indicated by that difficulty. If the player picks Easy, it starts at a length of 1. Medium is length of 5, Hard is a length of 9.
-- :heavy_check_mark: The difficulty choice is remembered between sessions, and indicated using a Bootstrap class. When the player goes back to the web app, the previously chosen difficulty setting is indicated by the different style of the button.
-- :heavy_check_mark: Clicking the reset button resets the high scores. All scores are deleted.
+:heavy_check_mark: Clicking the start button runs the game: one of the pictures is animated.
+:heavy_check_mark: Clinking the submit button submits the player sequence. The player either gets an alert that they got it right, or that they lost.
+:heavy_check_mark: Choosing any of the difficulties means the game starts with a pattern length as indicated by that difficulty. If the player picks Easy, it starts at a length of 1. Medium is length of 5, Hard is a length of 9.
+:heavy_check_mark: The difficulty choice is remembered between sessions, and indicated using a Bootstrap class. When the player goes back to the web app, the previously chosen difficulty setting is indicated by the different style of the button.
+:heavy_check_mark: Clicking the reset button resets the high scores. All scores are deleted.
 <br/>
 
 <ins>The game</ins>
-- :heavy_check_mark: Images that need to be clicked are animated.
-- :heavy_check_mark: When the player clicks an image, it is animated.
-- :heavy_check_mark: The score increments when the player gets the pattern right.
-- :heavy_check_mark: The longest sequence score increments when the player beats a sequence that is the longest so far.
-- :heavy_check_mark: The game gets progressively harder, by generating longer sequences.
-- :heavy_check_mark: Game info messages show up indicating progress.
-- The pattern increases in length until the player fails or the max length of 31 is reached.
+:heavy_check_mark: Images that need to be clicked are animated, because they are part of the sequence. Tested by running the game.
+:heavy_check_mark: When the player clicks an image, it is animated. Tested by clicking on the images.
+:heavy_check_mark: The score increments when the player gets the pattern right. Tested by running the game.
+:heavy_check_mark: The longest sequence score increments when the player beats a sequence that is the longest so far. Tested by running the game.
+:heavy_check_mark: The game gets progressively harder, by generating longer sequences. Tested by running the game.
+:heavy_check_mark: Game info messages show up indicating progress. Tested by running the game.
+:heavy_check_mark: The pattern increases in length until the player fails or the max length of 31 is reached. Tested by modifying the value of the maxLengthSequence variable. Getting to 31 is actually quite hard. I set it to 4 instead and played the game: when the game reached a pattern length of 4, it would keep generating patterns of 4 in length. It's a reasonable assumption that it would work the same for a value of 31, though I imagine using unit tests would be better proof.
 
 <ins>High scores</ins>
-- :heavy_check_mark: High scores populate in the table if they exist.
-- :heavy_check_mark: The table is updated when new high scores are achieved: they are given the correct place above and below lower and higher scores. Tested by running the game a few times and trying to get different high scores. Highest scores are placed at the top of the list, lowest at the bottom. If a score is achieved that is in between the highest and the lowest score, it is entered in the correct place and lower scores are pushed down.
+:heavy_check_mark: High scores populate in the table if they exist. Tested by browsing to the high scores.
+:heavy_check_mark: The table is updated when new high scores are achieved: they are given the correct place above and below lower and higher scores. Tested by running the game a few times and trying to get different high scores. Highest scores are placed at the top of the list, lowest at the bottom. If a score is achieved that is in between the highest and the lowest score, it is entered in the correct place and lower scores are pushed down.
 
 ### Notable Bugs
 
