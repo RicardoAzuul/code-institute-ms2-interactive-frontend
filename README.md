@@ -205,6 +205,7 @@ Fonts are sourced from Google Fonts. I decided on Lobster, because it seemed pla
 - [JSHint](https://jshint.com/): a linter for JavaScript, to help identify coding problems
 - [Prettier VS Code plugin](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode): a code formatter that helps with code formatting, which is good for creating a consistent style.
 - [ScreenToGif](https://www.screentogif.com/): to make screen recordings and turn them into gifs.
+- [Markdown link check](https://github.com/marketplace/actions/markdown-link-check): an automated tool to check for dead links in Markdown files.
 
 ---
 
