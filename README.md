@@ -367,6 +367,7 @@ The little bit of text explaining how to play the game was written by me.
 
 ### Media
 The pug photos were sourced from [Pexels](https://www.pexels.com/), [Unsplash](https://unsplash.com/) and [Stockvault](https://www.stockvault.net/).
+The favicon I found on [Icons8](https://icons8.com/icons/set/favicon)
 
 ### Acknowledgements
 
