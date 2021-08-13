@@ -21,6 +21,10 @@ body {
   color: #2a1f1a;
 }
 
+.navbar-toggler {
+  padding-top: 20px;
+}
+
 .nav-link {
   font-family: "Open Sans", sans-serif;
   color: #2a1f1a;
@@ -104,6 +108,10 @@ img {
 /* End of game settings page */
 
 /* How to play page */
+#simon-link {
+  color: #2a1f1a;
+  text-decoration: underline;
+}
 
 /* End of how to play page */
 

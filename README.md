@@ -12,7 +12,7 @@ Must haves for this project:
 Nice to have: 
 - a way to keep track of scores, maybe even a scoreboard.
 
-To visit the site, open [https://ricardoazuul.github.io/code-institute-ms2-interactive-frontend/](https://ricardoazuul.github.io/code-institute-ms2-interactive-frontend/)
+To visit the site, go to [https://ricardoazuul.github.io/code-institute-ms2-interactive-frontend/](https://ricardoazuul.github.io/code-institute-ms2-interactive-frontend/)
 
 ---
 
@@ -55,17 +55,20 @@ To visit the site, open [https://ricardoazuul.github.io/code-institute-ms2-inter
 
     **Update:** the difficulty isn't in the amount of pictures, but the length of sequence. Scaling difficulty is now implemented by having the game start off with longer or shorter sequences.
     1. Nice to have: a scoreboard, at least for individual players. 
+
+    - [Gif related to this user story](readme-assets/user-story-gifs/game.gif)
+
 - To view my highscores, I will click on "My high scores" in the navbar. This will take me to a page with my highscores.
 
-    - Screenshots related to this user story:
+    - [Gif related to this user story](readme-assets/user-story-gifs/highscores.gif)
 
 - To adjust the game settings, I will click on "Game settings" in the navbar. This will take me to the page where I can set the difficulty or reset my highscores.
 
-    - Screenshots related to this user story:
+    - [Gif related to this user story](readme-assets/user-story-gifs/game-settings.gif)
 
 - To find out how to play, I will click on "How to play in" in the navbar. This will take me to the page with game instructions.
 
-    - Screenshots related to this user story:
+    - [Gif related to this user story](readme-assets/user-story-gifs/how-to-play.gif)
 
 ---
 
@@ -201,6 +204,7 @@ Fonts are sourced from Google Fonts. I decided on Lobster, because it seemed pla
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse): an automated tool in Chrome DevTools that audits for performance, accessibility, progressive web apps, SEO and more.
 - [JSHint](https://jshint.com/): a linter for JavaScript, to help identify coding problems
 - [Prettier VS Code plugin](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode): a code formatter that helps with code formatting, which is good for creating a consistent style.
+- [ScreenToGif](https://www.screentogif.com/): to make screen recordings and turn them into gifs.
 
 ---
 
@@ -219,7 +223,7 @@ These screenshots indicate the responsiveness of the pages on various screens.
 
 ## Testing
 
-Testing was done using Google Chrome, Mozilla Firefox, Microsoft Edge, and also Internet Explorer. I also tested it on a Huawei P smart+ 2019 Android smartphone. The site works fine on all browsers. 
+Testing was done using Google Chrome, Mozilla Firefox, Microsoft Edge, and also Internet Explorer. I also tested it on a Huawei P smart+ 2019 Android smartphone. The site works fine on all modern browsers, but not Internet Explorer. Internet Explorer requires you to enable JavaScript (or Active Scripting as they call it) first. See [here](https://www.whatismybrowser.com/guides/how-to-enable-javascript/internet-explorer). However, Internet Explorer is no longer supported, so this is not an issue. 
 
 <ins>Tests for Readme.md:</ins>
 - :heavy_check_mark: When you click on the links in the TOC, you navigate to the section you clicked on.
@@ -229,17 +233,16 @@ Testing was done using Google Chrome, Mozilla Firefox, Microsoft Edge, and also 
 
 <ins>Code validation:</ins>
 1. [HTML validation](https://validator.w3.org/nu/)
-- :heavy_check_mark: 
 - index.html: 3 warnings, 1 error
 - highscores.html: 1 error
 - game-settings.html: 1 error
 - how-to-play.html: 1 error
 1. [CSS validation](https://jigsaw.w3.org/css-validator/)
-- 2 errors in Bootstrap
-- 750 warnings in Bootstrap
+- 2 errors in Bootstrap. These I will ignore, as they are errors in a third-party extension.
+- 750 warnings in Bootstrap. These I will ignore, as they are errors in a third-party extension.
 1. [VS Code JSHint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.jshint)
 - first check on 21-7-2021: 51 errors. Many of these errors were caused by JSHint not checking using ECMAScript 6. Added a .jshintrc file with this setting enabled.
-- second check on 21-7-2021: 14 errors. 12 of these are missing semicolons.
+- second check on 21-7-2021: 14 errors. 12 of these are missing semicolons. These haven been added.
 
 
 <br/>
@@ -253,39 +256,44 @@ Testing was done using Google Chrome, Mozilla Firefox, Microsoft Edge, and also 
     - Lighthouse reports that the start button does not have sufficient contrast ratio. I ran into this with my first project as well: adjusting this actually made the contrast worse. The start button is styled using Bootstrap classes, I am assuming these are sufficiently thought out to accept them as is.
 - first report [highscores.html](readme-assets/lighthouse-reports/lighthouse-report-highscores_1.html)
     - added meta elements to the html.
+    - Lighthouse reports that there is unused CSS, but this is contained within Bootstrap so not applicable.
 - first report [game-settings.html](readme-assets/lighthouse-reports/lighthouse-report-game-settings_1.html)
     - added meta elements to the html.
+    - Lighthouse reports that there is unused CSS, but this is contained within Bootstrap so not applicable.
+    - Lighthouse reports that the buttons does not have sufficient contrast ratio. I ran into this with my first project as well: adjusting this actually made the contrast worse. The buttons are styled using Bootstrap classes, I am assuming these are sufficiently thought out to accept them as is.
 - first report [how-to-play.html](readme-assets/lighthouse-reports/lighthouse-report-how-to-play_1.html)
     - added meta elements to the html.
+    - Lighthouse reports that there is unused CSS, but this is contained within Bootstrap so not applicable.
+
 <br/>
 
 <ins>Navigation Links in the nav bar:</ins>
-- The brand logo takes you back to the main page.
-- All links in the navbar take you to their respective page.
-- The active page is indicated with an underline below the related link.
-- When you hover over a link, a dog paw appears next to it.
+- :heavy_check_mark: The brand logo takes you back to the main page.
+- :heavy_check_mark: All links in the navbar take you to their respective page.
+- :heavy_check_mark: The active page is indicated with an underline below the related link.
+- :heavy_check_mark: When you hover over a link, a dog paw appears next to it.
 <br/>
 
 <ins>Buttons</ins>
-- Clicking the start button runs the game.
-- Clinking the submit button submits the player sequence.
-- Choosing any of the difficulties means the game starts with a pattern length as indicated by that difficulty.
-- The difficulty choice is remembered between sessions, and indicated using a Bootstrap class.
-- Clicking the reset button resets the high scores.
+- :heavy_check_mark: Clicking the start button runs the game: one of the pictures is animated.
+- :heavy_check_mark: Clinking the submit button submits the player sequence. The player either gets an alert that they got it right, or that they lost.
+- :heavy_check_mark: Choosing any of the difficulties means the game starts with a pattern length as indicated by that difficulty. If the player picks Easy, it starts at a length of 1. Medium is length of 5, Hard is a length of 9.
+- :heavy_check_mark: The difficulty choice is remembered between sessions, and indicated using a Bootstrap class. When the player goes back to the web app, the previously chosen difficulty setting is indicated by the different style of the button.
+- :heavy_check_mark: Clicking the reset button resets the high scores. All scores are deleted.
 <br/>
 
 <ins>The game</ins>
-- Images that need to be clicked are animated.
-- When the player clicks an image, it is animated.
-- The score increments when the player gets the pattern right.
-- The longest sequence score increments when the player beats a sequence that is the longest so far.
-- The game gets progressively harder, by generating longer sequences.
-- Game info messages show up indicating progress.
+- :heavy_check_mark: Images that need to be clicked are animated.
+- :heavy_check_mark: When the player clicks an image, it is animated.
+- :heavy_check_mark: The score increments when the player gets the pattern right.
+- :heavy_check_mark: The longest sequence score increments when the player beats a sequence that is the longest so far.
+- :heavy_check_mark: The game gets progressively harder, by generating longer sequences.
+- :heavy_check_mark: Game info messages show up indicating progress.
 - The pattern increases in length until the player fails or the max length of 31 is reached.
 
 <ins>High scores</ins>
-- High scores populate in the table if they exist.
-- The table is updated when new high scores are achieved: they are given the correct place above and below lower and higher scores.
+- :heavy_check_mark: High scores populate in the table if they exist.
+- :heavy_check_mark: The table is updated when new high scores are achieved: they are given the correct place above and below lower and higher scores. Tested by running the game a few times and trying to get different high scores. Highest scores are placed at the top of the list, lowest at the bottom. If a score is achieved that is in between the highest and the lowest score, it is entered in the correct place and lower scores are pushed down.
 
 ### Notable Bugs
 
@@ -295,7 +303,7 @@ While working on making the game loop, I ran into the following bug:
 
 Steps to troubleshoot:
 1. Console.logging at various steps in the code. This revealed that on the second round, when the player clicked an image, it registered as 2 clicks, and then would register as 1 click. It seemed to not be clearing the saved playersequence properly.
-1. As a side-step, I set playerSequence to be a globally scoped variable, and took the code to add eventListeners to the images to the function that runs on page load. This changed the bug: on the second round, the code to compare the playersequence and the gamesequence ran twice.
+1. As a side-step, I set playerSequence to be a globally scoped variable, and put the code to add eventListeners to the images in the function that runs on page load. This changed the bug: on the second round, the code to compare the playersequence and the gamesequence ran twice.
 1. To further disentangle the code from being a mess of functions calling functions calling functions, I moved the code that adds an eventListener to the submit button to the function that runs on page load. This seems to have fixed the bug. I think the bug was caused by a loop not running as I expected it to.
 
 ### Problems
@@ -315,7 +323,7 @@ This site is deployed to Github Pages. If you want to deploy it yourself:
 6. Scroll all the way down, to right above the Danger Zone.
 7. Here you can setup the repository to serve as the source for your GitHub Pages. In order to do so, choose a theme.
 8. Choosing a theme will apply one of several themes available. This adds a _config.yml file to the repository.
-9. After the theme has been applied, simply delete _config.yml from the repository to delete the theme and you'll have your own GitHub Pages site of Puggy Pair Up!
+9. After the theme has been applied, simply delete _config.yml from the repository to delete the theme and you'll have your own GitHub Pages site of Puggy Patterns!
 
 Click [here](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) for more information about Github Pages.
 
