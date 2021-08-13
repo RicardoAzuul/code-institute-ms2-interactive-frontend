@@ -246,8 +246,12 @@ Testing was done using Google Chrome, Mozilla Firefox, Microsoft Edge, and also 
 - 2 errors in Bootstrap. These I will ignore, as they are errors in a third-party extension.
 - 750 warnings in Bootstrap. These I will ignore, as they are errors in a third-party extension.
 1. [VS Code JSHint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.jshint)
-- first check on 21-7-2021: 51 errors. Many of these errors were caused by JSHint not checking using ECMAScript 6. Added a .jshintrc file with this setting enabled.
-- second check on 21-7-2021: 14 errors. 12 of these are missing semicolons. These haven been added.
+- first check on 21-7-2021: 51 problems. Many of these problems were caused by JSHint not checking using ECMAScript 6. Added a .jshintrc file with this setting enabled.
+- second check on 21-7-2021: 14 problems. 12 of these are missing semicolons. These haven been added.
+- third check on 13-8-2021: 2 problems.
+    1. Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (difficultyButtons, localStorage) (W083)
+    2. Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (playerSequence) (W083)
+I've taken both problems into consideration. While this is definitely something to look out for in future coding projects, I feel as these problems can be accepted in this case: either the variable is a global variable, so indicated at the top of the file, or the variable is actually part of the window interface, or the variable is referenced quite close to the problematic line of code. JSHint indicates that it may lead to confusing semantics, I'd say in these cases it didn't.
 
 
 <br/>
@@ -259,16 +263,20 @@ Testing was done using Google Chrome, Mozilla Firefox, Microsoft Edge, and also 
     - Lighthouse wants images to have a fixed width and height, but this means not being able to use Bootstrap's img-fluid class.
     - Lighthouse wants me to increase the caching time of the pug pictures, but this is something I have no control over, as I'm hosting the site on Github pages.
     - Lighthouse reports that the start button does not have sufficient contrast ratio. I ran into this with my first project as well: adjusting this actually made the contrast worse. The start button is styled using Bootstrap classes, I am assuming these are sufficiently thought out to accept them as is.
+- second report [index.html](readme-assets/lighthouse-reports/lighthouse-report_index_2.html)
 - first report [highscores.html](readme-assets/lighthouse-reports/lighthouse-report-highscores_1.html)
     - added meta elements to the html.
     - Lighthouse reports that there is unused CSS, but this is contained within Bootstrap so not applicable.
+- first report [highscores.html](readme-assets/lighthouse-reports/lighthouse-report-highscores_2.html)
 - first report [game-settings.html](readme-assets/lighthouse-reports/lighthouse-report-game-settings_1.html)
     - added meta elements to the html.
     - Lighthouse reports that there is unused CSS, but this is contained within Bootstrap so not applicable.
     - Lighthouse reports that the buttons does not have sufficient contrast ratio. I ran into this with my first project as well: adjusting this actually made the contrast worse. The buttons are styled using Bootstrap classes, I am assuming these are sufficiently thought out to accept them as is.
+- first report [game-settings.html](readme-assets/lighthouse-reports/lighthouse-report-game-settings_2.html)
 - first report [how-to-play.html](readme-assets/lighthouse-reports/lighthouse-report-how-to-play_1.html)
     - added meta elements to the html.
     - Lighthouse reports that there is unused CSS, but this is contained within Bootstrap so not applicable.
+- first report [how-to-play.html](readme-assets/lighthouse-reports/lighthouse-report-how-to-play_2.html)
 
 <br/>
 
