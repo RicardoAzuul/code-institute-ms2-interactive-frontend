@@ -1,6 +1,6 @@
 # Puggy Patterns
 
-![Markdown Link](https://github.com/RicardoAzuul/code-institute-ms2-interactive-frontend/actions/workflows/action/badge.svg)
+![Markdown Link](https://github.com/RicardoAzuul/code-institute-ms2-interactive-frontend/actions/workflows/action.yml/badge.svg)
 
 Puggy Patterns is a browser game for people who like pugs and memory games.
 
