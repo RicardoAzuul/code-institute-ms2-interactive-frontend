@@ -236,13 +236,13 @@ Testing was done using Google Chrome, Mozilla Firefox, Microsoft Edge, and also 
 1. [HTML validation](https://validator.w3.org/nu/)
 - index.html: 3 warnings, 1 error
     - the 3 warnings are about the sections in the HTML not having headings. However, in this case I feel that headings are not necessary: I'm using the section element to differentiate between different sections of the game, but there is no text that warrants the use of headings.
-    - the error is about an aria-controls attribute not pointing to an element in the same document. This was a typo.
+    - the error is about an aria-controls attribute not pointing to an element in the same document. This was a typo and has been fixed.
 - highscores.html: 1 error
-    - the error is about an aria-controls attribute not pointing to an element in the same document. This was a typo.
+    - the error is about an aria-controls attribute not pointing to an element in the same document. This was a typo and has been fixed.
 - game-settings.html: 1 error
-    - the error is about an aria-controls attribute not pointing to an element in the same document. This was a typo.
+    - the error is about an aria-controls attribute not pointing to an element in the same document. This was a typo and has been fixed.
 - how-to-play.html: 1 error
-    - the error is about an aria-controls attribute not pointing to an element in the same document. This was a typo.
+    - the error is about an aria-controls attribute not pointing to an element in the same document. This was a typo and has been fixed.
 1. [CSS validation](https://jigsaw.w3.org/css-validator/)
 - 2 errors in Bootstrap. These I will ignore, as they are errors in a third-party extension.
 - 750 warnings in Bootstrap. These I will ignore, as they are errors in a third-party extension.
@@ -367,7 +367,7 @@ The little bit of text explaining how to play the game was written by me.
 
 ### Media
 The pug photos were sourced from [Pexels](https://www.pexels.com/), [Unsplash](https://unsplash.com/) and [Stockvault](https://www.stockvault.net/).
-The favicon I found on [Icons8](https://icons8.com/icons/set/favicon)
+The favicon I found on [Icons8](https://icons8.com/icons/set/favicon).
 
 ### Acknowledgements
 

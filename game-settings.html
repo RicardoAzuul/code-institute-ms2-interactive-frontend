@@ -8,12 +8,12 @@
   <meta name="description" content="Adjust the game settings for Puggy Patterns.">
   <meta name="author" content="Richard Blaauw">
   <meta name="keywords" content="pugs, memory game, Simon game">
+  <link rel="shortcut icon" type="image/png" href="assets/images/icons8-puzzle-24.png"/>
+  <title>Game Settings</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="shortcut icon" type="image/png" href="assets/images/icons8-puzzle-24.png"/>
-  <title>Game Settings</title>
 </head>
 
 <body>
@@ -72,19 +72,19 @@
           <div class="form-group row">
             <label for="easy-button" class="col-3 col-md-2 offset-3 offset-md-4 col-form-label text-center">Start at 1</label>
             <div class="col">
-              <button type="button" class="btn btn-primary difficulty-button" id="easy-button" data-difficulty="easy">Easy</button>
+              <button type="button" class="btn btn-primary difficulty-button" id="easy-button" data-difficulty="easy" aria-label="Easy difficulty">Easy</button>
             </div>
           </div>
           <div class="form-group row">
             <label for="medium-button" class="col-3 col-md-2 offset-3 offset-md-4 col-form-label text-center">Start at 5</label>
             <div class="col">
-              <button type="button" class="btn btn-outline-primary difficulty-button" id="medium-button" data-difficulty="medium">Medium</button>
+              <button type="button" class="btn btn-outline-primary difficulty-button" id="medium-button" data-difficulty="medium" aria-label="Medium difficulty">Medium</button>
             </div>
           </div>
           <div class="form-group row">
             <label for="hard-button" class="col-3 col-md-2 offset-3 offset-md-4 col-form-label text-center">Start at 9</label>
             <div class="col">
-              <button type="button" class="btn btn-outline-primary difficulty-button" id="hard-button" data-difficulty="hard">Hard</button>
+              <button type="button" class="btn btn-outline-primary difficulty-button" id="hard-button" data-difficulty="hard" aria-label="Hard difficulty">Hard</button>
             </div>
           </div>
         </form>
