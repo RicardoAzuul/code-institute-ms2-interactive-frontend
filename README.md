@@ -1,5 +1,7 @@
 # Puggy Patterns
 
+![Markdown Link](https://github.com/RicardoAzuul/code-institute-ms2-interactive-frontend/actions/workflows/action/badge.svg)
+
 Puggy Patterns is a browser game for people who like pugs and memory games.
 
 It is a game inspired by Simon, but using pug pictures. Instead of a circle with four different colours, players see four pug pictures. The game randomly animates a picture, which the player then has to click. Each round the game generates a longer sequence of pictures that need to be clicked in order.
