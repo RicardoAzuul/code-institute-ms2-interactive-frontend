@@ -243,6 +243,7 @@ Testing was done using Google Chrome, Mozilla Firefox, Microsoft Edge, and also 
     - the error was about an aria-controls attribute not pointing to an element in the same document. This was a typo and has been fixed.
 - how-to-play.html: 1 error
     - the error was about an aria-controls attribute not pointing to an element in the same document. This was a typo and has been fixed.
+
 2. [CSS validation](https://jigsaw.w3.org/css-validator/)
 - 2 errors in Bootstrap. These I will ignore, as they are errors in a third-party extension.
 - 750 warnings in Bootstrap. These I will ignore, as they are errors in a third-party extension.
@@ -323,7 +324,7 @@ Click [here](https://docs.github.com/en/pages/getting-started-with-github-pages/
 1. If you want to run the project locally, simply clone the repository into the directory of your choice: 
 
 ```
-git clone 
+git clone https://github.com/RicardoAzuul/code-institute-ms2-interactive-frontend.git
 ```
 2. Using Visual Studio Code, search for the [Live Server](https://ritwickdey.github.io/vscode-live-server/) extension by Ritwick Dey and install it.
 3. Press F1 in Visual Studio Code and in the search bar that pops up look for Live Server and start it.
