@@ -83,7 +83,10 @@ function generateSequence() {
   animatePictures(gameSequence);
 }
 
-// function that uses the generated sequence to animate pictures: used this answer on Stackoverflow: https://stackoverflow.com/questions/35071794/js-jquery-animate-divs-in-order
+/**  
+ * function that uses the generated sequence to animate pictures: used this answer on Stackoverflow: https://stackoverflow.com/questions/35071794/js-jquery-animate-divs-in-order
+ * I've changed the names of the variables and moved the code that increments the index, but otherwise the code has not been changed.
+*/
 /**
  * This function animates pictures in sequence, by adding and removing a CSS class.
  *
