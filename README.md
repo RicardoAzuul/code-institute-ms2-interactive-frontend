@@ -254,6 +254,7 @@ Testing was done using Google Chrome, Mozilla Firefox, Microsoft Edge, and also 
 - third check on 13-8-2021: 2 problems.
     1. Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (difficultyButtons, localStorage) (W083)
     2. Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (playerSequence) (W083)
+    
 I've taken both problems into consideration. While this is definitely something to look out for in future coding projects, I feel as these problems can be accepted in this case: either the variable is a global variable, so indicated at the top of the file, or the variable is actually part of the window interface, or the variable is referenced quite close to the problematic line of code. JSHint indicates that it may lead to confusing semantics, I'd say in these cases it didn't.
 
 <br/>
