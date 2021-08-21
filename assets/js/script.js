@@ -1,5 +1,6 @@
 // Global variables
-var playerSequence = [];
+const playerSequence = [];
+const localStorage = window.localStorage;
 var gameSequence = [];
 const scoreKeyArray = [
   "score1",
@@ -27,8 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     getDifficultySetting();
 
-    let difficultyButtons = $(".difficulty-button");
-    for (const difficultyButton of difficultyButtons) {
+    const difficultyButtons = $(".difficulty-button");   
+    for (const difficultyButton of difficultyButtons) {       
       difficultyButton.addEventListener("click", function () {
         for (const difficultyButton of difficultyButtons) {
           difficultyButton.classList.remove("btn-primary");
@@ -44,16 +45,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /**
  * Generates a random sequence of numbers.
- *
  * Uses the value contained by the element with id longest-sequence to determine how long the sequence needs to be.
- *
  * Also uses the value of the difficulty key value pair in localstorage to determine how long the sequence needs to be, but only the first time.
- *
  * The generated sequence is then passed as an array to the animatePictures function.
  */
 function generateSequence() {
   gameSequence = [];
-  playerSequence = [];
+  playerSequence.length = 0;
   let sequenceLength = 0;
   const maxLengthSequence = 31;
 
@@ -84,13 +82,13 @@ function generateSequence() {
 }
 
 /**  
- * function that uses the generated sequence to animate pictures: used this answer on Stackoverflow: https://stackoverflow.com/questions/35071794/js-jquery-animate-divs-in-order
+ * Function that uses the generated sequence to animate pictures: used this answer on Stackoverflow: https://stackoverflow.com/questions/35071794/js-jquery-animate-divs-in-order
  * I've changed the names of the variables and moved the code that increments the index, but otherwise the code has not been changed.
 */
 /**
  * This function animates pictures in sequence, by adding and removing a CSS class.
  *
- * @param {*} gameSequence - an array of integers that the function uses to animate pictures.
+ * @param {*} gameSequence - an array of integers that the function uses to animate pictures, based on their index in an array.
  */
 function animatePictures(gameSequence) {
   let index = 0;
@@ -100,8 +98,7 @@ function animatePictures(gameSequence) {
   removeClassAndPause();
 
   /**
-   * This function, when called, removes a CSS class from an element after a timeout.
-   *
+   * This function removes a CSS class from an element after a timeout.
    * It then increments an index, and either breaks the loop or continues the loop by calling another function that adds a CSS class to an element after a timeout.
    */
   function removeClassAndPause() {
@@ -119,7 +116,7 @@ function animatePictures(gameSequence) {
   }
 
   /**
-   * This function, when called, adds a CSS class to an element and then calls another function.
+   * This function adds a CSS class to an element and then calls another function.
    */
   function addClassAndPause() {
     window.setTimeout(function () {
@@ -133,7 +130,6 @@ function animatePictures(gameSequence) {
 
 /**
  * This function compares the sequence the player submitted vs the sequence the game generated.
- *
  * Based on the result, it will either call functions that increase the scores, or call the function that resets the scores.
  */
 function checkSequence() {
@@ -146,7 +142,7 @@ function checkSequence() {
       }
     }
 
-    if (correctAnswer === true) {
+    if (correctAnswer) {
       $("#game-alert")
         .text("Correct!")
         .addClass("alert-success")
@@ -173,7 +169,7 @@ function checkSequence() {
 }
 
 /**
- * This function, if called, gets the current score from the DOM and then increments it by 1.
+ * This function gets the current score from the DOM and then increments it by 1.
  */
 function increaseScore() {
   let oldScore = parseInt($("#current-score").text());
@@ -181,8 +177,7 @@ function increaseScore() {
 }
 
 /**
- * This function, when called, gets the current longest sequence from the DOM and increments it by 1.
- *
+ * This function gets the current longest sequence from the DOM and increments it by 1.
  * It only does this if the player submitted sequence is longer than the current longest sequence.
  */
 function increaseSequenceScore() {
@@ -193,8 +188,7 @@ function increaseSequenceScore() {
 }
 
 /**
- * This function, when called, resets the score counters in the DOM to 0.
- *
+ * This function resets the score counters in the DOM to 0.
  * It also gets the current score from the DOM and calls the saveScore function with that current score as a parameter.
  */
 function resetScores() {
@@ -210,12 +204,9 @@ function resetScores() {
  * @param {*} endScore - An integer that the function uses to determine if the player beat their highscore.
  *
  * The function gets all the currently saved highscores from localStorage.
- *
  * Then it checks every highscore vs endScore. If the endScore is higher than any of the highscores, it gets spliced into the array of highscores.
- *
  * This array of highscores is then written back to localStorage.
- *
- */
+ *  */
 function saveScore(endScore) {
   let highScoreBeaten = false;
   let scoreKey = "";
@@ -224,7 +215,7 @@ function saveScore(endScore) {
   for (let index = 0; index < scoreKeyArray.length; index++) {
     scoreKey = scoreKeyArray[index];
     scoreValue = localStorage.getItem(scoreKey);
-    if (scoreValue === null) {
+    if (!scoreValue) {
       scoreValue = 0;
     }
     scoreValueArray.push(scoreValue);
@@ -259,8 +250,7 @@ function saveScore(endScore) {
 }
 
 /**
- * This function, when called, gets everything ready for the game to run.
- *
+ * This function gets everything ready for the game to run.
  * It adds eventlisteners that listen for clicks to the Start button, the Submit button and the images.
  */
 function setupGamePage() {
@@ -294,7 +284,7 @@ function setupGamePage() {
 }
 
 /**
- * This function, when called, gets the highscores from localStorage and writes them to the DOM.
+ * This function gets the highscores from localStorage and writes them to the DOM.
  */
 function displayScores() {
   for (const scoreKey of scoreKeyArray) {
@@ -306,7 +296,7 @@ function displayScores() {
 }
 
 /**
- * This function, when called, resets all the highscores in localStorage to an empty string.
+ * This function resets all the highscores in localStorage to an empty string.
  */
 function resetHighScores() {
   for (const scoreKey of scoreKeyArray) {
@@ -315,7 +305,7 @@ function resetHighScores() {
 }
 
 /**
- * This function, when called, gets the difficulty setting from localStorage and based on that adds and removes CSS classes to the difficulty buttons.
+ * This function gets the difficulty setting from localStorage and based on that adds and removes CSS classes to the difficulty buttons.
  */
 function getDifficultySetting() {
   let difficulty = localStorage.getItem("difficulty");

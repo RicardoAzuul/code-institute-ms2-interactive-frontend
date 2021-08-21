@@ -227,9 +227,7 @@ These screenshots indicate the responsiveness of the pages on various screens.
 Testing was done using Google Chrome, Mozilla Firefox, Microsoft Edge, and also Internet Explorer. I also tested it on a Huawei P smart+ 2019 Android smartphone. The site works fine on all modern browsers, but not Internet Explorer. Internet Explorer requires you to enable JavaScript (or Active Scripting as they call it) first. See [here](https://www.whatismybrowser.com/guides/how-to-enable-javascript/internet-explorer). However, Internet Explorer is no longer supported, so this is not an issue. 
 
 <ins>Tests for Readme.md:</ins>
-- :heavy_check_mark: When you click on the links in the TOC, you navigate to the section you clicked on.
-- :heavy_check_mark: All links to images open images.
-- :heavy_check_mark: All links to external websites open properly.
+- :heavy_check_mark: Realizing that I was doing a lot of manual work to check all the links, I googled for an automated solution. I found one using a Github Action Workflow. This Workflow checks all the links in markdown files. The action does generate an error: a 403 status for the Pexels website. This error is probably due to a blacklist, because I ran the workflow too often.
 <br/>
 
 <ins>Code validation:</ins>
